@@ -45,6 +45,8 @@ This is the UML of our database for the YummyYummy website.
 
 ![UML](images/Development/YummyUML.jpg)
 
+Keep in mind that some extra changes might be made in order to add functionalities.
+
 ### Developers
 
 - João Alves
