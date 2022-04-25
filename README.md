@@ -10,8 +10,10 @@ YummyYuummy will give you the most YummyYummy Food!!!
 
 <br>
 
-## UI Mock-up
 ---
+
+## UI Mock-up
+
 ### Logo
 This is our YummyYummy Logo:
 
@@ -29,8 +31,9 @@ Now we have the first mock-ups of our website. Keep in mind that some design cho
 
 <br>
 
-## UML
 ---
+
+## UML
 
 This is the UML of our database for the YummyYummy website.
 
