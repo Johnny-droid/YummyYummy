@@ -6,22 +6,22 @@ This website will also support take-away orders. The users will be able to order
 
 We hope you like our website after it's done.
 
-YummyYuummy will give you the most YummyYummy Food!!! 
+YummyYuummy will give you the most YummyYummy Food!!!
 
 <br>
 
 ## UI Mock-up
---------------------------------------------------------
+---
 ### Logo
 This is our YummyYummy Logo:
 
-![Logo](images/yummy_logo_transparent_bg.png)
+![Logo](images/Logo/YummyLogoTransparentBg.png)
 
 In the future, this logo will bring back memories of your best meals ever!
 
 <br>
 
-Now we have the first mock-ups of our website. Keep in mind that some design choices may change throughout the project development. 
+Now we have the first mock-ups of our website. Keep in mind that some design choices may change throughout the project development.
 
 ### Home Page
 
@@ -30,18 +30,17 @@ Now we have the first mock-ups of our website. Keep in mind that some design cho
 <br>
 
 ## UML
-------------------------------------------------------------
+---
 
 This is the UML of our database for the YummyYummy website.
 
-![UML](images/yummy_UML.jpg)
+![UML](images/Development/YummyUML.jpg)
 
 ### Developers
 
-- João Alves 
+- João Alves
 - José Araújo
 - Eva Carvalho (design of images)
-
 
 ### Class 15
 ### Group 06
