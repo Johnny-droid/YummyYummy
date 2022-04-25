@@ -27,9 +27,15 @@ Now we have the first mock-ups of our website. Keep in mind that some design cho
 
 ### Home Page
 
-
+![Home Page](images/UI_Mock-up/HomePage.png)
 
 <br>
+
+### Restaurants Page
+
+![Restaurants Page](images/UI_Mock-up/RestaurantsPage.png)
+
+
 
 ---
 
