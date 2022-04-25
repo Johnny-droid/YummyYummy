@@ -8,12 +8,14 @@ We hope you like our website after it's done.
 
 YummyYuummy will give you the most YummyYummy Food!!! 
 
-## UI Mock-up
+<br>
 
+## UI Mock-up
+--------------------------------------------------------
 ### Logo
 This is our YummyYummy Logo:
 
-![LogoYummyYummy](images/yummy_logo_transparent_bg.png)
+![Logo](images/yummy_logo_transparent_bg.png)
 
 In the future, this logo will bring back memories of your best meals ever!
 
@@ -24,6 +26,15 @@ Now we have the first mock-ups of our website. Keep in mind that some design cho
 ### Home Page
 
 
+
+<br>
+
+## UML
+------------------------------------------------------------
+
+This is the UML of our database for the YummyYummy website.
+
+![UML](images/yummy_UML.jpg)
 
 ### Developers
 
