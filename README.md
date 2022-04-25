@@ -13,7 +13,7 @@ YummyYuummy will give you the most YummyYummy Food!!!
 ### Logo
 This is our YummyYummy Logo:
 
-![LogoYummyYummy](images/unknown.png)
+![LogoYummyYummy](images/yummy_logo_transparent_bg.png)
 
 In the future, this logo will bring back memories of your best meals ever!
 
