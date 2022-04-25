@@ -35,6 +35,13 @@ Now we have the first mock-ups of our website. Keep in mind that some design cho
 
 ![Restaurants Page](images/UI_Mock-up/RestaurantsPage.png)
 
+<br>
+
+### Orders Page
+
+![Orders Page](images/UI_Mock-up/OrdersPage.png)
+
+<br>
 
 
 ---
