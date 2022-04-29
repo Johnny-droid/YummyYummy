@@ -1,0 +1,25 @@
+body header {
+    display: grid;
+    grid-template-columns: [start] 1fr [img] 20em [home] 3fr [signs] 20em [aux] 1fr [end];
+}
+
+body > header img {
+    grid-column: img / home;
+    margin-left: 12em;
+}
+
+body > header nav {
+    grid-column: home / signs;
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+body > header signs {
+    grid-column: signs / aux;
+    display: flex; 
+    justify-content: space-evenly;   
+    align-items: center;    
+
+}
+
