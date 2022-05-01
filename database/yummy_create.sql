@@ -52,8 +52,8 @@ CREATE TABLE Product (
     name VARCHAR, 
     price DOUBLE PRECISION, 
     discount INTEGER, 
-    restaurante_name VARCHAR REFERENCES Restaurant(id_restaurant),
-    constraint Discount_1_to_100 check (discount <= 100 AND discount >= 0)
+    id_restaurant INTEGER REFERENCES Restaurant(id_restaurant),
+    constraint Discount_0_to_100 check (discount <= 100 AND discount >= 0)
 );
 
 CREATE TABLE Order (
@@ -61,7 +61,7 @@ CREATE TABLE Order (
     status VARCHAR, --might try something with enum
     dateStart TIME, 
     dateEnd TIME,
-    client VARCHAR REFERENCES Client(id_client)
+    id_client INTEGER REFERENCES Client(id_client)
 );
 
 CREATE TABLE Products_Orders (
