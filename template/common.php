@@ -25,7 +25,22 @@
                 <h1><a>SIGN UP</a></h1>
             </signs>
         </header>
-    </body>
 
+        <main>
+<?php } ?>
+
+<?php function output_footer() { ?>
+        
+        </main>
+
+        <footer>
+            <img src="images/Logo/YummyLogoWhiteBlack.png">
+
+            <h4> Made by: João Alves & José Araújo </h4>
+
+            <img src="images/Logo/FEUPLogo.png">
+        </footer>
+    </body>
 </html>
+
 <?php } ?>

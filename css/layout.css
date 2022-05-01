@@ -1,9 +1,13 @@
+/* HEADER */
+
 body header {
     display: grid;
-    grid-template-columns: [start] 1fr [img] 20em [home] 3fr [signs] 20em [aux] 1fr [end];
+    grid-template-columns: [start] 1fr [img] 20em [home] 5fr [signs] 20em [aux] 1fr [end];
 }
 
 body > header img {
+    height: 5em; 
+    width: 5em; 
     grid-column: img / home;
     margin-left: 12em;
 }
@@ -15,6 +19,11 @@ body > header nav {
     align-items: center;
 }
 
+body > header > nav > h1 {
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
 body > header signs {
     grid-column: signs / aux;
     display: flex; 
@@ -23,3 +32,40 @@ body > header signs {
 
 }
 
+
+
+
+
+
+/* FOOTER */
+
+body > footer {
+    align-items: center;
+    display: grid; 
+    grid-template-columns: [start] auto [imgYummy] 1fr [authors] auto [imgFEUP];
+}
+
+body > footer > img:first-child {
+    padding: 0.5em;
+    margin-right: 7em;
+    height: 5em;
+    width: 5em;
+    grid-column: start / imgYummy;
+}
+
+body > footer h3 {
+    grid-column: imgYummy / authors;
+}
+
+body > footer > img:last-child {
+    grid-column: authors / imgFEUP;
+}
+
+
+
+
+/* BANNER */
+
+#banner {
+    width: 100%;
+}

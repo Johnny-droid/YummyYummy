@@ -1,12 +1,9 @@
+/* HEADER */
+
 body header {
     background-color: beige;
     padding-top: 1em;
     padding-bottom: 1em;
-}
-
-body > header img {
-    height: 5em; 
-    width: 5em; 
 }
 
 body > header > nav > h1 a {
@@ -34,3 +31,24 @@ body > header > signs h1:nth-child(2) {
     background-color: #FAFA33;
     
 }
+
+
+
+
+
+/* FOOTER */
+
+body > footer {
+    background-color: black;
+    color: white;
+}
+
+body > footer * {
+    font-family: sans-serif;
+}
+
+
+
+
+
+
