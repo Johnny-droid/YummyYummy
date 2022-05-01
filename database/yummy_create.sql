@@ -3,10 +3,10 @@ drop table if exists Client;
 drop table if exists Restaurant;
 drop table if exists Category;
 drop table if exists RestaurantCategory;
-drop table if exists Products;
-drop table if exists Orders;
+drop table if exists Product;
+drop table if exists Order;
 drop table if exists Products_Orders;
-drop table if exists Reviews;
+drop table if exists Review;
 
 
 CREATE TABLE RestaurantOwner (
@@ -47,7 +47,7 @@ CREATE TABLE RestaurantCategory (
     PRIMARY KEY(id_restaurant, id_category)
 );
 
-CREATE TABLE Products (
+CREATE TABLE Product (
     id_product INTEGER PRIMARY KEY,
     name VARCHAR, 
     price DOUBLE PRECISION, 
@@ -56,7 +56,7 @@ CREATE TABLE Products (
     constraint Discount_1_to_100 check (discount <= 100 AND discount >= 0)
 );
 
-CREATE TABLE Orders (
+CREATE TABLE Order (
     id_order INTEGER PRIMARY KEY, 
     status VARCHAR, --might try something with enum
     dateStart TIME, 
@@ -65,12 +65,12 @@ CREATE TABLE Orders (
 );
 
 CREATE TABLE Products_Orders (
-    id_product VARCHAR REFERENCES Products(id_product), 
-    id_order INTEGER REFERENCES orders(id_order), 
+    id_product VARCHAR REFERENCES Product(id_product), 
+    id_order INTEGER REFERENCES Order(id_order), 
     PRIMARY KEY(id_product, id_order)
 );
 
-CREATE TABLE Reviews (
+CREATE TABLE Review (
     id_client VARCHAR REFERENCES Client(id_client), 
     id_restaurant VARCHAR REFERENCES Restaurant(id_restaurant), 
     rating INTEGER, 
