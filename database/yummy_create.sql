@@ -52,7 +52,7 @@ CREATE TABLE Products (
     name VARCHAR, 
     price DOUBLE PRECISION, 
     discount INTEGER, 
-    restaurante_name VARCHAR REFERENCES Restaurant(id_restaurant),
+    restaurante_id VARCHAR REFERENCES Restaurant(id_restaurant),
     constraint Discount_1_to_100 check (discount <= 100 AND discount >= 0)
 );
 
