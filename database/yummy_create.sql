@@ -3,10 +3,10 @@ drop table if exists Client;
 drop table if exists Restaurant;
 drop table if exists Category;
 drop table if exists RestaurantCategory;
-drop table if exists Products;
-drop table if exists Orders;
+drop table if exists Product;
+drop table if exists Order;
 drop table if exists Products_Orders;
-drop table if exists Reviews;
+drop table if exists Review;
 
 
 CREATE TABLE RestaurantOwner (
@@ -22,7 +22,7 @@ CREATE TABLE Client (
     username VARCHAR, 
     password VARCHAR, 
     address VARCHAR, 
-    phone VARCHAR
+    phone_number VARCHAR
 );
 
 CREATE TABLE Restaurant (
@@ -37,8 +37,8 @@ CREATE TABLE Restaurant (
 
 CREATE TABLE Category (
    id_category INTEGER PRIMARY KEY,
-   name VARCHAR,
-   img_name VARCHAR
+   name VARCHAR
+   --img_file VARCHAR
 );
 
 CREATE TABLE RestaurantCategory (
@@ -47,30 +47,31 @@ CREATE TABLE RestaurantCategory (
     PRIMARY KEY(id_restaurant, id_category)
 );
 
-CREATE TABLE Products (
+CREATE TABLE Product (
     id_product INTEGER PRIMARY KEY,
     name VARCHAR, 
     price DOUBLE PRECISION, 
     discount INTEGER, 
-    restaurante_id VARCHAR REFERENCES Restaurant(id_restaurant),
-    constraint Discount_1_to_100 check (discount <= 100 AND discount >= 0)
+    id_restaurant INTEGER REFERENCES Restaurant(id_restaurant),
+    constraint Discount_0_to_100 check (discount <= 100 AND discount >= 0)
 );
 
-CREATE TABLE Orders (
+CREATE TABLE Order (
     id_order INTEGER PRIMARY KEY, 
     status VARCHAR, --might try something with enum
     dateStart TIME, 
     dateEnd TIME,
-    client VARCHAR REFERENCES Client(id_client)
+    id_client INTEGER REFERENCES Client(id_client),
+    constraint Order_Status_Matches check (status IN ('RECEIVED', 'PREPARNG', 'READY', 'DELIVERED'))
 );
 
 CREATE TABLE Products_Orders (
-    id_product VARCHAR REFERENCES Products(id_product), 
-    id_order INTEGER REFERENCES orders(id_order), 
+    id_product VARCHAR REFERENCES Product(id_product), 
+    id_order INTEGER REFERENCES Order(id_order), 
     PRIMARY KEY(id_product, id_order)
 );
 
-CREATE TABLE Reviews (
+CREATE TABLE Review (
     id_client VARCHAR REFERENCES Client(id_client), 
     id_restaurant VARCHAR REFERENCES Restaurant(id_restaurant), 
     rating INTEGER, 
