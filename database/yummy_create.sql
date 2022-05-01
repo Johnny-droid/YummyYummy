@@ -61,7 +61,8 @@ CREATE TABLE Order (
     status VARCHAR, --might try something with enum
     dateStart TIME, 
     dateEnd TIME,
-    id_client INTEGER REFERENCES Client(id_client)
+    id_client INTEGER REFERENCES Client(id_client),
+    constraint Order_Status_Matches check (status IN ('RECEIVED', 'PREPARNG', 'READY', 'DELIVERED'))
 );
 
 CREATE TABLE Products_Orders (
