@@ -12,7 +12,7 @@
 
     <body>
         <header>
-            <img src="images/Logo/YummyLogoTransparentBg.png">
+            <img src="images/Logo/YummyLogoTransparentBg.png" alt="LogoYummyYellow">
 
             <nav>
                 <h1><a href="index.php">HOME</a></h1>
@@ -34,11 +34,11 @@
         </main>
 
         <footer>
-            <img src="images/Logo/YummyLogoWhiteBlack.png">
+            <img src="images/Logo/YummyLogoWhiteBlack.png" alt="LogoYummyWhite">
 
             <h4> Made by: João Alves & José Araújo </h4>
 
-            <img src="images/Logo/FEUPLogo.png">
+            <img src="images/Logo/FEUPLogo.png" alt="Logo FEUP">
         </footer>
     </body>
 </html>

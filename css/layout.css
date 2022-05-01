@@ -65,7 +65,20 @@ body > footer > img:last-child {
 
 
 /* BANNER */
-
-#banner {
-    width: 100%;
+body main {
+    text-align: center;
 }
+
+@media (min-width: 100em) {
+    #banner {
+        width: 100em;
+    }
+}
+
+@media (max-width: 100em) {
+    #banner {
+        width: 100%;
+    }
+}
+
+
