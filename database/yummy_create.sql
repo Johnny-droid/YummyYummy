@@ -22,7 +22,7 @@ CREATE TABLE Client (
     username VARCHAR, 
     password VARCHAR, 
     address VARCHAR, 
-    phone VARCHAR
+    phone_number VARCHAR
 );
 
 CREATE TABLE Restaurant (
