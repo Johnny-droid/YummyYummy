@@ -36,14 +36,14 @@ insert into Reviews values(4, 5, 4, 2, 'Very good and very cheap, what a finding
 insert into Reviews values(5, 6, 3, 5, 'A bit expensive for what it is worth but good'); 
 insert into Reviews values(8, 8, 5, 2, 'I am amazed, chinese food culture at its finest! Wow');  
 
-insert into Category values(1, 'Pizza', ''); 
-insert into Category values(2, 'Hamburguer', '');
-insert into Category values(3, 'Sushi', '');
-insert into Category values(4, 'Asian', '');
-insert into Category values(5, 'Fast Food', '');
-insert into Category values(6, 'Kebab', '');
-insert into Category values(7, 'Vegan', '');
-insert into Category values(8, 'Portuguese', '');
+insert into Category values(1, 'Pizza'); 
+insert into Category values(2, 'Hamburguer');
+insert into Category values(3, 'Sushi');
+insert into Category values(4, 'Asian');
+insert into Category values(5, 'Fast Food');
+insert into Category values(6, 'Kebab');
+insert into Category values(7, 'Vegan');
+insert into Category values(8, 'Portuguese');
 
 insert into RestaurantCategory values(1, 8); 
 insert into RestaurantCategory values(1, 7);  
