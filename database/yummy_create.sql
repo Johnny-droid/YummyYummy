@@ -37,7 +37,8 @@ CREATE TABLE Restaurant (
 
 CREATE TABLE Category (
    id_category INTEGER PRIMARY KEY,
-   name VARCHAR
+   name VARCHAR,
+   img_name VARCHAR
 );
 
 CREATE TABLE RestaurantCategory (

@@ -2,7 +2,8 @@
 
 body header {
     display: grid;
-    grid-template-columns: [start] 1fr [img] 20em [home] 5fr [signs] 20em [aux] 1fr [end];
+    flex-wrap: wrap;
+    grid-template-columns: [start] 1fr [img] 15em [home] 5fr [signs] 15em [aux] 1fr [end];
 }
 
 body > header img {
@@ -64,10 +65,20 @@ body > footer > img:last-child {
 
 
 
-/* BANNER */
+/* MAIN */
 body main {
     text-align: center;
 }
+
+
+
+
+
+
+
+
+/* BANNER */
+
 
 @media (min-width: 100em) {
     #banner {
@@ -81,4 +92,24 @@ body main {
     }
 }
 
+
+
+
+/* Categories */
+
+#categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+
+.category {
+    margin: 1.5em;
+    display: inline-block;
+}
+
+.category img {
+    width: 12em;
+    height: 10em;
+}
 

@@ -1,3 +1,8 @@
+body {
+    font-family: sans-serif;
+}
+
+
 /* HEADER */
 
 body header {
@@ -12,12 +17,10 @@ body > header > nav > h1 a {
 }
 
 body > header > nav h1 {
-    font-family: sans-serif;
     font-size: 120%;    
 }
 
 body > header > signs h1:nth-child(1) {
-    font-family: sans-serif;
     font-size: 120%;
     padding-left: 0.5em;
     padding-right: 0.5em; 
@@ -25,7 +28,6 @@ body > header > signs h1:nth-child(1) {
 }
 
 body > header > signs h1:nth-child(2) {
-    font-family: sans-serif;
     font-size: 120%;
     padding: 0.5em; 
     background-color: #FAFA33;
@@ -43,12 +45,32 @@ body > footer {
     color: white;
 }
 
-body > footer * {
-    font-family: sans-serif;
+
+
+
+
+
+
+
+/* Categories */
+
+#categories {
+    background-color:rgb(255, 240, 109);
 }
 
+.category {
+    background-color: white;
+    border-radius: 20px;
+    border: 2px black solid;
+}
 
+.category:hover {
+    background-color: lightgray;
+}
 
-
-
+.category img {
+    border-bottom: 2px black solid;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
 
