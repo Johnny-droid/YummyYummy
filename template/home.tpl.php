@@ -1,11 +1,13 @@
 <?php function output_home_page() { ?>
 
-    <img id="banner" src="images/Banner/YummyBannerQuestion.png">
+    <div class="imgSearch">
+        <img id="banner" src="images/Banner/YummyBannerQuestion.png">
 
-    <div class="searchBar">
-        <input type="text" placeholder="Search...">
+        <div class="searchBar">
+            <input type="text" placeholder="Search...">
+        </div>
     </div>
-
+    
     <section id="categories">
         <article class="category">
             <img src="images/Categories/AnimatedFastFood.jpg">

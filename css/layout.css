@@ -34,10 +34,6 @@ body > header signs {
 }
 
 
-
-
-
-
 /* FOOTER */
 
 body > footer {
@@ -63,57 +59,3 @@ body > footer > img:last-child {
     grid-column: authors / imgFEUP;
     margin-right: 1em;
 }
-
-
-
-
-/* MAIN */
-body main {
-    text-align: center;
-}
-
-
-
-
-
-
-
-
-/* BANNER */
-
-
-@media (min-width: 100em) {
-    #banner {
-        width: 100%;
-    }
-}
-
-@media (max-width: 100em) {
-    #banner {
-        width: 100%;
-    }
-}
-
-
-
-
-/* Categories */
-
-#categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-evenly;
-    margin-bottom: 1em;
-    margin-top: 0.8em;
-}
-
-.category {
-    margin: 1.5em;
-    display: inline-block;
-}
-
-.category img {
-    width: 12em;
-    height: 10em;
-}
-
