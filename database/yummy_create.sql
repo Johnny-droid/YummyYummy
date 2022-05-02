@@ -1,12 +1,14 @@
+
+--Delete tables if they already exist
+drop table if exists Products_Orders;
+drop table if exists Orders;
+drop table if exists Product;
+drop table if exists Review;
+drop table if exists RestaurantCategory;
+drop table if exists Category;
+drop table if exists Restaurant;
 drop table if exists RestaurantOwner;
 drop table if exists Client;
-drop table if exists Restaurant;
-drop table if exists Category;
-drop table if exists RestaurantCategory;
-drop table if exists Product;
-drop table if exists Order;
-drop table if exists Products_Orders;
-drop table if exists Review;
 
 
 CREATE TABLE RestaurantOwner (
@@ -56,18 +58,18 @@ CREATE TABLE Product (
     constraint Discount_0_to_100 check (discount <= 100 AND discount >= 0)
 );
 
-CREATE TABLE Order (
-    id_order INTEGER PRIMARY KEY, 
+CREATE TABLE Orders (
+    id_order INTEGER PRIMARY KEY,
     status VARCHAR, --might try something with enum
-    dateStart TIME, 
-    dateEnd TIME,
-    id_client INTEGER REFERENCES Client(id_client),
-    constraint Order_Status_Matches check (status IN ('RECEIVED', 'PREPARNG', 'READY', 'DELIVERED'))
+    dateStart DATETIME, 
+    dateEnd DATETIME,
+    id_client INTEGER REFERENCES Client(id_client)
+    constraint Order_Status_Matches check (status IN ('RECEIVED', 'PREPARING', 'READY', 'DELIVERED'))
 );
 
 CREATE TABLE Products_Orders (
     id_product VARCHAR REFERENCES Product(id_product), 
-    id_order INTEGER REFERENCES Order(id_order), 
+    id_order INTEGER REFERENCES Orders(id_order), 
     PRIMARY KEY(id_product, id_order)
 );
 
