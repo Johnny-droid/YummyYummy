@@ -2,6 +2,10 @@
 
     <img id="banner" src="images/Banner/YummyBannerQuestion.png">
 
+    <div class="searchBar">
+        <input type="text" placeholder="Search...">
+    </div>
+
     <section id="categories">
         <article class="category">
             <img src="images/Categories/AnimatedFastFood.jpg">

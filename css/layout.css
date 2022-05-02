@@ -84,7 +84,7 @@ body main {
 
 @media (min-width: 100em) {
     #banner {
-        width: 100em;
+        width: 100%;
     }
 }
 
