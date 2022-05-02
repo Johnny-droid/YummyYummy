@@ -1,39 +1,17 @@
-<?php function output_home_page() { ?>
+<?php function output_home_page(array $categories) { ?>
 
     <img id="banner" src="images/Banner/YummyBannerQuestion.png">
 
     <section id="categories">
-        <article class="category">
-            <img src="images/Categories/AnimatedFastFood.jpg">
-            <h3>Fast Food</h3>
-        </article>
+        <?php foreach($categories as $category) { ?>
+            
+            <article class="category">
+                <img src="images/Categories/Animated<?= str_replace(' ', '', $category->name)?>.jpg">
+                <h3><?= $category->name ?></h3>
+            </article>
 
-        <article class="category">
-            <img src="images/Categories/AnimatedHamburger.jpg">
-            <h3>Hamburger</h3>
-        </article>
-
-        <article class="category">
-            <img src="images/Categories/AnimatedHotDog.jpg">
-            <h3>Hot Dog</h3>
-        </article>
-
-        <article class="category">
-            <img src="images/Categories/AnimatedItalian.png">
-            <h3>Italian Food</h3>
-        </article>
-
-        <article class="category">
-            <img src="images/Categories/AnimatedPizza.jpg">
-            <h3>Pizza</h3>
-        </article>
-
-        <article class="category">
-            <img src="images/Categories/AnimatedSushi.png">
-            <h3>Sushi</h3>
-        </article>
+        <?php } ?>
     </section>
-
 
 <?php } ?>
 
