@@ -38,7 +38,7 @@
 
             <h4> Made by: João Alves & José Araújo </h4>
 
-            <img src="images/Logo/FEUPLogo.png" alt="Logo FEUP">
+            <img src="images/Logo/FeupLogo.png" alt="Logo FEUP">
         </footer>
     </body>
 </html>
