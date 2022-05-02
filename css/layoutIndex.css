@@ -4,6 +4,15 @@ body main {
     text-align: center;
 }
 
+.imgSearch {
+    position: relative;
+}
+
+.searchBar {    
+    position: absolute;
+    bottom: 8em;
+    right: 50em;
+}
 
 /* BANNER */
 
