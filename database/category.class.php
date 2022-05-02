@@ -14,7 +14,26 @@
 
         }
 
+        
+        static function getCategories(PDO $db) : array {
+            $stmt = $db->prepare('
+                SELECT id_category as id, name
+                FROM Category;
+            ');
 
+            $stmt->execute();
+
+            $categories = array();
+
+            while ($category = $stmt->fetch()) {
+                $categories[] = new Category(
+                    intval($category['id']),
+                    $category['name']
+                );
+            }
+
+            return $categories;
+        }
 
 
     }
