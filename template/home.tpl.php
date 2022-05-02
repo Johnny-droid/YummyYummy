@@ -1,10 +1,10 @@
 <?php function output_home_page(array $categories) { ?>
 
-    <div class="imgSearch">
+    <div id="imgSearch">
         <img id="banner" src="images/Banner/YummyBannerQuestion.png">
 
-        <div class="searchBar">
-            <input type="text" placeholder="Search...">
+        <div id="searchBar"> <!-- This will probably change to a form -->
+            <input id="inputSearch" type="text" placeholder="Search...">
         </div>
     </div>
     

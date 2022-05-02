@@ -1,7 +1,40 @@
-.images {
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 5vw);
-    grid-gap: 15px; 
+.restaurantGlobal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+}
+
+
+/* Main Image of Restaurant */
+.restaurantImage {
+    margin: 1em;
+    border-radius: 20px;
+}
+
+
+@media (min-width: 40em) {
+    .restaurantImage {
+        width: 40em;
+    }
+
+    .restaurantMainInformation {
+        width: 40em;
+    }
+}
+
+@media (max-width: 40em) {
+    .restaurantImage {
+        width: 100%;
+    }
+
+    .restaurantMainInformation {
+        width: 100%;
+    }
+}
+
+
+.restaurantMainInformation {
+    border: 2px solid black;
 }
 

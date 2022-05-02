@@ -1,24 +1,30 @@
-/* MAIN */
 
-body main {
+
+/* Banner and Search */
+#imgSearch {
     text-align: center;
-}
-
-.imgSearch {
     position: relative;
+    width: 100%;
 }
 
-.searchBar {    
+#searchBar {    
     position: absolute;
-    bottom: 8em;
-    right: 50em;
+    width: 100%;
+    bottom: 14%;
 }
 
-/* BANNER */
+#inputSearch {
+    font-size: 1.1em;
+    padding: 1em;
+}
 
 @media (min-width: 100em) {
     #banner {
-        width: 100%;
+        width: 100em;
+    }
+
+    #inputSearch {
+        width: 20em;
     }
 }
 
@@ -26,12 +32,21 @@ body main {
     #banner {
         width: 100%;
     }
+
+    #inputSearch {
+        width: 25%;
+    }
 }
+
+
+
+
 
 
 /* Categories */
 
 #categories {
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
     justify-content:space-evenly;
@@ -48,3 +63,6 @@ body main {
     width: 12em;
     height: 10em;
 }
+
+
+
