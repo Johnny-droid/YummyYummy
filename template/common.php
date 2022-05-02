@@ -9,6 +9,8 @@
         <link href="css/style.css" rel="stylesheet">
         <link href="css/layoutIndex.css" rel="stylesheet">
         <link href="css/styleIndex.css" rel="stylesheet">
+        <link href="css/layoutRestaurant.css" rel="stylesheet">
+        <link href="css/styleRestaurant.css" rel="stylesheet">
 
     </head>
 
@@ -18,7 +20,7 @@
 
             <nav>
                 <h1><a href="index.php">HOME</a></h1>
-                <h1><a href="restaurants.php">RESTAURANTS</a></h1>
+                <h1><a href="restaurant.php">RESTAURANTS</a></h1>
                 <h1><a href="orders.php">ORDERS</a></h1>
             </nav>
 
