@@ -49,6 +49,7 @@ body > footer {
 body > footer > img:first-child {
     padding: 0.5em;
     margin-right: 7em;
+    margin-left: 1em; 
     height: 5em;
     width: 5em;
     grid-column: start / imgYummy;
@@ -60,6 +61,7 @@ body > footer h3 {
 
 body > footer > img:last-child {
     grid-column: authors / imgFEUP;
+    margin-right: 1em;
 }
 
 
@@ -101,6 +103,8 @@ body main {
     display: flex;
     flex-wrap: wrap;
     justify-content:space-evenly;
+    margin-bottom: 1em;
+    margin-top: 0.8em;
 }
 
 .category {
