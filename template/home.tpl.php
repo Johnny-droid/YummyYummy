@@ -1,7 +1,13 @@
 <?php function output_home_page(array $categories) { ?>
 
-    <img id="banner" src="images/Banner/YummyBannerQuestion.png">
+    <div class="imgSearch">
+        <img id="banner" src="images/Banner/YummyBannerQuestion.png">
 
+        <div class="searchBar">
+            <input type="text" placeholder="Search...">
+        </div>
+    </div>
+    
     <section id="categories">
         <?php foreach($categories as $category) { ?>
             
