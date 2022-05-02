@@ -1,0 +1,45 @@
+body {
+    font-family: sans-serif;
+}
+
+/* HEADER */
+
+body header {
+    background-color: beige;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+body > header > nav > h1 a {
+    text-decoration: none;
+    color: black;
+}
+
+body > header > nav h1 {
+    font-size: 120%;    
+}
+
+body > header > signs h1:nth-child(1) {
+    font-size: 120%;
+    padding-left: 0.5em;
+    padding-right: 0.5em; 
+    text-align: center;
+}
+
+body > header > signs h1:nth-child(2) {
+    font-size: 120%;
+    padding: 0.5em; 
+    background-color: #FAFA33;   
+}
+
+body > header > signs > h1 a {
+    text-decoration: none;
+    color: black;
+}
+
+/* FOOTER */
+
+body > footer {
+    background-color: black;
+    color: white;
+}
