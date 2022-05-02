@@ -19,7 +19,7 @@
         </article>
 
         <article class="category">
-            <img src="images/Categories/AnimatedItalianFood.png">
+            <img src="images/Categories/AnimatedItalian.png">
             <h3>Italian Food</h3>
         </article>
 
