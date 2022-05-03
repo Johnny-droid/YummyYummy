@@ -21,6 +21,14 @@
     .restaurantMainInformation {
         width: 40em;
     }
+
+    .restaurantExtraInformation {
+        width: 40em;
+    }
+
+    .reviews {
+        width: 40em;
+    }
 }
 
 @media (max-width: 40em) {
@@ -29,6 +37,14 @@
     }
 
     .restaurantMainInformation {
+        width: 100%;
+    }
+
+    .restaurantExtraInformation {
+        width: 100%;
+    }
+
+    .reviews {
         width: 100%;
     }
 }

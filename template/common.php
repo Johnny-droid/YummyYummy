@@ -20,7 +20,7 @@
 
             <nav>
                 <h1><a href="index.php">HOME</a></h1>
-                <h1><a href="restaurant.php">RESTAURANTS</a></h1>
+                <h1><a href="restaurants.php">RESTAURANTS</a></h1>
                 <h1><a href="orders.php">ORDERS</a></h1>
             </nav>
 

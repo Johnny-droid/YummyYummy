@@ -9,7 +9,7 @@ insert into RestaurantOwner values(6, 'joaodireito', 'abba', 'Avenida do Bairro'
 insert into RestaurantOwner values(7, 'marianacustodio', 'abba', 'Rua do Padrasto', 924785694);
 insert into RestaurantOwner values(8, 'luisrebento', 'abba', 'Avenida Lisboa', 919123564);
 
-insert into Restaurant values (1, 'Grelha do Manuel', '932659956', 'Porto', '08:00', '23:00', 1); 
+insert into Restaurant values (1, 'Grelha do Manuel', '932659956', 'Porto', '22:30', '23:00', 1); 
 insert into Restaurant values (2, 'Hamburgueres do Carlos', '932828456', 'Porto', '8:30', '23:00', 2);
 insert into Restaurant values (3, 'Grelha do Aníbal', '937468123', 'Porto', '9:00', '23:00', 3);
 insert into Restaurant values (4, 'Restaurante do Pedro', '912345723', 'Porto', '8:00', '24:00', 4);

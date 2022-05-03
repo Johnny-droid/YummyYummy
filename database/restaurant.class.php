@@ -47,6 +47,16 @@
             );
         }
 
+        function getOpenOrClosed() {
+            $strOpenTime =  $this->openingTime->format('H:i');
+            $strClosedTime = $this->closingTime->format('H:i');
+            if (time() >= strtotime($strOpenTime)  && time() <= strtotime($strClosedTime)) {
+                echo 'Open';
+            } else {
+                echo 'Closed';
+            }
+
+        } 
 
 
     }
