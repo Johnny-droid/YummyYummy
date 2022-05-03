@@ -4,13 +4,15 @@
     class Review {
 
         public int $id_client;
+        public string $username;
         public int $id_restaurant;
         public int $rating;
         public int $priceScore;
         public string $comment;
 
-        public function __construct(int $id_client, int $id_restaurant, int $rating, int $priceScore, string $comment) {
+        public function __construct(int $id_client, string $username, int $id_restaurant, int $rating, int $priceScore, string $comment) {
             $this->id_client = $id_client;
+            $this->username = $username;
             $this->id_restaurant = $id_restaurant;
             $this->rating = $rating;
             $this->priceScore = $priceScore;
@@ -21,7 +23,7 @@
         static function getRestaurantReviews(PDO $db, int $id) : array {
             $stmt = $db->prepare('
                 SELECT * 
-                FROM Review
+                FROM Review JOIN Client using(id_client)
                 WHERE id_restaurant = ?
             ');
 
@@ -32,6 +34,7 @@
             while ($review = $stmt->fetch()) {
                 $reviews[] = new Review(
                     intval($review['id_client']),
+                    $review['username'],
                     intval($review['id_restaurant']),
                     intval($review['rating']),
                     intval($review['price']),
@@ -53,7 +56,7 @@
         }
 
 
-        
+
         static function getAveragePriceSymbols(array $reviews) : string {
             if (sizeof($reviews) === 0) {return 0;}
 

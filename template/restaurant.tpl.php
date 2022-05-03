@@ -1,4 +1,4 @@
-<?php function output_restaurant(Restaurant $restaurant, array $reviews) { ?>
+<?php function output_restaurant(Restaurant $restaurant, array $categories, array $reviews) { ?>
     
     <section class="restaurantGlobal">
         <img class="restaurantImage" src="images/Restaurants/restaurant<?= $restaurant->id ?>.jpg">
@@ -17,10 +17,9 @@
 
             <h2>Information</h2>
             <ul>
-                <li>Category1 Not valid</li>
-                <li>Category2 Not valid</li>
-                <li>Category3 Not valid</li>
-
+                <?php foreach($categories as $category) {   ?>
+                    <li><?= $category->name ?></li>
+                <?php } ?>
             </ul>
 
             <p>Phone Number: <?= $restaurant->phoneNumber?> </p>
@@ -31,14 +30,17 @@
         <section class="reviews">
             <h2>Reviews</h2>
 
-            <article class="review">
+            <?php foreach($reviews as $review) { ?>
+
+                <article class="review">
+                    
+                    <h5><?= $review->username ?></h5>
+                    <div class="reviewRating"><?= $review->rating ?></div>
+                    <div class="reviewPrice"><?= $review->priceScore ?></div>
+                    <p><?= $review->comment ?></p>
                 
-                <h5>Marcelo</h5>
-                <div class="reviewRating"> Rating here </div>
-                <div class="reviewPrice"> Price here </div>
-                <p>Somerandom comment asovpd\soncoancancpacnododoabodavbad</p>
-            
-            <article>
+                <article>
+            <?php } ?>
 
         </section>
 

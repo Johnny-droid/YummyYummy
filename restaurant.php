@@ -13,8 +13,9 @@
 
     $restaurant = Restaurant::getRestaurant($db, $id);
     $reviews = Review::getRestaurantReviews($db, $id);
+    $categories = Category::getRestaurantCategories($db, $id);
 
     output_header(); 
-    output_restaurant($restaurant, $reviews); 
+    output_restaurant($restaurant, $categories, $reviews); 
     output_footer();
 ?>
