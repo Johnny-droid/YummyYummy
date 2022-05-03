@@ -71,6 +71,16 @@
 
             return $string;
         }
+        	
+        function getPriceSymbols() : string {
+
+            $string = "";
+            for ($i = 1; $i <= $this->priceScore; $i++) {
+                $string = $string . "€ ";
+            }
+
+            return $string;
+        }
 
     }
 

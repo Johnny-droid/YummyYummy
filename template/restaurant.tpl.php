@@ -16,33 +16,38 @@
         <div class="restaurantExtraInformation">
 
             <h2>Information</h2>
-            <ul>
-                <?php foreach($categories as $category) {   ?>
-                    <li><?= $category->name ?></li>
-                <?php } ?>
-            </ul>
+            <div class="restaurantCategories">
+                <strong>Categories:</strong>
 
-            <p>Phone Number: <?= $restaurant->phoneNumber?> </p>
-            <p>Location: <?= $restaurant->location ?></p>
+                <?php foreach($categories as $category) {  ?>
+                    <div class="restaurantCategory"><?= $category->name ?></div>
+                <?php } ?>
+
+            </div> 
+            
+            <strong>Phone Number: </strong><?= $restaurant->phoneNumber?>
+            <br>
+            <strong>Location:</strong> <?= $restaurant->location ?>
 
         </div>
 
-        <section class="reviews">
+        <div class="reviews">
             <h2>Reviews</h2>
 
             <?php foreach($reviews as $review) { ?>
 
-                <article class="review">
-                    
-                    <h5><?= $review->username ?></h5>
-                    <div class="reviewRating"><?= $review->rating ?></div>
-                    <div class="reviewPrice"><?= $review->priceScore ?></div>
-                    <p><?= $review->comment ?></p>
+                <article>
+                    <div class="reviewHeader">
+                        <strong><?= $review->username ?></strong>
+                        <div class="reviewRating"><?= $review->rating ?></div>
+                        <div class="reviewPrice"><?= $review->getPriceSymbols() ?></div>
+                    </div>
+                    <p class="reviewComment"><?= $review->comment ?></p>
                 
                 <article>
             <?php } ?>
 
-        </section>
+        </div>
 
     </section>
         

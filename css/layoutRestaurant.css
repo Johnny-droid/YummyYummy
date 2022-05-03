@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid black;
 }
 
 
@@ -14,43 +13,14 @@
 
 
 @media (min-width: 40em) {
-    .restaurantImage {
-        width: 40em;
-    }
-
-    .restaurantMainInformation {
-        width: 40em;
-    }
-
-    .restaurantExtraInformation {
-        width: 40em;
-    }
-
-    .reviews {
+    .restaurantGlobal > *{
         width: 40em;
     }
 }
 
 @media (max-width: 40em) {
-    .restaurantImage {
+    .restaurantGlobal > * {
         width: 100%;
     }
-
-    .restaurantMainInformation {
-        width: 100%;
-    }
-
-    .restaurantExtraInformation {
-        width: 100%;
-    }
-
-    .reviews {
-        width: 100%;
-    }
-}
-
-
-.restaurantMainInformation {
-    border: 2px solid black;
 }
 

@@ -1,0 +1,57 @@
+.restaurantGlobal > div {
+    padding: 1.5em;
+    margin: 1em;
+    border: 7px solid rgb(255, 255, 100);
+    border-radius: 40px;
+}
+
+
+/*  Restaurant categories, phone number and location  */
+.restaurantExtraInformation {
+    list-style-type: none;
+    
+}
+
+.restaurantCategories {
+    display: flex;
+    margin-bottom: 0.5em;
+}
+
+.restaurantCategories :first-child {
+    padding: 0.6em 0.2em 0.6em 0em;
+    
+}
+
+.restaurantCategory {
+    display: inline-block;
+    padding: 0.6em;
+    background-color: rgb(255, 255, 100);
+    border-radius: 20px;
+    margin-left: 1.5em;
+}
+
+
+
+
+/* Reviews */
+.reviewHeader {
+    display: flex;
+}
+
+.reviewHeader :first-child {
+    padding: 0.6em 0.2em 0.6em 0em;
+}
+
+.reviewRating {
+    padding: 0.6em;
+    background-color: rgb(81, 255, 104);
+    border-radius: 20px;
+    margin-left: 1.5em;
+}
+
+.reviewPrice {
+    padding: 0.6em;
+    background-color: rgb(81, 229, 255);
+    border-radius: 20px;
+    margin-left: 1.5em;
+}
