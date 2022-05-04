@@ -1,4 +1,8 @@
 <?php
+    declare(strict_types = 1);
+
+    session_start();
+    
     require_once("template/common.php"); 
     require_once("template/restaurant.tpl.php"); 
 
@@ -19,3 +23,4 @@
     output_restaurant($restaurant, $categories, $reviews); 
     output_footer();
 ?>
+

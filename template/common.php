@@ -27,8 +27,14 @@
             </nav>
 
             <signs>
-                <h1><a href="login.php">LOGIN</a></h1>
-                <h1><a href="login.php">SIGN UP</a></h1>
+                <?php if (!isset($_SESSION['id'])) { ?>
+                    <h1><a href="login.php">LOGIN</a></h1>
+                    <h1><a href="login.php">SIGN UP</a></h1>
+                <?php } else { ?>
+                    <h1><a href="profile.php">PROFILE</a></h1>
+                    <h1><a href="action_logout.php">LOG OUT</a></h1>
+                <?php } ?>
+                
             </signs>
         </header>
 

@@ -16,7 +16,7 @@ CREATE TABLE RestaurantOwner (
     username VARCHAR, 
     password VARCHAR, 
     address VARCHAR, 
-    phone VARCHAR
+    phone_number VARCHAR
 );
 
 CREATE TABLE Client (

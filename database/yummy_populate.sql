@@ -97,16 +97,20 @@ insert into Orders values(6, 'DELIVERED', '12/04/2022 11:50:00', '12/04/2022 13:
 insert into Orders values(7, 'PREPARING', '19/04/2022 9:50:00', '', 7); 
 insert into Orders values(8, 'RECEIVED', '20/04/2022 10:30:00', '', 8); 
 
+insert into Products_Orders values(5, 1);
+insert into Products_Orders values(6, 1);
 insert into Products_Orders values(8, 1);
-insert into Products_Orders values(13, 1);
-insert into Products_Orders values(20, 1);
-insert into Products_Orders values(7, 2);  
+insert into Products_Orders values(14, 2);  
 insert into Products_Orders values(12, 2);
-insert into Products_Orders values(21, 3);
+insert into Products_Orders values(26, 3);
 insert into Products_Orders values(25, 3);
 insert into Products_Orders values(27, 3);
 insert into Products_Orders values(1, 4);
 insert into Products_Orders values(3, 4);
+insert into Products_Orders values(26, 5);
+insert into Products_Orders values(27, 5);
+insert into Products_Orders values(25, 6);
+insert into Products_Orders values(26, 6);
 insert into Products_Orders values(5, 7);
 insert into Products_Orders values(8, 7);
 insert into Products_Orders values(17, 8);
