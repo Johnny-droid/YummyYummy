@@ -2,3 +2,11 @@
     border: 2px solid black;
     border-radius: 30px;
 }
+
+.orderInformation {
+    border-right: 2px solid black;
+}
+
+.orderStatus {
+    font-size: 1.8em;
+}
