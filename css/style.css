@@ -43,3 +43,28 @@ body > footer {
     background-color: black;
     color: white;
 }
+
+/* Log in */
+.formLogin {
+    border: 2px solid black;
+    border-radius: 30px;
+    margin: 5em;
+    background-color: lightgray;
+    width: 20em;
+}
+
+.formLogin > input {
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+.formLogin > button {
+    padding: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+}
+
+.formLogin > img {
+    width: 10em;
+}

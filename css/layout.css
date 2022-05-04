@@ -59,3 +59,17 @@ body > footer > img:last-child {
     grid-column: authors / imgFEUP;
     margin-right: 1em;
 }
+
+
+/* Log in */
+.loginDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.formLogin {
+    text-align: center;
+}
+
+
+
