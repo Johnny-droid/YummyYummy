@@ -7,6 +7,27 @@
             parent::__construct($id, $name, $password, $address, $phoneNumber);
         }
 
+        
+        static function getClient(PDO $db, int $id) : Client {
+            $stmt = $db->prepare('
+                SELECT * 
+                FROM Client
+                WHERE id_client = ?
+            ');
+
+            $stmt->execute(array($id));
+
+            $client = $stmt->fetch();
+
+            return new Client(
+                intval($client['id_client']),
+                $client['username'],
+                $client['password'],
+                $client['address'],
+                $client['phone_number']
+            );
+        }
+
 
         static function getClientWithPassword(PDO $db, string $username, string $password) : ?Client {
             $stmt = $db->prepare('

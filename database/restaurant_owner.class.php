@@ -7,6 +7,27 @@
             parent::__construct($id, $name, $password, $address, $phoneNumber);
         }
 
+        
+        static function getRestaurantOwner(PDO $db, int $id) : RestaurantOwner {
+          $stmt = $db->prepare('
+              SELECT * 
+              FROM RestaurantOwner
+              WHERE id_restaurant_owner = ?
+          ');
+
+          $stmt->execute(array($id));
+
+          $restaurant_owner = $stmt->fetch();
+
+          return new RestaurantOwner(
+              intval($restaurant_owner['id_restaurant_owner']),
+              $restaurant_owner['username'],
+              $restaurant_owner['password'],
+              $restaurant_owner['address'],
+              $restaurant_owner['phone_number']
+          );
+      }
+
 
         static function getRestaurantOwnerWithPassword(PDO $db, string $username, string $password) : ?RestaurantOwner {
             $stmt = $db->prepare('

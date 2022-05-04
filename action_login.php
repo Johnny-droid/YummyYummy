@@ -15,11 +15,11 @@
 
   if ($client) {
     $_SESSION['id'] = $client->id;
-    $_SESSION['name'] = $client->name;
+    $_SESSION['username'] = $client->name;
     $_SESSION['isClient'] = true;
   } else if ($restaurant_owner) {
     $_SESSION['id'] = $restaurant_owner->id;
-    $_SESSION['name'] = $restaurant_owner->name;
+    $_SESSION['username'] = $restaurant_owner->name;
     $_SESSION['isClient'] = false;
   }
 
