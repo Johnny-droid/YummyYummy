@@ -11,6 +11,8 @@
         <link href="css/styleIndex.css" rel="stylesheet">
         <link href="css/layoutRestaurant.css" rel="stylesheet">
         <link href="css/styleRestaurant.css" rel="stylesheet">
+        <link href="css/layoutOrders.css" rel="stylesheet">
+        <link href="css/styleOrders.css" rel="stylesheet">
 
     </head>
 

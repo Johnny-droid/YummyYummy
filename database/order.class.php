@@ -35,7 +35,7 @@
                     $orderDateEnd = DateTime::createFromFormat('d/m/Y H:i:s', $order['dateEnd']);
                 }
 
-                $orders[] = new Order(
+                $orders[intval($order['id_order'])] = new Order(
                     intval($order['id_order']),
                     $order['status'],
                     DateTime::createFromFormat('d/m/Y H:i:s', $order['dateStart']),

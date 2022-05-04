@@ -24,6 +24,31 @@
 
         }
 
+        static function getRestaurants(PDO $db) : array {
+            $stmt = $db->prepare('
+                SELECT *
+                FROM Restaurant;
+            ');
+
+            $stmt->execute();
+
+            $restaurants = array();
+
+            while ($restaurant = $stmt->fetch()) {
+                $restaurants[intval($restaurant['id_restaurant'])] = new Restaurant(
+                    intval($restaurant['id_restaurant']),
+                    $restaurant['name'],
+                    $restaurant['phone'],
+                    $restaurant['location'],
+                    DateTime::createFromFormat('H:i', $restaurant['openingTime']),
+                    DateTime::createFromFormat('H:i', $restaurant['closingTime']),
+                    intval($restaurant['owner'])
+                    );
+            }
+
+            return $restaurants;
+        }
+
 
         static function getRestaurant(PDO $db, int $id) : Restaurant {
             $stmt = $db->prepare('

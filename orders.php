@@ -4,16 +4,18 @@
 
     require_once("database/connection.db.php");
     require_once("database/order.class.php");
+    require_once("database/product.class.php");
+    require_once("database/restaurant.class.php");
 
     $db = getDatabaseConnection();
 
     $id_client = intval($_GET['id']);
 
     $orders = Order::getClientOrders($db, $id_client);
-    
-    // now, take orders and create a map with orders and respective products
+    $orders_products = Product::getOrdersProducts($db, $orders);
+    $restaurants = Restaurant::getRestaurants($db);
 
     output_header(); 
-    output_orders($orders);
+    output_orders($orders, $orders_products, $restaurants);
     output_footer(); 
 ?>

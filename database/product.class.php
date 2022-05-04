@@ -49,7 +49,13 @@
             return $ordersProducts;
         }
 
-        
+        static function getTotalPriceProducts(array $products) : float {
+            $sum = 0;
+            foreach ($products as $product) {
+                $sum += $product->price;
+            }
+            return $sum;
+        }
 
 
     }
