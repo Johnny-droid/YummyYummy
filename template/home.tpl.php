@@ -8,6 +8,10 @@
         </div>
     </div>
     
+    <section id="restaurantsSearch">
+
+    </section>
+
     <section id="categories">
         <?php foreach($categories as $category) { ?>
             

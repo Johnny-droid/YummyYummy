@@ -68,3 +68,38 @@ body > footer {
 .formLogin > img {
     width: 10em;
 }
+
+
+
+#restaurantsSearch {
+    background-color: lightyellow;
+}
+
+.restaurantSearch {
+    border: 2px solid black;
+    background-color: black;
+    border-radius: 30px;
+}
+
+.restaurantSearch > img {
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+.restaurantSearch > div {
+    background-color: white;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-left: 2px solid black;
+    padding: 1em;
+}
+
+.restaurantSearch > div:hover {
+    background-color: lightgrey;
+}
+
+.restaurantSearch > div > a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+}

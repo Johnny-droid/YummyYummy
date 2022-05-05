@@ -74,8 +74,9 @@ Keep in mind that some extra changes might be made in order to add functionaliti
 
 # Details we still need to do:
 
-Log in and Sign up (also log out)
-Profile of a user
+hash passwords
+Sign up
+Profile of a user (css missing)
 When making an order, make sure you only insert product of the same restaurant
 Use javascript maybe to change the color of things in single restaurant page
 List the menu of each restaurant in it's page and add a way to create a "basket" for an order

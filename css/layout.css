@@ -73,3 +73,29 @@ body > footer > img:last-child {
 
 
 
+/* Restaurants */
+#restaurantsSearch {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    justify-content: space-evenly;
+}
+
+.restaurantSearch {
+    display: flex;
+    margin-top: 2em;
+    width: 35em;
+}
+
+.restaurantSearch > img {
+    width: 45%;
+}
+
+.restaurantSearch > div {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

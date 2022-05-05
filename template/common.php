@@ -13,6 +13,7 @@
         <link href="css/styleRestaurant.css" rel="stylesheet">
         <link href="css/layoutOrders.css" rel="stylesheet">
         <link href="css/styleOrders.css" rel="stylesheet">
+        <script src="javascript/script.js" defer></script>
 
     </head>
 

@@ -49,6 +49,32 @@
             return $restaurants;
         }
 
+        static function getRestaurantsSearch(PDO $db, string $search, int $limit) : array {
+            $stmt = $db->prepare('
+                SELECT *
+                FROM Restaurant
+                WHERE name LIKE ?
+                LIMIT ?;
+            ');
+
+            $stmt->execute(array($search . '%', $limit));
+
+            $restaurants = array();
+
+            while ($restaurant = $stmt->fetch()) {
+                $restaurants[] = new Restaurant(
+                    intval($restaurant['id_restaurant']),
+                    $restaurant['name'],
+                    $restaurant['phone'],
+                    $restaurant['location'],
+                    DateTime::createFromFormat('H:i', $restaurant['openingTime']),
+                    DateTime::createFromFormat('H:i', $restaurant['closingTime']),
+                    intval($restaurant['owner'])
+                    );
+            }
+
+            return $restaurants;
+        }
 
         static function getRestaurant(PDO $db, int $id) : Restaurant {
             $stmt = $db->prepare('
@@ -72,13 +98,13 @@
             );
         }
 
-        function getOpenOrClosed() {
+        function getOpenOrClosed() : string {
             $strOpenTime =  $this->openingTime->format('H:i');
             $strClosedTime = $this->closingTime->format('H:i');
             if (time() >= strtotime($strOpenTime)  && time() <= strtotime($strClosedTime)) {
-                echo 'Open';
+                return 'Open';
             } else {
-                echo 'Closed';
+                return 'Closed';
             }
 
         } 
