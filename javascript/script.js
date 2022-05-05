@@ -6,7 +6,12 @@ if (searchBar) {
 
     const section = document.querySelector('#restaurantsSearch')
     section.innerHTML = ''
-    section.style.padding = '2em'
+    if (restaurants.length > 0) {
+        section.style.padding = '2em'
+    } else {
+        section.style.padding = '0em'
+    }
+    
 
     for (const restaurant of restaurants) {
         const article = document.createElement('article')

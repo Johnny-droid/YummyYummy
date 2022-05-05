@@ -85,6 +85,7 @@ body > footer > img:last-child {
 .restaurantSearch {
     display: flex;
     margin-top: 2em;
+    margin-bottom: 2em;
     width: 35em;
 }
 
