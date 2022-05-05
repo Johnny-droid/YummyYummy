@@ -8,6 +8,7 @@
 
     require_once("database/connection.db.php");
     require_once("database/restaurant.class.php");
+    require_once("database/product.class.php");
     require_once("database/review.class.php");
     require_once("database/category.class.php");
 
@@ -18,9 +19,10 @@
     $restaurant = Restaurant::getRestaurant($db, $id);
     $reviews = Review::getRestaurantReviews($db, $id);
     $categories = Category::getRestaurantCategories($db, $id);
+    $products = Product::getRestaurantProducts($db, $id);
 
     output_header(); 
-    output_restaurant($restaurant, $categories, $reviews); 
+    output_restaurant($restaurant, $categories, $reviews, $products); 
     output_footer();
 ?>
 

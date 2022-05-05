@@ -1,4 +1,4 @@
-<?php function output_restaurant(Restaurant $restaurant, array $categories, array $reviews) { ?>
+<?php function output_restaurant(Restaurant $restaurant, array $categories, array $reviews, array $products) { ?>
     
     <section class="restaurantGlobal">
         <img class="restaurantImage" src="images/Restaurants/restaurant<?= $restaurant->id ?>.jpg">
@@ -29,6 +29,30 @@
             <br>
             <strong>Location:</strong> <?= $restaurant->location ?>
 
+        </div>
+        
+        <div class="menu">
+            <h2>Menu</h2>
+            <ul>
+                <?php foreach ($products as $product) { ?>
+                    
+                    <?php if ($product->discount === 0) { ?>
+                        <li class="product">
+                            <?= $product->name . ' ' . $product->price ?>€
+                            <button class="productButton"> + </button>
+                        </li>
+                    <?php } else { ?>
+                        <li class="product">
+                            <?= $product->name . ' ' . $product->price * (1 - ($product->discount/100)) ?>€ <br>
+                            Discount: <?= $product->discount ?>% &nbsp&nbsp Old price: <?= $product->price ?>€
+                            <button class="productButton"> + </button>
+                        </li>
+                    <?php } ?>
+                    
+                    
+                <?php } ?>   
+            </ul>
+            
         </div>
 
         <div class="reviews">

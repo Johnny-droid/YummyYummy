@@ -18,6 +18,34 @@
         }
 
 
+        static function getRestaurantProducts(PDO $db, int $id_restaurant) : array {
+            $stmt = $db->prepare('
+                SELECT *
+                FROM Product
+                Where id_restaurant = ?
+            ');
+
+            $stmt->execute(array($id_restaurant));
+
+            $products = array();
+
+            while ($product = $stmt->fetch()) {
+
+                $products[] = new Product(
+                    intval($product['id_product']),
+                    $product['name'],
+                    floatval($product['price']),
+                    intval($product['discount']),
+                    intval($product['id_restaurant'])
+                );
+            }
+
+            return $products;
+        }
+
+
+
+
         static function getOrdersProducts(PDO $db, array $orders) : array {
             $ordersProducts = array();
             
@@ -63,3 +91,4 @@
 
 
 ?>
+
