@@ -48,7 +48,39 @@
                 $client['phone_number']
               );
             } else return null;
-          }
+        }
+
+
+        static function existsWithUsername(PDO $db, string $username) : bool {
+          $stmt = $db->prepare('
+            SELECT *
+            FROM Client 
+            WHERE lower(username) = ?
+          ');
+          
+          $stmt->execute(array(strtolower($username)));
+      
+          if ($stmt->fetch()) {
+            return true;
+          } else return false;
+        }
+
+        static function saveUser(PDO $db, string $username, string $password, string $address, string $phoneNumber) : bool {
+            try {
+              $stmt = $db->prepare('
+              INSERT INTO Client (username, password, address, phone_number) 
+                values(?, ?, ?, ?); 
+              ');
+              
+              $stmt->execute(array($username, $password, $address, $phoneNumber));
+              return true;
+            } catch (PDOException $e) {
+              return false;
+            }
+            
+  
+        }
+
 
     }
 

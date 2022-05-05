@@ -49,6 +49,20 @@
               );
             } else return null;
           }
+
+          static function existsWithUsername(PDO $db, string $username) : bool {
+            $stmt = $db->prepare('
+              SELECT *
+              FROM RestaurantOwner 
+              WHERE lower(username) = ?
+            ');
+            
+            $stmt->execute(array(strtolower($username)));
+        
+            if ($stmt->fetch()) {
+              return true;
+            } else return false;
+          }
     }
 
 ?>
