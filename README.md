@@ -80,4 +80,8 @@ When making an order, make sure you only insert product of the same restaurant
 Use javascript maybe to change the color of things in single restaurant page
 List the menu of each restaurant in it's page and add a way to create a "basket" for an order 
 (invetar um número de tele aleatório para colocar no footer e fingir como linha de suport técnico)
-adicionar comnetários
+adicionar comentários/reviews
+editar perfil
+donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc
+marcar restaurantes como favoritos
+

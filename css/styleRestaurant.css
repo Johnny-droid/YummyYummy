@@ -1,7 +1,7 @@
 .restaurantGlobal > div {
     padding: 1.5em;
     margin: 1em;
-    border: 7px solid rgb(255, 255, 100);
+    border: 2px solid black;
     border-radius: 40px;
 }
 

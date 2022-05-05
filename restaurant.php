@@ -14,12 +14,18 @@
 
     $db = getDatabaseConnection();
 
-    $id = intval($_GET['id']);
+    $id_restaurant = intval($_GET['id']);
+    $_SESSION['id_restaurant'] = $id_restaurant;
 
-    $restaurant = Restaurant::getRestaurant($db, $id);
-    $reviews = Review::getRestaurantReviews($db, $id);
-    $categories = Category::getRestaurantCategories($db, $id);
-    $products = Product::getRestaurantProducts($db, $id);
+    var_dump($_SESSION);
+    foreach ($_SESSION as $key=>$value) {
+        echo $key . " " . $value . "<br>";
+    } 
+
+    $restaurant = Restaurant::getRestaurant($db, $id_restaurant);
+    $reviews = Review::getRestaurantReviews($db, $id_restaurant);
+    $categories = Category::getRestaurantCategories($db, $id_restaurant);
+    $products = Product::getRestaurantProducts($db, $id_restaurant);
 
     output_header(); 
     output_restaurant($restaurant, $categories, $reviews, $products); 

@@ -39,13 +39,17 @@
                     <?php if ($product->discount === 0) { ?>
                         <li class="product">
                             <?= $product->name . ' ' . $product->price ?>€
-                            <button class="productButton"> + </button>
+                            <?php if (isset($_SESSION['id']) && $_SESSION['isClient']) { ?>
+                                <button class="productButton" value="<?= $product->id ?>"> + </button>
+                            <?php } ?>
                         </li>
                     <?php } else { ?>
                         <li class="product">
                             <?= $product->name . ' ' . $product->price * (1 - ($product->discount/100)) ?>€ <br>
                             Discount: <?= $product->discount ?>% &nbsp&nbsp Old price: <?= $product->price ?>€
-                            <button class="productButton"> + </button>
+                            <?php if (isset($_SESSION['id']) && $_SESSION['isClient']) { ?>
+                                <button class="productButton" value="<?= $product->id ?>"> + </button>
+                            <?php } ?>
                         </li>
                     <?php } ?>
                     

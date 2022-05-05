@@ -18,7 +18,7 @@
     $orders = Order::getClientOrders($db, $id_client);
     $orders_products = Product::getOrdersProducts($db, $orders);
     $restaurants = Restaurant::getRestaurants($db);
-
+    
     output_header(); 
     output_orders($orders, $orders_products, $restaurants);
     output_footer(); 

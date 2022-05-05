@@ -17,6 +17,26 @@
             $this->id_restaurant = $id_restaurant;
         }
 
+        static function getProduct(PDO $db, int $id_product) : Product {
+            $stmt = $db->prepare('
+                SELECT * 
+                FROM Product
+                WHERE id_product = ?
+            ');
+
+            $stmt->execute(array($id_product));
+
+            $product = $stmt->fetch();
+
+            return new Product(
+                intval($product['id_product']),
+                $product['name'],
+                floatval($product['price']),
+                intval($product['discount']),
+                intval($product['id_restaurant'])
+            );
+        }
+
 
         static function getRestaurantProducts(PDO $db, int $id_restaurant) : array {
             $stmt = $db->prepare('
