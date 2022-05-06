@@ -17,7 +17,7 @@
     $id_restaurant = intval($_GET['id']);
     $_SESSION['id_restaurant'] = $id_restaurant;
 
-    var_dump($_SESSION);
+    var_dump($_SESSION['products']);
     foreach ($_SESSION as $key=>$value) {
         echo $key . " " . $value . "<br>";
     } 

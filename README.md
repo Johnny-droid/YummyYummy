@@ -83,5 +83,5 @@ List the menu of each restaurant in it's page and add a way to create a "basket"
 adicionar comentários/reviews
 editar perfil
 donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc
-marcar restaurantes como favoritos
+marcar restaurantes como favoritos (talvez se tenha de criar uma nova table na base de dados para isto)
 
