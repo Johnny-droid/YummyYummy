@@ -15,6 +15,7 @@
         <link href="css/styleOrders.css" rel="stylesheet">
         <script src="javascript/searchRestaurant.js" defer></script>
         <script src="javascript/makeOrder.js" defer></script>
+        <link rel="icon" href="images/Logo/YummyLogoTransparentBg.png">
 
     </head>
 
