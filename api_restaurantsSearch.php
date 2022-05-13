@@ -9,7 +9,7 @@
     $search = $_GET['search'];
     if ($search !== '') {
         $db = getDatabaseConnection();
-        $restaurants = Restaurant::getRestaurantsSearch($db, $search, 4);
+        $restaurants = Restaurant::getRestaurantsSearch($db, $search, 8);
     } else {
         $restaurants = array();
     }

@@ -9,10 +9,19 @@ async function showProductInOrder(id_product, addToSession) {
     if (!aside) {
         aside.innerHTML = '';
         const h1Order = document.createElement('h1')
+        const buttonSaveOrder = document.createElement('button')
+        
         h1Order.innerHTML = 'Order'
+        buttonSaveOrder.innerHTML = 'Save Order'
+        buttonSaveOrder.id = 'saveOrder'
         aside.appendChild(h1Order)
+        aside.appendChild(buttonSaveOrder)
         aside.classList.add('clientOrders')
+        const main = document.querySelector('main')
+        main.appendChild(aside)
     }
+
+    
     
     const productDiv = document.getElementById('productDiv' + id_product)
 
@@ -90,9 +99,17 @@ if (addProductsToOrderButtons) {
 
 
 
-     /*
-            const sessionResponse = await fetch('api_getSession.php')
-            const sessionArray = await sessionResponse.json();
-            const session = sessionArray[0];
-            console.log(session['id_restaurant']);
-            */        
+
+
+
+
+
+
+/*
+const sessionResponse = await fetch('api_getSession.php')
+const sessionArray = await sessionResponse.json();
+const session = sessionArray[0];
+console.log(session['id_restaurant']);
+*/      
+
+

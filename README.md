@@ -76,7 +76,7 @@ Keep in mind that some extra changes might be made in order to add functionaliti
 
 hash passwords
 Profile of a user (css missing)
-When making an order, make sure you only insert product of the same restaurant
+When making an order, make sure you only insert product of the same restaurant -> Fazer um trigger ou algo semelhante para garantir que uma order é de um só restaurante
 Use javascript maybe to change the color of things in single restaurant page
 List the menu of each restaurant in it's page and add a way to create a "basket" for an order 
 (invetar um número de tele aleatório para colocar no footer e fingir como linha de suport técnico)
@@ -84,4 +84,4 @@ adicionar comentários/reviews
 editar perfil
 donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc
 marcar restaurantes como favoritos (talvez se tenha de criar uma nova table na base de dados para isto)
-
+icon no tab da pagina

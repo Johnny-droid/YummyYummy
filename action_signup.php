@@ -17,6 +17,7 @@
         header('Location: signup.php?error=1');
     
     } else if (!Client::saveUser($db, $_POST['username'], $_POST['password'], $_POST['address'], $_POST['phoneNumber'])) {
+    //sha1($_POST['password'])
         header('Location: signup.php?error=2');
     
     } else if ($client = Client::getClientWithPassword($db, $_POST['username'], $_POST['password'])) {
