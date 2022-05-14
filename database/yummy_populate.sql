@@ -1,13 +1,35 @@
 PRAGMA foreign_keys = on; 
 
-insert into RestaurantOwner values(1, 'rubenarruada', 'abba', 'Rua das Camélias', 932471824);
-insert into RestaurantOwner values(2, 'anamarota', 'abba', 'Rua das Passagens', 932471824);
-insert into RestaurantOwner values(3, 'ritaferro', 'abba', 'Rua das Graves', 924854125);
-insert into RestaurantOwner values(4, 'zedopipo', 'abba', 'Rua dos Bispos', 921451218);
-insert into RestaurantOwner values(5, 'andreferreira', 'abba', 'Rua das Freiras', 932458212);
-insert into RestaurantOwner values(6, 'joaodireito', 'abba', 'Avenida do Bairro', 912457821);
-insert into RestaurantOwner values(7, 'marianacustodio', 'abba', 'Rua do Padrasto', 924785694);
-insert into RestaurantOwner values(8, 'luisrebento', 'abba', 'Avenida Lisboa', 919123564);
+--Restaurant owner
+insert into User values(1, 'rubenarruada', 'abba', 'Rua das Camélias', 932471824, 'rubenarruada@gmail.com', 43, 'I am good at what I make. Surf is my passion :)', 'O');
+insert into User values(2, 'anamarota', 'abba', 'Rua das Passagens', 932471824, 'anamarota@gmail.com', 24, 'Live your best life xoxo', 'O');
+insert into User values(3, 'ritaferro', 'abba', 'Rua das Graves', 924854125, 'ritaferro@outlook.com', 32, 'What is life without dogs? Just think', 'O');
+insert into User values(4, 'zedopipo', 'abba', 'Rua dos Bispos', 921451218, 'zedopipo@gmail.com', 54, 'Adoro ir a tascas e comer muitas tapas! A vida é boa...', 'O');
+insert into User values(5, 'andreferreira', 'abba', 'Rua das Freiras', 932458212, 'andreferreira@outlook.com', 30, 'Vendo o mar...', 'O');
+insert into User values(6, 'joaodireito', 'abba', 'Avenida do Bairro', 912457821, 'joaodireito@office.com', 53, 'Adoro comer chinês e às vezes um indiano!', 'O');
+insert into User values(7, 'marianacustodio', 'abba', 'Rua do Padrasto', 924785694, 'marianacustodio@yahoo.com', 47, 'Uma boa companhia é sempre apreciável!', 'O');
+insert into User values(8, 'luisrebento', 'abba', 'Avenida Lisboa', 919123564, 'luisrebento@gmail.com', 22, 'Não há nada que eu aprecie mais nesta vida que futebol. Adoro os meus gatos.', 'O');
+
+--Client
+insert into User values(9, 'andresantos', 'abba', 'Rua de Camões', 963145278, 'andresantos@gmail.com', 20, 'Adoro carros, mas melhor que carros só comida!', 'C'); 
+insert into User values(10, 'cellopedro', 'abba', 'Rua de Sagres', 963145278, 'cellopedro@outlook.com', 40, 'Basket deveria ser mais que um desporto! Viva à Fast Food', 'C');
+insert into User values(11, 'ruiramiro', 'abba', 'Rua de Serpentes', 963145278, 'ruiramiro@gmail.com', 64, 'Gosto de um bom passeio na paraia. Nada como um bom Marisco', 'C');
+insert into User values(12, 'ruisantos', 'abba', 'Rua de Portugal', 963145278, 'ruisantos@poutlook.com', 43, 'Gosto de ver TV e socializar com a minha sogra', 'C');
+insert into User values(13, 'patriciavieira', 'abba', 'Rua do Porto', 963145278, 'patriciavieira@outlook.com', 37, 'Always strive for more, life is crazy', 'C');
+insert into User values(14, 'rosamarques', 'abba', 'Rua de Lisboa', 963145278, 'rosamarques@gmail.com', 43, 'Life is too short not to learn about Chemistry', 'C');
+insert into User values(15, 'miguelarruada', 'abba', 'Rua de Trancos', 963145278, 'miguelarruada@gmail.com', 29, 'Vivo a vida à Tom Sawyer e mais não é preciso dizer! ;)', 'C');
+insert into User values(16, 'chamicosantos', 'abba', 'Rua do Camilo', 963145278, 'chamicosantos@finance.com', 34, 'Sou simples, vivo ainda mais simplesmente...', 'C');
+
+--Courier
+insert into User values(17, 'ritaroda', 'abba', 'Rua de Camões', 963145278, 'ritaroda@gmail.com', 22, 'Engenharia é a minha vida e andar de mota em part-time o meu hobbie!', 'E'); 
+insert into User values(18, 'joaobezugo', 'abba', 'Rua de Sagres', 963145278, 'joaobezugo@gmail.com', 34, 'Speed, I am Speed! Melhor entregador de sempre', 'E');
+insert into User values(19, 'matildecamelia', 'abba', 'Rua de Serpentes', 963145278, 'matildecamelia@yahoo.com', 56, 'Adoro fazer as pessoas felizes e comer é o meu passatempo preferido', 'E');
+insert into User values(20, 'ruisantos365', 'abba', 'Rua de Portugal', 963145278, 'ruisantos365@office365.com', 32, 'Sou o maior aficionado por motas, a obcessão é real, eu juro...', 'E');
+insert into User values(21, 'patricksantos', 'abba', 'Rua do Porto', 963145278, 'patricksantos@gmail.com', 70, 'Faço entregas desde que tenho 20 anos, sempre foi o meu trabalho de sonho...', 'E');
+insert into User values(22, 'rosanamarques', 'abba', 'Rua de Lisboa', 963145278, 'rosanamarques@live.com', 36, 'Melhores anos da minha vida são os loucos 30s! Um brinde à vida!', 'E');
+insert into User values(23, 'fernandomota', 'abba', 'Rua de Trancos', 963145278, 'fernandomota@gmail.com', 38, 'Divirto-me a fazer entregas e os meus clientes apreciam', 'E');
+insert into User values(24, 'pprunner', 'abba', 'Rua do Camilo', 963145278, 'pprunner@outlook.com', 20, 'Sou estafeta para ajudar a pagar os estudos! Vida dura, mas um dia compensará...', 'E');
+
 
 insert into Restaurant values (1, 'Grelha do Manuel', '932659956', 'Porto', '22:30', '23:00', 1); 
 insert into Restaurant values (2, 'Hamburgueres do Carlos', '932828456', 'Porto', '8:30', '23:00', 2);
@@ -17,15 +39,6 @@ insert into Restaurant values (5, 'Roulote da Vânia', '928754321', 'Porto', '8:
 insert into Restaurant values (6, 'Pizzaria Vasco', '910045769', 'Porto', '8:00', '23:00', 6);
 insert into Restaurant values (7, 'Sushiaria', '923465782', 'Porto', '8:00', '23:00', 7);
 insert into Restaurant values (8, 'Xi-Yuan', '933325648', 'Vila Nova de Gaia', '8:00', '23:00', 8);
-
-insert into Client values(1, 'andresantos', 'abba', 'Rua de Camões', 963145278); 
-insert into Client values(2, 'cellopedro', 'abba', 'Rua de Sagres', 963145278);
-insert into Client values(3, 'ruiramiro', 'abba', 'Rua de Serpentes', 963145278);
-insert into Client values(4, 'ruisantos', 'abba', 'Rua de Portugal', 963145278);
-insert into Client values(5, 'patriciavieira', 'abba', 'Rua do Porto', 963145278);
-insert into Client values(6, 'rosamarques', 'abba', 'Rua de Lisboa', 963145278);
-insert into Client values(7, 'miguelarruada', 'abba', 'Rua de Trancos', 963145278);
-insert into Client values(8, 'chamicosantos', 'abba', 'Rua do Camilo', 963145278);
 
 insert into Review values(1, 1, 5, 3, 'Very Good Restaurant');
 insert into Review values(2, 3, 4, 5, 'A bit expensive but very good overall'); 

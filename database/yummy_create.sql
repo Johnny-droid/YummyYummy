@@ -1,4 +1,3 @@
-
 --Delete tables if they already exist
 drop table if exists Products_Orders;
 drop table if exists Orders;
@@ -10,22 +9,19 @@ drop table if exists Restaurant;
 drop table if exists RestaurantOwner;
 drop table if exists Client;
 
-
-CREATE TABLE RestaurantOwner (
-    id_restaurant_owner INTEGER PRIMARY KEY,
+CREATE TABLE User (
+    id_user INTEGER PRIMARY KEY, 
     username VARCHAR, 
     password VARCHAR, 
     address VARCHAR, 
-    phone_number VARCHAR
-);
-
-CREATE TABLE Client (
-    id_client INTEGER PRIMARY KEY,
-    username VARCHAR, 
-    password VARCHAR, 
-    address VARCHAR, 
-    phone_number VARCHAR
-);
+    phone_number VARCHAR, 
+    email VARCHAR, 
+    age INTEGER, 
+    bio VARCHAR, 
+    user_type CHAR, --'O' (restaurant owner) ; 'C' (client) ; 'E' (courier)
+    UNIQUE(username)
+    constraint user_type_matches check (user_type IN ('O', 'C', 'E'))
+); 
 
 CREATE TABLE Restaurant (
     id_restaurant INTEGER PRIMARY KEY,
@@ -34,7 +30,7 @@ CREATE TABLE Restaurant (
     location VARCHAR, 
     openingTime TIME, 
     closingTime TIME,
-    owner VARCHAR REFERENCES RestaurantOwner(id_restaurant_owner)
+    owner VARCHAR REFERENCES User(id_user)
 );
 
 CREATE TABLE Category (
@@ -63,7 +59,7 @@ CREATE TABLE Orders (
     status VARCHAR, --might try something with enum
     dateStart DATETIME, 
     dateEnd DATETIME,
-    id_client INTEGER REFERENCES Client(id_client)
+    id_client INTEGER REFERENCES User(id_user)
     constraint Order_Status_Matches check (status IN ('RECEIVED', 'PREPARING', 'READY', 'DELIVERED'))
 );
 
@@ -74,10 +70,10 @@ CREATE TABLE Products_Orders (
 );
 
 CREATE TABLE Review (
-    id_client VARCHAR REFERENCES Client(id_client), 
+    id_client VARCHAR REFERENCES User(id_user), 
     id_restaurant VARCHAR REFERENCES Restaurant(id_restaurant), 
     rating INTEGER, 
     price INTEGER, 
     comment VARCHAR,
-    PRIMARY KEY(id_client, id_restaurant)
+    PRIMARY KEY(id_user, id_restaurant)
 );
