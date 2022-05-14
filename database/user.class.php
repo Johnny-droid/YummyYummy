@@ -35,36 +35,61 @@
             $user = $stmt->fetch(); 
 
             return new User(
-                intval($client['id_user']), 
-                $client['username'], 
-                $client['password'], 
-                $client['address'], 
-                $client['phone_number'], 
-                $client['email'], 
-                intval($client['age']),
-                $client['bio'], 
-                $client['user_type']
+                intval($user['id_user']), 
+                $user['username'], 
+                $user['password'], 
+                $user['address'], 
+                $user['phone_number'], 
+                $user['email'], 
+                intval($user['age']),
+                $user['bio'], 
+                $user['user_type']
             ); 
         }
 
         static function getUserWithPassword(PDO $db, string $username, string $password) : User {
             $stmt = $db->prepare('SELECT * FROM User WHERE username = ? AND password = ?'); 
 
-            $stmt->execute(array());
+            // $stmt->execute(array(strtolower($username), sha1($password)));
+            $stmt->execute(array(strtolower($username), $password));
 
-            return new User(); 
+            $user = $stmt->fetch(); 
+
+            return new User(
+                intval($user['id_user']), 
+                $user['username'], 
+                $user['password'], 
+                $user['address'], 
+                $user['phone_number'], 
+                $user['email'], 
+                intval($user['age']),
+                $user['bio'], 
+                $user['user_type']
+            ); 
         }
 
         static function existsWithUsername(PDO $db, string $username) : bool {
+            $stmt = $db->prepare('SELECT * from User WHERE lower(username) = ?'); 
 
-            return false; 
+            $stmt->execute(array(strtolower($username))); 
+
+            if($stmt->fetch()) return true; 
+
+            else return false; 
         }
 
         static function saveUser(PDO $db, string $username, string $password, string $address, string $phone_number,
                                 string $email, int $age, string $bio, string $type) {
+            try {
+                $stmt = $db->prepare('insert into User values(?, ?, ?, ?, ?, ?, ?, ?); '); 
 
+                $stmt->execute(array($username, $password, $address, $phone_number, $email, $age, $bio, $type)); 
+                
+                return true; 
+            } catch (PDOException $e) {
+                return false; 
+            }
         }
     }
-
 ?>
 
