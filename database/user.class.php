@@ -26,7 +26,6 @@
             $this->type = $type; 
         }
 
-
         static function getUser(PDO $db, int $id) : User {
             $stmt = $db->prepare('SELECT * FROM User WHERE id_user = ?'); 
 
