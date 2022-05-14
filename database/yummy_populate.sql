@@ -40,13 +40,31 @@ insert into Restaurant values (6, 'Pizzaria Vasco', '910045769', 'Porto', '8:00'
 insert into Restaurant values (7, 'Sushiaria', '923465782', 'Porto', '8:00', '23:00', 7);
 insert into Restaurant values (8, 'Xi-Yuan', '933325648', 'Vila Nova de Gaia', '8:00', '23:00', 8);
 
-insert into Review values(1, 1, 5, 3, 'Very Good Restaurant');
-insert into Review values(2, 3, 4, 5, 'A bit expensive but very good overall'); 
-insert into Review values(1, 2, 3, 3, 'Was expecting a fairly better service...'); 
-insert into Review values(3, 4, 5, 5, 'Expensive but definitely worth the buck!'); 
-insert into Review values(4, 5, 4, 2, 'Very good and very cheap, what a finding this was!'); 
-insert into Review values(5, 6, 3, 5, 'A bit expensive for what it is worth but good'); 
-insert into Review values(8, 8, 5, 2, 'I am amazed, chinese food culture at its finest! Wow');  
+insert into Favourite values(9, 1); 
+insert into Favourite values(9, 2); 
+insert into Favourite values(10, 5); 
+insert into Favourite values(11, 8); 
+insert into Favourite values(13, 3); 
+insert into Favourite values(15, 5); 
+insert into Favourite values(16, 7); 
+insert into Favourite values(16, 8); 
+insert into Favourite values(14, 4); 
+insert into Favourite values(11, 5); 
+
+insert into Review values(1, 1, 1, 5, 3, 'Very Good Restaurant');
+insert into Review values(2, 2, 3, 4, 5, 'A bit expensive but very good overall'); 
+insert into Review values(3, 1, 2, 3, 3, 'Was expecting a fairly better service...'); 
+insert into Review values(4, 3, 4, 5, 5, 'Expensive but definitely worth the buck!'); 
+insert into Review values(5, 4, 5, 4, 2, 'Very good and very cheap, what a finding this was!'); 
+insert into Review values(6, 5, 6, 3, 5, 'A bit expensive for what it is worth but good'); 
+insert into Review values(7, 8, 8, 5, 2, 'I am amazed, chinese food culture at its finest! Wow');  
+
+insert into Reply values(1, 1, 'Thank your for your feedback! Hope seeing you soon'); 
+insert into Reply values(3, 2, 'Thank you for your review! We promise we will build on that!'); 
+insert into Reply values(2, 3, 'We are sorry to hear that... Come here one more time and your wont regret it'); 
+insert into Reply values(4, 4, 'Great review! Thanks!'); 
+insert into Reply values(5, 5, 'We are delighted to hear that from you!'); 
+insert into Reply values(6, 6, 'More than glad that you liked it! There is no such thing as chinese culture and you know it :)'); 
 
 insert into Category values(1, 'Pizza'); 
 insert into Category values(2, 'Hamburger');
@@ -101,14 +119,14 @@ insert into Product values(25, 'Gimbap', 10.50, 0, 8);
 insert into Product values(26, 'Miso Ramen', 10.50, 10, 8); 
 insert into Product values(27, 'Satay', 5.50, 10, 8); 
 
-insert into Orders values(1, 'RECEIVED', '02/05/2022 10:50:00', '', 1); 
-insert into Orders values(2, 'PREPARING', '01/05/2022 11:50:00', '', 1); 
-insert into Orders values(3, 'READY', '02/05/2022 10:45:00', '', 2); 
-insert into Orders values(4, 'READY', '01/05/2022 10:50:00', '', 3); 
-insert into Orders values(5, 'DELIVERED', '21/04/2022 12:50:00', '21/04/2022 14:00:00', 3); 
-insert into Orders values(6, 'DELIVERED', '12/04/2022 11:50:00', '12/04/2022 13:00:00', 4); 
-insert into Orders values(7, 'PREPARING', '19/04/2022 9:50:00', '', 7); 
-insert into Orders values(8, 'RECEIVED', '20/04/2022 10:30:00', '', 8); 
+insert into Orders values(1, 'RECEIVED', '02/05/2022 10:50:00', '', 1, 17); 
+insert into Orders values(2, 'PREPARING', '01/05/2022 11:50:00', '', 1, NULL); 
+insert into Orders values(3, 'READY', '02/05/2022 10:45:00', '', 2, NULL); 
+insert into Orders values(4, 'READY', '01/05/2022 10:50:00', '', 3, 24); 
+insert into Orders values(5, 'DELIVERED', '21/04/2022 12:50:00', '21/04/2022 14:00:00', 3, 19); 
+insert into Orders values(6, 'DELIVERED', '12/04/2022 11:50:00', '12/04/2022 13:00:00', 4, 20); 
+insert into Orders values(7, 'PREPARING', '19/04/2022 9:50:00', '', 7, NULL); 
+insert into Orders values(8, 'RECEIVED', '20/04/2022 10:30:00', '', 8, 21); 
 
 insert into Products_Orders values(5, 1);
 insert into Products_Orders values(6, 1);

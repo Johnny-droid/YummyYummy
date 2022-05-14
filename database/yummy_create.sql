@@ -59,7 +59,8 @@ CREATE TABLE Orders (
     status VARCHAR, --might try something with enum
     dateStart DATETIME, 
     dateEnd DATETIME,
-    id_client INTEGER REFERENCES User(id_user)
+    id_client INTEGER REFERENCES User(id_user),
+    id_courier INTEGER REFERENCES User(id_user),
     constraint Order_Status_Matches check (status IN ('RECEIVED', 'PREPARING', 'READY', 'DELIVERED'))
 );
 
@@ -70,10 +71,23 @@ CREATE TABLE Products_Orders (
 );
 
 CREATE TABLE Review (
-    id_client VARCHAR REFERENCES User(id_user), 
-    id_restaurant VARCHAR REFERENCES Restaurant(id_restaurant), 
+    id_review INTEGER PRIMARY KEY,
+    id_client INTEGER REFERENCES User(id_user), 
+    id_restaurant INTEGER REFERENCES Restaurant(id_restaurant), 
     rating INTEGER, 
     price INTEGER, 
     comment VARCHAR,
-    PRIMARY KEY(id_user, id_restaurant)
 );
+
+CREATE TABLE Reply (
+    id_replier INTEGER REFERENCES User(id_user), 
+    id_review INTEGER REFERENCES Review(id_review),
+    reply VARCHAR, 
+    PRIMARY KEY(id_replier, id_review)
+); 
+
+CREATE TABLE Favourite (
+    id_user INTEGER REFERENCES User(id_user), 
+    id_restaurant INTEGER REFERENCES Restaurant(id_restaurant), 
+    PRIMARY KEY(id_user, id_restaurant)
+); 
