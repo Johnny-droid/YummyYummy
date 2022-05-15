@@ -13,6 +13,8 @@
         <link href="css/styleRestaurant.css" rel="stylesheet">
         <link href="css/layoutOrders.css" rel="stylesheet">
         <link href="css/styleOrders.css" rel="stylesheet">
+        <link href="css/layoutProfile.css" rel="stylesheet">
+        <link href="css/styleProfile.css" rel="stylesheet">
         <script src="javascript/searchRestaurant.js" defer></script>
         <script src="javascript/makeOrder.js" defer></script>
         <link rel="icon" href="images/Logo/YummyLogoTransparentBg.png">
