@@ -1,4 +1,5 @@
 --Delete tables if they already exist
+drop table if exists User; 
 drop table if exists Products_Orders;
 drop table if exists Orders;
 drop table if exists Product;
@@ -6,8 +7,8 @@ drop table if exists Review;
 drop table if exists RestaurantCategory;
 drop table if exists Category;
 drop table if exists Restaurant;
-drop table if exists RestaurantOwner;
-drop table if exists Client;
+drop table if exists Reply; 
+drop table if exists Favourite; 
 
 CREATE TABLE User (
     id_user INTEGER PRIMARY KEY, 
@@ -19,7 +20,7 @@ CREATE TABLE User (
     age INTEGER, 
     bio VARCHAR, 
     user_type CHAR, --'O' (restaurant owner) ; 'C' (client) ; 'E' (courier)
-    UNIQUE(username)
+    UNIQUE(username),
     constraint user_type_matches check (user_type IN ('O', 'C', 'E'))
 ); 
 
@@ -76,7 +77,7 @@ CREATE TABLE Review (
     id_restaurant INTEGER REFERENCES Restaurant(id_restaurant), 
     rating INTEGER, 
     price INTEGER, 
-    comment VARCHAR,
+    comment VARCHAR
 );
 
 CREATE TABLE Reply (

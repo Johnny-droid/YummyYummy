@@ -27,7 +27,7 @@
         }
 
         static function getUser(PDO $db, int $id) : User {
-            $stmt = $db->prepare('SELECT * FROM User WHERE id_user = ?'); 
+            $stmt = $db->prepare('select * from User where id_user = ?'); 
 
             $stmt->execute(array($id)); 
 
@@ -46,13 +46,15 @@
             ); 
         }
 
-        static function getUserWithPassword(PDO $db, string $username, string $password) : User {
-            $stmt = $db->prepare('SELECT * FROM User WHERE username = ? AND password = ?'); 
+        static function getUserWithPassword(PDO $db, string $username, string $password) : ?User {
+            $stmt = $db->prepare('select * from User where username = ? and password = ?'); 
 
             // $stmt->execute(array(strtolower($username), sha1($password)));
             $stmt->execute(array(strtolower($username), $password));
 
             $user = $stmt->fetch(); 
+
+            if(!$user) { return null; }
 
             return new User(
                 intval($user['id_user']), 

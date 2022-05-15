@@ -5,23 +5,16 @@
 
   require_once('database/connection.db.php');
   require_once('database/user.class.php');
-  require_once('database/restaurant_owner.class.php');
-  require_once('database/client.class.php');
 
   $db = getDatabaseConnection();
 
-  $client = Client::getClientWithPassword($db, $_POST['username'], $_POST['password']);
-  $restaurant_owner = RestaurantOwner::getRestaurantOwnerWithPassword($db, $_POST['username'], $_POST['password']);
+  $user = User::getUserWithPassword($db, $_POST['username'], $_POST['password']);
 
-  if ($client) {
-    $_SESSION['id'] = $client->id;
-    $_SESSION['username'] = $client->name;
-    $_SESSION['isClient'] = true;
-  } else if ($restaurant_owner) {
-    $_SESSION['id'] = $restaurant_owner->id;
-    $_SESSION['username'] = $restaurant_owner->name;
-    $_SESSION['isClient'] = false;
-  }
+  if ($user) {
+    $_SESSION['id'] = $user->id;
+    $_SESSION['username'] = $user->name;
+    $_SESSION['type'] = $user->type;
+  } 
 
   header('Location: index.php');
 ?>

@@ -9,19 +9,16 @@
     require_once("database/connection.db.php");
     
     require_once("database/user.class.php");
-    require_once("database/restaurant_owner.class.php");
-    require_once("database/client.class.php");
 
     $db = getDatabaseConnection();
 
-    if (isset($_SESSION['id']) && $_SESSION['isClient']) {
-        $user = Client::getClient($db, $_SESSION['id']);
-    } else if (isset($_SESSION['id']) && !$_SESSION['isClient']) {
-        $user = RestaurantOwner::getRestaurantOwner($db, $_SESSION['id']);
-    }
+    if (isset($_SESSION['id'])) {
+        $user = User::getUser($db, $_SESSION['id']);
+    } 
 
-    output_header(); 
-    output_profile($user);
+    output_header();
+    if($user) { output_profile($user); } 
+    else {header('Location: index.php');}
     output_footer();
 ?>
 
