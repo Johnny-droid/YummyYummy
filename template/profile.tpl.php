@@ -1,5 +1,9 @@
 <?php function output_profile(User $user) { ?>
     <div class="pic">
+        <label class="-label" for="file">
+            <span>Change Image</span>
+        </label>
+        <input id="file" type="file" onchange="loadFile(event)"/>
         <img src="../images/Artworks/Profile Pictures/profile1.png" alt="Avatar" class="avatar">
     </div>
 
