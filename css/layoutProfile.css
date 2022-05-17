@@ -1,3 +1,18 @@
+main {
+    display: grid;
+    grid-template-rows: [start] auto [middle] auto [end];
+}
+
+.pic {
+    grid-row: start / middle;
+    justify-self: center;
+    padding: 2em;
+}
+
+.profiling {
+    grid-row: middle / end;
+}
+
 .profiling {
     display: grid; 
     grid-template-columns: [start] 1em [div1] auto [div2] 1em [end];

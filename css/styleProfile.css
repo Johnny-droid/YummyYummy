@@ -1,3 +1,11 @@
+.avatar {
+    vertical-align: middle; 
+    margin-bottom: -1.5em;
+    margin-top: 0.5em;
+    width: 160px; 
+    height: 160px; 
+}
+
 .profiling h1 {
     padding: 0.6em;
     border-style: solid;
@@ -18,11 +26,3 @@
     margin: 0.2em; 
 }
 
-.profiling {
-    background-color: #fffdd0;
-    margin-top: 0.8em; 
-    margin-bottom: 0.8em;
-    margin-left: 0; 
-    margin-right: 0;
-    padding: 1em; 
-}
