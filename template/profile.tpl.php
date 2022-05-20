@@ -15,17 +15,17 @@
         <strong>Phone Number: <?= $user->phoneNumber ?></strong><br>
         <strong>Email: <?= $user->email ?></strong><br>
         <strong>Bio: <?= $user->bio ?></strong><br>
-        
-    </div>
-    
-    <div class="favourites">
+        <div class="favourites">
             <?php
                 if ($favouriteRestaurants) { ?>
-                    <strong>Favourite Restaurants </strong>
+                    <h3 id="headingers">Favourite Restaurants </h3>
             <?php        foreach($favouriteRestaurants as $restaurant) { ?>
                             <strong><?=$restaurant->name?></strong> <br>
             <?php }
                 } ?>
         </div>
+    </div>
+    
+    
         
 <?php } ?>

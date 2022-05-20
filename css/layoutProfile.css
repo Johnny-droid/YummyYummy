@@ -18,10 +18,11 @@ main {
 .profiling {
     display: grid; 
     grid-template-columns: [start] 1em [div1] auto [div2] 1em [end];
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto;
     justify-content: center;
     text-align: center;
     margin: 2em; 
+    margin-bottom: 0em;
 }
 
 .profiling h1 {
@@ -34,15 +35,14 @@ main {
 }
 
 .favourites {
-    display: grid; 
-    grid-template-columns: [start] 1em [div1] auto [div2] 1em [end];
+    grid-column: div1 / div2;
     justify-content: center;
     text-align: center;
-    margin: 2em; 
+    margin: 1.5em; 
+    margin-bottom: 4em;
 }
 
 .favourites strong {
-    grid-column: div1 / div2;
-    padding: 0.3em; 
+    margin: 1em; 
 }
 
