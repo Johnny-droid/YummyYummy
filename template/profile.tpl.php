@@ -15,11 +15,17 @@
         <strong>Phone Number: <?= $user->phoneNumber ?></strong><br>
         <strong>Email: <?= $user->email ?></strong><br>
         <strong>Bio: <?= $user->bio ?></strong><br>
-        <?php
-            if ($favouriteRestaurants) {
-                
-            }
-        ?>
+        
     </div>
+    
+    <div class="favourites">
+            <?php
+                if ($favouriteRestaurants) { ?>
+                    <strong>Favourite Restaurants </strong>
+            <?php        foreach($favouriteRestaurants as $restaurant) { ?>
+                            <strong><?=$restaurant->name?></strong> <br>
+            <?php }
+                } ?>
+        </div>
         
 <?php } ?>

@@ -101,7 +101,9 @@
 
         static function getClientFavouriteRestaurants(PDO $db, int $id_user) : array {
  
-            $stmt = $db->prepare('select * from Favourite, Restaurant where id_user = ?'); 
+            $stmt = $db->prepare('select distinct *
+                                from Favourite, Restaurant
+                                where id_user = ? and idrestaurant = id_restaurant; '); 
 
             $stmt->execute(array($id_user)); 
     

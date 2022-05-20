@@ -32,3 +32,17 @@ main {
     grid-column: div1 / div2;
     padding: 0.3em; 
 }
+
+.favourites {
+    display: grid; 
+    grid-template-columns: [start] 1em [div1] auto [div2] 1em [end];
+    justify-content: center;
+    text-align: center;
+    margin: 2em; 
+}
+
+.favourites strong {
+    grid-column: div1 / div2;
+    padding: 0.3em; 
+}
+
