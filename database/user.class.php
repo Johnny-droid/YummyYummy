@@ -46,6 +46,7 @@
             ); 
         }
 
+
         static function getUserWithPassword(PDO $db, string $username, string $password) : ?User {
             $stmt = $db->prepare('select * from User where username = ? and password = ?'); 
 

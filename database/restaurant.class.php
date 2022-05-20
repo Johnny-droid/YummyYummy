@@ -98,6 +98,31 @@
             );
         }
 
+
+        static function getClientFavouriteRestaurants(PDO $db, int $id_user) : array {
+ 
+            $stmt = $db->prepare('select * from Favourite, Restaurant where id_user = ?'); 
+
+            $stmt->execute(array($id_user)); 
+    
+            $restaurants = array(); 
+
+            while ($restaurant = $stmt->fetch()) {
+                $restaurants[] = new Restaurant(
+                    intval($restaurant['id_restaurant']),
+                    $restaurant['name'],
+                    $restaurant['phone'],
+                    $restaurant['location'],
+                    DateTime::createFromFormat('H:i', $restaurant['openingTime']),
+                    DateTime::createFromFormat('H:i', $restaurant['closingTime']),
+                    intval($restaurant['owner'])
+                    );
+            }
+
+            return $restaurants; 
+        }
+
+        
         function getOpenOrClosed() : string {
             $strOpenTime =  $this->openingTime->format('H:i');
             $strClosedTime = $this->closingTime->format('H:i');

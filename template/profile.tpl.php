@@ -1,4 +1,4 @@
-<?php function output_profile(User $user) { ?>
+<?php function output_profile(User $user, $favouriteRestaurants) { ?>
     <div class="pic">
         <label class="-label" for="file">
             <span>Change Image</span>
@@ -15,6 +15,11 @@
         <strong>Phone Number: <?= $user->phoneNumber ?></strong><br>
         <strong>Email: <?= $user->email ?></strong><br>
         <strong>Bio: <?= $user->bio ?></strong><br>
+        <?php
+            if ($favouriteRestaurants) {
+                
+            }
+        ?>
     </div>
         
 <?php } ?>
