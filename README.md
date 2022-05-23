@@ -85,3 +85,4 @@ editar perfil
 donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc
 marcar restaurantes como favoritos (talvez se tenha de criar uma nova table na base de dados para isto)
 icon no tab da pagina
+Add option to add restaurant to favourites list

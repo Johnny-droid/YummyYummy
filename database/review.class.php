@@ -23,7 +23,7 @@
         static function getRestaurantReviews(PDO $db, int $id) : array {
             $stmt = $db->prepare('
                 SELECT * 
-                FROM Review JOIN Client using(id_client)
+                FROM Review JOIN User using(id_client)
                 WHERE id_restaurant = ?
             ');
 
