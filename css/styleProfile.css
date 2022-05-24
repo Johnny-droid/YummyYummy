@@ -59,13 +59,12 @@
     background-size: cover;
 }
 
-.profiling strong {
-    background-color: white;
-    border-style: solid;
-    border-width: 3px; 
-    border-radius: 0.7em;
-    padding: 0.4em; 
-    margin: 0.2em; 
+.itemProfile {
+    border: 3px solid black;
+    border-radius: 15px;
+    padding: 0.5em; 
+    font-weight: bold;
+    margin: 0.5em;
 }
 
 .favourites h3 {
@@ -79,6 +78,4 @@
     background-size: cover;
 }
 
-.favourites strong {
-    margin: 2em; 
-}
+
