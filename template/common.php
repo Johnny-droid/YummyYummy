@@ -18,6 +18,7 @@
         <script src="javascript/searchRestaurant.js" defer></script>
         <script src="javascript/makeOrder.js" defer></script>
         <script src="javascript/profileChanges.js" defer></script>
+        <script src="javascript/colorsOrders.js" defer></script>
         <link rel="icon" href="images/Logo/YummyLogoTransparentBg.png">
 
     </head>

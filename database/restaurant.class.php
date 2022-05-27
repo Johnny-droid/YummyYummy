@@ -57,7 +57,7 @@
                 LIMIT ?;
             ');
 
-            $stmt->execute(array($search . '%', $limit));
+            $stmt->execute(array('%' . $search . '%', $limit));
 
             $restaurants = array();
 
