@@ -9,6 +9,20 @@ drop table if exists Category;
 drop table if exists Restaurant;
 drop table if exists Reply; 
 drop table if exists Favourite; 
+drop view if exists Client; 
+drop view if exists Courier; 
+
+create view Client as 
+    select id_user
+    from User 
+    where user_type = 'C'; 
+
+
+create view Courier as 
+    select id_user 
+    from User
+    where user_type = "E"; 
+
 
 CREATE TABLE User (
     id_user INTEGER PRIMARY KEY, 
