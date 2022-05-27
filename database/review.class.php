@@ -23,7 +23,8 @@
         static function getRestaurantReviews(PDO $db, int $id) : array {
             $stmt = $db->prepare('
                 SELECT * 
-                FROM Review JOIN User using(id_client)
+                FROM (select id_client as id_user, id_restaurant, rating, price, comment FROM Review) 
+                     JOIN User using(id_user)
                 WHERE id_restaurant = ?
             ');
 
@@ -33,7 +34,7 @@
 
             while ($review = $stmt->fetch()) {
                 $reviews[] = new Review(
-                    intval($review['id_client']),
+                    intval($review['id_user']),
                     $review['username'],
                     intval($review['id_restaurant']),
                     intval($review['rating']),

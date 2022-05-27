@@ -78,6 +78,7 @@ CREATE TABLE Review (
     rating INTEGER, 
     price INTEGER, 
     comment VARCHAR
+    --maybe we should tell the id_client and id_restaurant to be unique (together)
 );
 
 CREATE TABLE Reply (
@@ -91,3 +92,4 @@ CREATE TABLE Favourite (
     id_user INTEGER,
     idrestaurant INTEGER 
 ); 
+
