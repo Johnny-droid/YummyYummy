@@ -3,6 +3,7 @@
 PRAGMA foreign_keys = ON; 
 
 drop trigger if exists checkIDClient; 
+drop trigger if exists checkIDCourier; 
 
 create trigger checkIDClient
 before insert on Orders 
@@ -11,4 +12,9 @@ begin
     select raise(ignore); 
 end; 
 
-
+create trigger checkIDCourier 
+before update on Orders
+when (not (New.id_courier in Courier))
+begin
+    select raise(ignore); 
+end; 
