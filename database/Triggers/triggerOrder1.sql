@@ -1,0 +1,2 @@
+-- after insert on Order (check id client and check id courier - ensure 
+-- they are both what they are supposed to be)

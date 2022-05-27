@@ -1,0 +1,2 @@
+-- after insert on Order (check if order products belong only to one 
+-- Restaurant)
