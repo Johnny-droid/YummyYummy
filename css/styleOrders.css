@@ -5,11 +5,13 @@
 
 .orderInformation {
     border-right: 2px solid black;
-    background-color: lightgrey;
+    background-color:rgb(230, 230, 230);
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
 }
 
 .orderStatus {
-    font-size: 1.8em;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    font-size: 2em;
 }
