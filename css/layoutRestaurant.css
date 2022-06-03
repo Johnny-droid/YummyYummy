@@ -62,3 +62,6 @@
     align-items: center;
 }
 
+#restaurantStatus {
+    font-weight: bold;
+}

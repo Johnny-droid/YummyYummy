@@ -9,7 +9,7 @@
                 <h1><?= $restaurant->name?></h1>
                 <p>Rating: <?= Review::getAverageRating($reviews) ?></p>
                 <p>Price:  <?= Review::getAveragePriceSymbols($reviews)?></p>
-                <p><?= $restaurant->getOpenOrClosed() ?></p>
+                <p id="restaurantStatus"><?= $restaurant->getOpenOrClosed() ?></p>
 
             </div>
 
@@ -93,5 +93,6 @@
     
 
 <?php } ?>
+
 
 

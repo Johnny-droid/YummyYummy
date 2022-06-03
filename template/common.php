@@ -19,6 +19,7 @@
         <script src="javascript/makeOrder.js" defer></script>
         <script src="javascript/profileChanges.js" defer></script>
         <script src="javascript/colorsOrders.js" defer></script>
+        <script src="javascript/colorsOpenClose.js" defer></script>
         <link rel="icon" href="images/Logo/YummyLogoTransparentBg.png">
 
     </head>
