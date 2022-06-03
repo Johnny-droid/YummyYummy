@@ -3,8 +3,8 @@
 
     session_start();
 
-    require_once('database/connection.db.php');
-    require_once('database/product.class.php');
+    require_once(__DIR__ .'/../database/connection.db.php');
+    require_once(__DIR__ .'/../database/product.class.php');
 
     $db = getDatabaseConnection();
 

@@ -3,8 +3,8 @@
 
     session_start();
 
-    require_once('database/connection.db.php');
-    require_once('database/restaurant.class.php');
+    require_once(__DIR__ .'/../database/connection.db.php');
+    require_once(__DIR__ .'/../database/restaurant.class.php');
 
     $search = $_GET['search'];
     if ($search !== '') {
