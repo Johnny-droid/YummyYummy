@@ -23,7 +23,7 @@
 
     output_header();
     if($user) { output_profile($user, $favouriteRestaurants); } 
-    else {header('Location: index.php');}
+    else {header('Location: /../index.php');}
     output_footer();
 ?>
 
