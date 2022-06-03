@@ -3,8 +3,8 @@
 
     session_start();
 
-    require_once("template/common.php"); 
-    require_once("template/signup.tpl.php"); 
+    require_once(__DIR__ . '/../template/common.php'); 
+    require_once(__DIR__ . '/../template/signup.tpl.php'); 
 
     output_header(); 
     output_signup();
