@@ -3,11 +3,11 @@
 
     session_start();
 
-    require_once("template/common.php"); 
-    require_once("template/restaurants.tpl.php"); 
+    require_once(__DIR__ . '/../template/common.php'); 
+    require_once(__DIR__ . '/../template/restaurants.tpl.php'); 
 
-    require_once("database/connection.db.php");
-    require_once("database/restaurant.class.php");
+    require_once(__DIR__ . '/../database/connection.db.php');
+    require_once(__DIR__ . '/../database/restaurant.class.php');
 
     $db = getDatabaseConnection();
 
