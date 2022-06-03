@@ -45,7 +45,7 @@
                     <h1><a href="../pages/signup.php">SIGN UP</a></h1>
                 <?php } else { ?>
                     <h1><a href="../pages/profile.php">PROFILE</a></h1>
-                    <h1><a href="../pages/action_logout.php">LOG OUT</a></h1>
+                    <h1><a href="../action/action_logout.php">LOG OUT</a></h1>
                 <?php } ?>
                 
             </signs>

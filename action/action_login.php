@@ -16,5 +16,6 @@
     $_SESSION['type'] = $user->type;
   } 
 
-  header('Location: ' . __DIR__ .'/../index.php');
+
+  header ('Location: '. $_SERVER['HTTP_REFERER'] . '/../../index.php');
 ?>
