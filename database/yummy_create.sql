@@ -11,6 +11,7 @@ drop table if exists Reply;
 drop table if exists Favourite; 
 drop view if exists Client; 
 drop view if exists Courier; 
+drop view if exists CompleteOrders; 
 
 create view Client as 
     select id_user
@@ -22,6 +23,10 @@ create view Courier as
     select id_user 
     from User
     where user_type = "E"; 
+
+create view CompleteOrders as
+    select *
+    from Products_Orders, Order, Restaurant;
 
 
 CREATE TABLE User (
