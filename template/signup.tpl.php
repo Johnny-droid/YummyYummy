@@ -1,8 +1,8 @@
 <?php function output_signup() { ?>
     <div class="loginDiv">
-        <form class="formLogin" action="action_signup.php" method="post">
+        <form class="formLogin" action="../action/action_signup.php" method="post">
             <h1>Sign up to<br> Yummy Yummy!</h1>
-            <img src="images/Logo/YummyLogoTransparentBg.png" alt="Logo"><br>
+            <img src="../images/Logo/YummyLogoTransparentBg.png" alt="Logo"><br>
             <input type="text" name="username" placeholder="username"> <br>
             <input type="password" name="password" placeholder="password"><br>
             <input type="text" name="address" placeholder="address"><br>

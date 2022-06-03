@@ -16,7 +16,7 @@
         <?php foreach($categories as $category) { ?>
             
             <article class="category">
-                <img src="images/Categories/Animated<?= str_replace(' ', '', $category->name)?>.jpg">
+                <img src="../images/Categories/Animated<?= str_replace(' ', '', $category->name)?>.jpg">
                 <h3><?= $category->name ?></h3>
             </article>
 

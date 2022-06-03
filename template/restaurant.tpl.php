@@ -1,7 +1,7 @@
 <?php function output_restaurant(Restaurant $restaurant, array $categories, array $reviews, array $products) { ?>
     <div class="restaurantGlobal">
         <section class="restaurantInformation">
-            <img class="restaurantImage" src="images/Restaurants/Restaurant<?= $restaurant->id ?>.jpg">
+            <img class="restaurantImage" src="../images/Restaurants/Restaurant<?= $restaurant->id ?>.jpg">
             
             
             <div class="restaurantMainInformation">
