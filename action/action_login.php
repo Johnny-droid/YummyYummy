@@ -16,5 +16,5 @@
     $_SESSION['type'] = $user->type;
   } 
 
-  header('Location: /../index.php');
+  header('Location: ' . __DIR__ .'/../index.php');
 ?>

@@ -1,6 +1,6 @@
 async function showProductInOrder(id_product, addToSession) {
     if (addToSession) {
-        const response = await fetch('api_setSessionProduct.php?id_product=' + id_product);
+        const response = await fetch('../api/api_setSessionProduct.php?id_product=' + id_product);
         const session = await response.json() 
     } 
     
@@ -27,7 +27,7 @@ async function showProductInOrder(id_product, addToSession) {
 
     if (!productDiv) {
 
-        const responseProduct = await fetch('api_getProduct.php?id_product=' + id_product);
+        const responseProduct = await fetch('../api/api_getProduct.php?id_product=' + id_product);
         const product = await responseProduct.json();
         
         const productDivNew = document.createElement('div')
@@ -44,7 +44,7 @@ async function showProductInOrder(id_product, addToSession) {
         productRemove.innerHTML = 'Remove'
         productRemove.value = id_product
         productRemove.addEventListener('click', async function() {
-            await fetch('api_removeSessionProduct.php?id_product=' + id_product);
+            await fetch('../api/api_removeSessionProduct.php?id_product=' + id_product);
             const productDivToRemove = document.getElementById('productDiv' + id_product);
             if (productDivToRemove) {
                 productDivToRemove.remove();
@@ -72,7 +72,7 @@ async function showProductInOrder(id_product, addToSession) {
 }
 
 async function showProductInOrderBeginning() {
-    const response = await fetch('api_setSessionProduct.php')
+    const response = await fetch('../api/api_setSessionProduct.php')
     const sessionProductsObject = await response.json();
     let sessionProducts = Object.values(sessionProductsObject)
     sessionProducts = sessionProducts.filter(function(el) {return el !== null})

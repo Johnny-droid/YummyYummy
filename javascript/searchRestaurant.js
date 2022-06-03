@@ -1,7 +1,7 @@
 const searchBar = document.querySelector('#inputSearch')
 if (searchBar) {
     searchBar.addEventListener('input', async function() {
-    const response = await fetch('api_restaurantsSearch.php?search=' + this.value)
+    const response = await fetch('../api/api_restaurantsSearch.php?search=' + this.value)
     const restaurants = await response.json()
 
     const section = document.querySelector('#restaurantsSearch')
@@ -18,12 +18,12 @@ if (searchBar) {
         article.classList.add('restaurantSearch')
 
         const img = document.createElement('img')
-        img.src = 'images/Restaurants/Restaurant' + restaurant.id + '.jpg'
+        img.src = '../images/Restaurants/Restaurant' + restaurant.id + '.jpg'
 
         const infoRestaurant = document.createElement('div')
 
         const link = document.createElement('a')
-        link.href = 'restaurant.php?id=' + restaurant.id
+        link.href = '../pages/restaurant.php?id=' + restaurant.id
         link.textContent = restaurant.name
 
         infoRestaurant.appendChild(link)
