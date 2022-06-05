@@ -1,5 +1,5 @@
 /* HEADER */
-@media (min-width: 50em) {
+@media (min-width: 90em) {
     body header {
         display: grid;
         flex-wrap: wrap;
@@ -38,7 +38,7 @@
     }
 }
  
-@media (max-width: 50em) {
+@media (max-width: 90em) {
     body header {
         display: flex; 
         justify-content: space-between;
