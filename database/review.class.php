@@ -59,7 +59,7 @@
 
 
         static function getAveragePriceSymbols(array $reviews) : string {
-            if (sizeof($reviews) === 0) {return 0;}
+            if (sizeof($reviews) === 0) {return "unknown";}
 
             $sum = 0;
             foreach($reviews as $review) {$sum += $review->priceScore;}
