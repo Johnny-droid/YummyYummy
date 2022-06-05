@@ -7,10 +7,10 @@
                     <h2 class="orderRestaurant"><?= $restaurants[reset($products[0])->id_restaurant]->name ?></h2>
                     <ul>
                         <?php foreach ($products as $product) { ?>
-                            <li><?= $product[0]->name . ' ( ' . $product[1] . ' )' ?></li>
+                            <li><?= $product[0]->name . '  ' . $product[0]->price . '€   (' . $product[1] . ') ' ?></li>
                         <?php  } ?>
                     </ul>
-                    <strong>Price: <?= Product::getTotalPriceProducts($products[0]) ?></strong><br>
+                    <strong>Price: <?= Product::getTotalPriceProducts($products) ?> € </strong><br>
                     <strong>Date Ordered: <?= $orders[$id_order]->dateStart->format('d/m/Y H:i:s') ?></strong>
                 </div>
                 

@@ -100,7 +100,7 @@
         static function getTotalPriceProducts(array $products) : float {
             $sum = 0;
             foreach ($products as $product) {
-                $sum += $product->price;
+                $sum += $product[0]->price * $product[1];   // 0 is the product, 1 is the quantity
             }
             return $sum;
         }

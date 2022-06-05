@@ -83,3 +83,4 @@ adicionar comentários/reviews
 editar perfil
 donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc
 Add option to add restaurant to favourites list
+Ask the aditional things for sign up things to sign up 
