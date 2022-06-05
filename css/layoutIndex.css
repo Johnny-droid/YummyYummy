@@ -1,21 +1,23 @@
 
 
 /* Banner and Search */
-#imgSearch {
-    text-align: center;
-    position: relative;
-    width: 100%;
-}
-
-#searchBar {    
-    position: absolute;
-    width: 100%;
-    bottom: 14%;
-}
-
-#inputSearch {
-    font-size: 1.1em;
-    padding: 1em;
+@media (min-width: 50em) {
+    #imgSearch {
+        text-align: center;
+        position: relative;
+        width: 100%;
+    }
+    
+    #searchBar {    
+        position: absolute;
+        width: 100%;
+        bottom: 14%;
+    }
+    
+    #inputSearch {
+        font-size: 1.1em;
+        padding: 1em;
+    }
 }
 
 @media (min-width: 100em) {
@@ -35,6 +37,22 @@
 
     #inputSearch {
         width: 25%;
+    }
+}
+
+@media (max-width: 50em) {
+    #banner {
+        display: none;
+    }
+
+    #inputSearch {
+        font-size: 1.1em;
+        width: 90%; 
+        margin-top: 2em; 
+        margin-bottom: -2em;  
+        margin-left: 1em;  
+        margin-right: 1em;
+        padding: 1em;
     }
 }
 

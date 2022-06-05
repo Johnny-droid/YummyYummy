@@ -21,13 +21,29 @@
         <script src="../javascript/profileChanges.js" defer></script>
         <script src="../javascript/colorsOrders.js" defer></script>
         <script src="../javascript/colorsOpenClose.js" defer></script>
+        <script src="../javascript/dropdownHeader.js" defer></script>
     </head>
 
     <body>
         <header>
+            <nav class="dropdown">
+                <button onclick="showDropdownContent()" class="button" type="button">
+                    <!--<img src="../images/Development/three-bars-icon.png" alt="dropdown">-->
+                    ≡
+                </button>
+                
+                <div id="myDropdown" class="dropdown-content">
+                    <h1><a href="../index.php">HOME</a></h1>
+                    <h1><a href="../pages/restaurants.php">RESTAURANTS</a></h1>
+                    <?php if (isset($_SESSION['id'])) { ?>
+                        <h1><a href="../pages/orders.php">ORDERS</a></h1> 
+                    <?php } ?>
+                </div>
+            </nav>
+        
             <img src="../images/Logo/YummyLogoTransparentBg.png" alt="LogoYummyYellow">
 
-            <nav>
+            <nav class="default">
                 <h1><a href="../index.php">HOME</a></h1>
                 <h1><a href="../pages/restaurants.php">RESTAURANTS</a></h1>
                 <?php if (isset($_SESSION['id'])) { ?>
