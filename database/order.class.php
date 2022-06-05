@@ -48,6 +48,14 @@
         }
 
 
+        static function insertOrder(PDO $db, $products) : bool {
+            
+
+
+            return false;
+        }
+
+
     }
 
 

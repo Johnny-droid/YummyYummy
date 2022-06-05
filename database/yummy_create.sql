@@ -88,9 +88,9 @@ CREATE TABLE Orders (
 CREATE TABLE Products_Orders (
     id_product VARCHAR REFERENCES Product(id_product), 
     id_order INTEGER REFERENCES Orders(id_order), 
-    quantity INTEGER
-    PRIMARY KEY(id_product, id_order)
-    constraint Quantity_Dif_0 check quantity > 0
+    quantity INTEGER,
+    PRIMARY KEY(id_product, id_order),
+    constraint Quantity_Dif_0 check (quantity > 0)
 );
 
 CREATE TABLE Review (
