@@ -9,7 +9,6 @@ async function getSessionProducts() {
     const sessionResponse = await fetch('../api/api_getSession.php')
     const sessionArray = await sessionResponse.json()
     const session = sessionArray[0]
-    console.log(session)
     return session['products']
 }
     
@@ -88,10 +87,9 @@ async function drawOrders() {
     products = await getSessionProducts()
     if (!aside) return
     keys = Object.keys(products)
-    console.log(keys)
     keys.forEach( (id_product) => {
         if (products[id_product] != 0) {
-                    drawOrder(id_product)
+            drawOrder(id_product)
         }
     })
 }
@@ -122,6 +120,6 @@ if (addProductsToOrderButtons) {
 // When the make order button is pressed, it should make the order using the products in session 
 if (makeOrderButton) {
     makeOrderButton.addEventListener('click', function() {
-        window.location.href = "../action/action_order.php";
+        window.location.href = "/../action/action_order.php"
     })
 }

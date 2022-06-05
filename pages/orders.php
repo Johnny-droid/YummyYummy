@@ -13,9 +13,10 @@
 
     $db = getDatabaseConnection();
 
-    $id_client = intval($_GET['id']);
+    $id_client = intval($_SESSION['id']);
 
     $orders = Order::getClientOrders($db, $id_client);
+    //order -> [(product, quantity), ...]
     $orders_products = Product::getOrdersProducts($db, $orders);
     $restaurants = Restaurant::getRestaurants($db);
     

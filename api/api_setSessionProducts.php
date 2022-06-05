@@ -7,8 +7,6 @@
 
     $_SESSION['products'] = json_decode($str_json);
 
-    //$_SESSION['products'] = array();
-
     //echo $str_json;
 
     /*

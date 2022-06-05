@@ -82,13 +82,13 @@
                 $products = array();
 
                 while ($product = $stmt->fetch()) {
-                    $products[] = new Product(
+                    $products[] = array(new Product(
                         intval($product['id_product']),
                         $product['name'],
                         floatval($product['price']),
                         intval($product['discount']),
                         intval($product['id_restaurant'])
-                    );
+                    ), $product['quantity']);
                 }
 
                 $ordersProducts[$order->id] = $products;

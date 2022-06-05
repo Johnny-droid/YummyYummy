@@ -16,7 +16,7 @@
     $id_restaurant = intval($_GET['id']);
     
     if ($_SESSION['id_restaurant'] !== $id_restaurant) {
-        $_SESSION['products'] = array();
+        $_SESSION['products'] = new stdClass();
     }
     
     $_SESSION['id_restaurant'] = $id_restaurant;

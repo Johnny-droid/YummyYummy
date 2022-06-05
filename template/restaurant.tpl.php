@@ -81,10 +81,8 @@
             <aside class="clientOrders">
                 <h1>Order</h1>
                 
-                <form action="">
-                    <button id="makeOrder">Make Order</button>
-                </form>
-                
+                <button id="makeOrder">Make Order</button>
+
             </aside>
         <?php } ?>
 

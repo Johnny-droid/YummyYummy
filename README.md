@@ -83,4 +83,3 @@ adicionar comentários/reviews
 editar perfil
 donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc
 Add option to add restaurant to favourites list
-For some reason the image on the tab isn't working
