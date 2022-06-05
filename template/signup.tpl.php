@@ -15,6 +15,8 @@
                 <small>Could not save account to our database.<br>Contact support line.</small>
             <?php } else if ($_GET['error'] == '3') { ?>
                 <small>Something went wrong.<br>Contact support line.</small>
+            <?php } else if ($_GET['error'] == '4') { ?>
+                <small>You need to be logged in!</small>
             <?php } ?>
         </form>
     </div>

@@ -21,6 +21,10 @@
     $restaurants = Restaurant::getRestaurants($db);
     
     output_header(); 
-    output_orders($orders, $orders_products, $restaurants);
+    if($id_client) {
+        output_orders($orders, $orders_products, $restaurants);
+    } else {
+        header('Location: ../pages/signup.php?error=4');
+    }
     output_footer(); 
 ?>

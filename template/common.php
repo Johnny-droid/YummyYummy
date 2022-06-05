@@ -32,10 +32,7 @@
                 <h1><a href="../pages/restaurants.php">RESTAURANTS</a></h1>
                 <?php if (isset($_SESSION['id'])) { ?>
                     <h1><a href="../pages/orders.php">ORDERS</a></h1> 
-                <?php } else { ?>
-                    <h1><a href="../index.php">ORDERS</a></h1> 
                 <?php } ?>
-                
             </nav>
 
             <signs>
