@@ -1,4 +1,8 @@
 --Delete tables if they already exist
+drop view if exists Client; 
+drop view if exists Courier; 
+drop view if exists CompleteOrders; 
+drop table if exists Favourite; 
 drop table if exists User; 
 drop table if exists Products_Orders;
 drop table if exists Orders;
@@ -8,10 +12,7 @@ drop table if exists RestaurantCategory;
 drop table if exists Category;
 drop table if exists Restaurant;
 drop table if exists Reply; 
-drop table if exists Favourite; 
-drop view if exists Client; 
-drop view if exists Courier; 
-drop view if exists CompleteOrders; 
+
 
 create view Client as 
     select id_user
@@ -26,7 +27,7 @@ create view Courier as
 
 create view CompleteOrders as
     select *
-    from Products_Orders, Order, Restaurant;
+    from Products_Orders, Orders, Restaurant;
 
 
 CREATE TABLE User (

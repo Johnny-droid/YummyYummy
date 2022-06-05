@@ -83,7 +83,7 @@
     border: 1px solid red;
 }
 
-#saveOrder {
+#makeOrder {
     padding: 0.5em;
     font-size: 1em;
     margin: 0.3em;
@@ -91,7 +91,7 @@
     border: 2px solid black;
 }
 
-#saveOrder:hover {
+#makeOrder:hover {
     background-color: yellow;
     color: white;
     border: 2px solid white;

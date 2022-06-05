@@ -119,14 +119,14 @@ insert into Product values(25, 'Gimbap', 10.50, 0, 8);
 insert into Product values(26, 'Miso Ramen', 10.50, 10, 8); 
 insert into Product values(27, 'Satay', 5.50, 10, 8); 
 
-insert into Orders values(1, 'RECEIVED', '02/05/2022 10:50:00', '', 1, 17); 
-insert into Orders values(2, 'PREPARING', '01/05/2022 11:50:00', '', 1, NULL); 
-insert into Orders values(3, 'READY', '02/05/2022 10:45:00', '', 2, NULL); 
-insert into Orders values(4, 'READY', '01/05/2022 10:50:00', '', 3, 24); 
-insert into Orders values(5, 'DELIVERED', '21/04/2022 12:50:00', '21/04/2022 14:00:00', 3, 19); 
-insert into Orders values(6, 'DELIVERED', '12/04/2022 11:50:00', '12/04/2022 13:00:00', 4, 20); 
-insert into Orders values(7, 'PREPARING', '19/04/2022 9:50:00', '', 7, NULL); 
-insert into Orders values(8, 'RECEIVED', '20/04/2022 10:30:00', '', 8, 21); 
+insert into Orders values(1, 'RECEIVED', '02/05/2022 10:50:00', '', 9, 17); 
+insert into Orders values(2, 'PREPARING', '01/05/2022 11:50:00', '', 9, NULL); 
+insert into Orders values(3, 'READY', '02/05/2022 10:45:00', '', 9, NULL); 
+insert into Orders values(4, 'READY', '01/05/2022 10:50:00', '', 10, 24); 
+insert into Orders values(5, 'DELIVERED', '21/04/2022 12:50:00', '21/04/2022 14:00:00', 13, 19); 
+insert into Orders values(6, 'DELIVERED', '12/04/2022 11:50:00', '12/04/2022 13:00:00', 13, 20); 
+insert into Orders values(7, 'PREPARING', '19/04/2022 9:50:00', '', 14, NULL); 
+insert into Orders values(8, 'RECEIVED', '20/04/2022 10:30:00', '', 15, 21); 
 
 insert into Products_Orders values(5, 1);
 insert into Products_Orders values(6, 1);

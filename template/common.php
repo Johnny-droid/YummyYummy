@@ -15,13 +15,12 @@
         <link href="../css/styleOrders.css" rel="stylesheet">
         <link href="../css/layoutProfile.css" rel="stylesheet">
         <link href="../css/styleProfile.css" rel="stylesheet">
+        <link rel="icon" href="../images/Logo/YummyLogoTransparentBg.png">
         <script src="../javascript/searchRestaurant.js" defer></script>
         <script src="../javascript/makeOrder.js" defer></script>
         <script src="../javascript/profileChanges.js" defer></script>
         <script src="../javascript/colorsOrders.js" defer></script>
         <script src="../javascript/colorsOpenClose.js" defer></script>
-        <link rel="icon" href="../images/Logo/YummyLogoTransparentBg.png">
-
     </head>
 
     <body>

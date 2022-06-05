@@ -82,6 +82,8 @@ body > footer {
 }
 
 .restaurantSearch > img {
+    width: 15em;
+    height: 15em;
     border-bottom-left-radius: 30px;
     border-top-left-radius: 30px;
 }

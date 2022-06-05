@@ -13,16 +13,16 @@
     require_once(__DIR__ . '/../database/category.class.php');
 
     $db = getDatabaseConnection();
-
     $id_restaurant = intval($_GET['id']);
-    $_SESSION['id_restaurant'] = $id_restaurant;
     
-    /*
-    var_dump($_SESSION['products']);
-    foreach ($_SESSION as $key=>$value) {
-        echo $key . " " . $value . "<br>";
-    } 
-    */
+    if ($_SESSION['id_restaurant'] !== $id_restaurant) {
+        $_SESSION['products'] = array();
+    }
+    
+    $_SESSION['id_restaurant'] = $id_restaurant;
+
+    //var_dump($_SESSION['products']);
+
 
     $restaurant = Restaurant::getRestaurant($db, $id_restaurant);
     $reviews = Review::getRestaurantReviews($db, $id_restaurant);

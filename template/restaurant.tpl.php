@@ -35,11 +35,10 @@
                 <h2>Menu</h2>
                 <ul>
                     <?php foreach ($products as $product) { ?>
-                        
                         <?php if ($product->discount === 0) { ?>
                             <li class="product">
                                 <?= $product->name . ' ' . $product->price ?>€
-                                <?php if (isset($_SESSION['id']) && $_SESSION['isClient']) { ?>
+                                <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C') { ?>
                                     <button class="productOrderAddButton" value="<?= $product->id ?>"> + </button>
                                 <?php } ?>
                             </li>
@@ -47,7 +46,7 @@
                             <li class="product">
                                 <?= $product->name . ' ' . $product->price * (1 - ($product->discount/100)) ?>€ <br>
                                 Discount: <?= $product->discount ?>% &nbsp&nbsp Old price: <?= $product->price ?>€
-                                <?php if (isset($_SESSION['id']) && $_SESSION['isClient']) { ?>
+                                <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C') { ?>
                                     <button class="productOrderAddButton" value="<?= $product->id ?>"> + </button>
                                 <?php } ?>
                             </li>
@@ -78,15 +77,16 @@
             </div>
 
         </section>
-        <aside class="clientOrders">
-            <h1>Order</h1>
-            
-            <form action="">
-                <button id="saveOrder">Save Order</button>
-            </form>
-            
-        </aside>
-
+        <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C') { ?>
+            <aside class="clientOrders">
+                <h1>Order</h1>
+                
+                <form action="">
+                    <button id="makeOrder">Make Order</button>
+                </form>
+                
+            </aside>
+        <?php } ?>
 
 
     </div>
