@@ -47,12 +47,25 @@
             return $orders;
         }
 
+        static function insertOrder(PDO $db, $id_client, $products) : bool {
+            $id_order = 0;
+            try {
+                $stmt1 = $db->prepare('insert into Orders (status, dateStart, dateEnd, id_client, id_courier) 
+                         values(?, ?, ?, ?, ?); '); 
 
-        static function insertOrder(PDO $db, $products) : bool {
-            
+                $stmt1->execute(array('RECEIVED', date('d/m/Y H:i:s'), '', $id_client, NULL)); 
+                $id_order = $db->lastInsertId();
 
+                $stmt2 = $db->prepare('insert into Products_Orders (id_product, id_order, quantity) values(?, ?, ?)');
 
-            return false;
+                foreach ($products as $id_product=>$quantity) {
+                    $stmt2->execute(array($id_product, $id_order, $quantity));
+                }
+            } catch (PDOException $e) {
+                return false; 
+            }
+
+            return true;
         }
 
 

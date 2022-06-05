@@ -83,10 +83,10 @@
         static function saveUser(PDO $db, string $username, string $password, string $address, string $phone_number,
                                 string $email, int $age, string $bio, string $type) {
             try {
-                $stmt = $db->prepare('insert into User values(?, ?, ?, ?, ?, ?, ?, ?); '); 
+                $stmt = $db->prepare('insert into User (username, password, address, phone_number, email, age, bio, user_type) 
+                         values(?, ?, ?, ?, ?, ?, ?, ?); '); 
 
                 $stmt->execute(array($username, $password, $address, $phone_number, $email, $age, $bio, $type)); 
-                
                 return true; 
             } catch (PDOException $e) {
                 return false; 
