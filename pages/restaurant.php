@@ -15,14 +15,16 @@
     $db = getDatabaseConnection();
     $id_restaurant = intval($_GET['id']);
     
-    if ($_SESSION['id_restaurant'] !== $id_restaurant) {
+    if (isset($_SESSION['id']) && $_SESSION['id_restaurant'] !== $id_restaurant) {
         $_SESSION['products'] = new stdClass();
     }
     
     $_SESSION['id_restaurant'] = $id_restaurant;
 
-    var_dump($_SESSION['products']);
-
+    $alreadyHasReview = true;
+    if (isset($_SESSION['id']) && $_SESSION['type'] === 'C') {
+        $alreadyHasReview = Review::alreadyHasReview($db, $_SESSION['id'], $id_restaurant);
+    }
 
     $restaurant = Restaurant::getRestaurant($db, $id_restaurant);
     $reviews = Review::getRestaurantReviews($db, $id_restaurant);
@@ -30,7 +32,8 @@
     $products = Product::getRestaurantProducts($db, $id_restaurant);
 
     output_header(); 
-    output_restaurant($restaurant, $categories, $reviews, $products); 
+    output_restaurant($restaurant, $categories, $reviews, $products, $alreadyHasReview); 
     output_footer();
+
 ?>
 

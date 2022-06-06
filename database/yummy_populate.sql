@@ -51,13 +51,13 @@ insert into Favourite values(16, 8);
 insert into Favourite values(14, 4); 
 insert into Favourite values(11, 5); 
 
-insert into Review values(1, 1, 1, 5, 3, 'Very Good Restaurant');
-insert into Review values(2, 2, 3, 4, 5, 'A bit expensive but very good overall'); 
-insert into Review values(3, 1, 2, 3, 3, 'Was expecting a fairly better service...'); 
-insert into Review values(4, 3, 4, 5, 5, 'Expensive but definitely worth the buck!'); 
-insert into Review values(5, 4, 5, 4, 2, 'Very good and very cheap, what a finding this was!'); 
-insert into Review values(6, 5, 6, 3, 5, 'A bit expensive for what it is worth but good'); 
-insert into Review values(7, 8, 8, 5, 2, 'I am amazed, chinese food culture at its finest! Wow');  
+insert into Review values(1, 10, 1, 5, 3, 'Very Good Restaurant');
+insert into Review values(2, 11, 3, 4, 5, 'A bit expensive but very good overall'); 
+insert into Review values(3, 12, 2, 3, 3, 'Was expecting a fairly better service...'); 
+insert into Review values(4, 13, 4, 5, 5, 'Expensive but definitely worth the buck!'); 
+insert into Review values(5, 14, 5, 4, 2, 'Very good and very cheap, what a finding this was!'); 
+insert into Review values(6, 15, 6, 3, 5, 'A bit expensive for what it is worth but good'); 
+insert into Review values(7, 15, 8, 5, 2, 'I am amazed, chinese food culture at its finest! Wow');  
 
 insert into Reply values(1, 1, 'Thank your for your feedback! Hope seeing you soon'); 
 insert into Reply values(3, 2, 'Thank you for your review! We promise we will build on that!'); 

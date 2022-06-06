@@ -47,7 +47,7 @@
             return $orders;
         }
 
-        static function insertOrder(PDO $db, $id_client, $products) : bool {
+        static function insertOrder(PDO $db, int $id_client, stdClass $products) : bool {
             $id_order = 0;
             try {
                 $stmt1 = $db->prepare('insert into Orders (status, dateStart, dateEnd, id_client, id_courier) 

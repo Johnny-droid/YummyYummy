@@ -58,11 +58,12 @@ body > footer {
     margin: 0.5em;
 }
 
-.formLogin > button {
+.formLogin > button, #makeReviewForm > button {
     padding: 1em;
     margin-top: 0.5em;
     margin-bottom: 1em;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .formLogin > img {

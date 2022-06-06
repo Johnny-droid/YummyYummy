@@ -75,8 +75,6 @@ Keep in mind that some extra changes might be made in order to add functionaliti
 # Details we still need to do:
 
 hash passwords
-When making an order, make sure you only insert product of the same restaurant -> Fazer um trigger ou algo semelhante para garantir que uma order é de um só restaurante
-List the menu of each restaurant in it's page and add a way to create a "basket" for an order 
 (invetar um número de tele aleatório para colocar no footer e fingir como linha de suport técnico)
 adicionar comentários/reviews
 editar perfil

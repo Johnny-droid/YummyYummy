@@ -62,6 +62,40 @@
     margin-left: 1.5em;
 }
 
+#buttonMakeReview {
+    margin: 1em;
+    padding: 1em;
+    border-radius: 50px;
+    background-color: white;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+#buttonMakeReview:hover {
+    background-color: rgb(255, 255, 100);
+    transform: scale(1.05) perspective(1px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.makeReview form > div {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.makeReviewNumber {
+    padding: 0.3em;
+    margin: 1em;
+}
+
+.makeReviewComment {
+    width: 90%;
+    padding: 0.7em;
+    margin: 1em;
+    font-size: 1.2em;
+    border-radius: 30px;
+}
+
 
 .productInOrders {
     margin: 0.5em;

@@ -99,7 +99,8 @@ CREATE TABLE Review (
     id_restaurant INTEGER REFERENCES Restaurant(id_restaurant), 
     rating INTEGER, 
     price INTEGER, 
-    comment VARCHAR
+    comment VARCHAR,
+    UNIQUE(id_client, id_restaurant)
     --maybe we should tell the id_client and id_restaurant to be unique (together)
 );
 

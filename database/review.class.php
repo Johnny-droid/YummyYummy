@@ -47,6 +47,48 @@
         }
 
 
+
+
+        static function alreadyHasReview(PDO $db, int $id_client, int $id_restaurant) : bool {
+            $stmt = $db->prepare('
+                SELECT * 
+                FROM Review
+                WHERE id_restaurant = ? AND id_client = ?
+            ');
+
+            $stmt->execute(array($id_restaurant, $id_client));
+
+            if ($stmt->fetch()) {
+                return true;
+            }
+            return false;
+        }
+
+
+
+        static function addReview(PDO $db, int $id_client, int $id_restaurant, int $rating, int $price, string $comment) : bool {
+
+            $previousReview = Review::alreadyHasReview($db, $id_client, $id_restaurant);
+            
+            if ($previousReview) return false;
+
+            try {
+                $stmt1 = $db->prepare('insert into Review (id_client, id_restaurant, rating, price, comment) 
+                         values(?, ?, ?, ?, ?); '); 
+
+                $stmt1->execute(array($id_client, $id_restaurant, $rating, $price, $comment)); 
+                
+            } catch (PDOException $e) {
+                return false;
+            }
+            
+            return true;
+        }
+
+
+
+
+
         static function getAverageRating(array $reviews) : float {
             if (sizeof($reviews) === 0) {return 0;}
 
@@ -84,7 +126,5 @@
         }
 
     }
-
-
 
 ?>

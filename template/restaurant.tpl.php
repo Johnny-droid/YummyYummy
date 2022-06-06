@@ -1,4 +1,4 @@
-<?php function output_restaurant(Restaurant $restaurant, array $categories, array $reviews, array $products) { ?>
+<?php function output_restaurant(Restaurant $restaurant, array $categories, array $reviews, array $products, bool $alreadyHasReview) { ?>
     <div class="restaurantGlobal">
         <section class="restaurantInformation">
             <img class="restaurantImage" src="../images/Restaurants/Restaurant<?= $restaurant->id ?>.jpg">
@@ -64,17 +64,43 @@
                 <?php foreach($reviews as $review) { ?>
 
                     <article>
-                        <div class="reviewHeader">
+                        <div>
+                            <div class="reviewHeader">
                             <strong><?= $review->username ?></strong>
                             <div class="reviewRating"><?= $review->rating ?></div>
                             <div class="reviewPrice"><?= $review->getPriceSymbols() ?></div>
+                            </div>
+                            <p class="reviewComment"><?= $review->comment ?></p>
                         </div>
-                        <p class="reviewComment"><?= $review->comment ?></p>
-                    
                     <article>
                 <?php } ?>
-
+                
+                <div class="makeReview">
+                     <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C' && !$alreadyHasReview) { ?>
+                        <?php if (isset($_GET['error_review'])) { ?>
+                            <?php if ($_GET['error_review'] === '1') { ?>   
+                                <small class="error">You must be a client to make a review</small>
+                            <?php } else if ($_GET['error_review'] === '2') { ?>
+                                <small class="error">Your values are invalid</small>
+                            <?php } else if ($_GET['error_review'] === '3') { ?>
+                                <small class="error">You can only make one review per restaurant</small>
+                            <?php } ?>
+                        <?php } ?>
+                        <button id="buttonMakeReview" onclick="toggleReviewButton()">Make Review</button>
+                        <form method="POST" id="makeReviewForm" action="../action/action_write_review.php">
+                            <div>
+                                <div>Rating: <input class="makeReviewNumber" type="number" name="rating" min="1" max="5" placeholder="1 to 5"></div>
+                                <div>Price: <input class="makeReviewNumber" type="number" name="price" min="1" max="5" placeholder="1 to 5"></div>
+                            </div>
+                            <input class="makeReviewComment" type="text" name="comment" placeholder="write your comment here">
+                            <button type="submit">Post Review</button>
+                        </form>
+                    <?php } ?>
+                </div>
+               
             </div>
+
+
 
         </section>
         <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C') { ?>
