@@ -9,7 +9,8 @@
             <input type="text" name="phoneNumber" placeholder="phone number"><br>
             <button type="submit">Sign up</button><br>
 
-            <?php if ($_GET['error'] === '1') { ?>
+            <?php if(isset($_GET['error'])) { 
+                if ($_GET['error'] === '1') { ?>
                 <small class="error">Username already used</small>
             <?php } else if ($_GET['error'] == '2') { ?>
                 <small class="error">Could not save account to our database.<br>Contact support line.</small>
@@ -20,4 +21,4 @@
             <?php } ?>
         </form>
     </div>
-<?php } ?>
+<?php }} ?>

@@ -11,6 +11,7 @@
     require_once(__DIR__ . '/../database/product.class.php');
     require_once(__DIR__ . '/../database/review.class.php');
     require_once(__DIR__ . '/../database/category.class.php');
+    require_once(__DIR__ . '/../database/user.class.php');
 
     $db = getDatabaseConnection();
     $id_restaurant = intval($_GET['id']);
