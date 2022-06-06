@@ -3,6 +3,12 @@
         <section class="restaurantInformation">
             <img class="restaurantImage" src="../images/Restaurants/Restaurant<?= $restaurant->id ?>.jpg">
             
+            <?php
+                if(isset($_SESSION['id']) && $_SESSION['type'] === 'C') { ?>
+                <div class="addFavourite">
+                    <button class="buttonFav">⭐ ADD TO FAVOURITES</button>
+                </div>
+            <?php } ?>
             
             <div class="restaurantMainInformation">
                 
@@ -80,11 +86,13 @@
         <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C') { ?>
             <aside class="clientOrders">
                 <h1>Order</h1>
-                <?php if ($_GET['error'] == 1) { ?>
-                    <small class="error">You need to select products for your order</small>
+                <?php if(isset($_GET['error'])) {
+                        if ($_GET['error'] == 1) { ?>
+                            <small class="error">You need to select products for your order</small>
                 <?php } else if ($_GET['error'] == 2) { ?>
                     <small class="error">An error occured. Check if the products are from the same restaurant</small>
-                <?php } ?>
+                <?php } 
+                    } ?>
                 <button id="makeOrder">Make Order</button>
 
 
