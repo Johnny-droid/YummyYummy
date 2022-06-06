@@ -86,3 +86,4 @@ Ask the aditional things for sign up things to sign up and change things from Cl
 Don't forget to ask wether it will be user or courier
 Courier and Restaurant Owner can change status of deliveries
 Restaurant Owners can reply to customers
+Sort orders according to date

@@ -21,7 +21,7 @@
     
     $_SESSION['id_restaurant'] = $id_restaurant;
 
-    //var_dump($_SESSION['products']);
+    var_dump($_SESSION['products']);
 
 
     $restaurant = Restaurant::getRestaurant($db, $id_restaurant);

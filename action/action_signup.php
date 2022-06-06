@@ -3,10 +3,10 @@
 
     session_start();
 
-    require_once('/../database/connection.db.php');
-    require_once('/../database/user.class.php');
-    require_once('/../database/restaurant_owner.class.php');
-    require_once('/../database/client.class.php');
+    require_once( __DIR__ . '/../database/connection.db.php');
+    require_once( __DIR__ . '/../database/user.class.php');
+    require_once( __DIR__ . '/../database/restaurant_owner.class.php');
+    require_once( __DIR__ . '/../database/client.class.php');
 
     $db = getDatabaseConnection();
 
@@ -24,7 +24,7 @@
         $_SESSION['id'] = $client->id;
         $_SESSION['username'] = $client->name;
         $_SESSION['isClient'] = true;
-        header('Location:' . __DIR__ .'/../pages/index.php');
+        header('Location:' . __DIR__ . '/../pages/index.php');
     
     } else {
         header('Location: ' . __DIR__ .'/../pages/signup.php?error=3');
