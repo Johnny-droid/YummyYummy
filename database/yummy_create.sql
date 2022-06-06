@@ -112,7 +112,7 @@ CREATE TABLE Reply (
 ); 
 
 CREATE TABLE Favourite (
-    id_user INTEGER,
-    idrestaurant INTEGER 
+    id_user INTEGER REFERENCES User(id_user),
+    id_restaurant INTEGER REFERENCES Restaurant(id_restaurant)
 ); 
 

@@ -1,4 +1,4 @@
-<?php function output_profile(User $user, $favouriteRestaurants) { ?>
+<?php function output_profile(User $user, array $restaurants) { ?>
     <div class="profile">
         <div class="pic">
             <label class="-label" for="file">
@@ -17,13 +17,16 @@
             <div class="itemProfile">Email: <?= $user->email ?></div>
             <div class="itemProfile">Bio: <?= $user->bio ?></div>
             <div class="favourites">
-                <?php
-                if ($favouriteRestaurants) { ?>
-                    <h3 id="headingers">Favourite Restaurants </h3>
-                    <?php foreach ($favouriteRestaurants as $restaurant) { ?>
-                        <div class="itemProfile"><?= $restaurant->name ?></div>
-                <?php }
-                } ?>
+                <?php if ($restaurants) { ?>
+                    <?php if ($user->type === 'C') { ?> 
+                        <h3 id="headingers">Favourite Restaurants </h3>
+                    <?php } else if ($user->type === 'O') { ?>
+                        <h3 id="headingers">Restaurants Owned</h3>
+                    <?php }; ?>
+                    <?php foreach ($restaurants as $restaurant) { ?>
+                        <div class="itemProfile"><a href="restaurant.php?id=<?= $restaurant->id ?>"><?= $restaurant->name ?></a></div>
+                    <?php } ?>
+                <?php } ?>
             </div>
         </div>
 

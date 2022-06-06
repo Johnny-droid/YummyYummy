@@ -103,7 +103,7 @@
  
             $stmt = $db->prepare('select distinct *
                                 from Favourite, Restaurant
-                                where id_user = ? and idrestaurant = id_restaurant; '); 
+                                where id_user = ?; '); 
 
             $stmt->execute(array($id_user)); 
     
@@ -122,6 +122,31 @@
             }
 
             return $restaurants; 
+        }
+
+
+        static function getOwnerRestaurants(PDO $db, int $id_owner) : array {
+            $stmt = $db->prepare('SELECT *
+                    FROM Restaurant
+                    WHERE owner = ?;'); 
+
+            $stmt->execute(array($id_owner)); 
+            
+            $restaurants = array();
+
+            while ($restaurant = $stmt->fetch()) {
+                $restaurants[] = new Restaurant(
+                    intval($restaurant['id_restaurant']),
+                    $restaurant['name'],
+                    $restaurant['phone'],
+                    $restaurant['location'],
+                    DateTime::createFromFormat('H:i', $restaurant['openingTime']),
+                    DateTime::createFromFormat('H:i', $restaurant['closingTime']),
+                    intval($restaurant['owner'])
+                    );
+            }
+
+            return $restaurants;
         }
 
         

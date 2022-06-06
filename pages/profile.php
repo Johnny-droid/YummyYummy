@@ -16,13 +16,15 @@
     if (isset($_SESSION['id'])) {
         $user = User::getUser($db, $_SESSION['id']);
 
-        if ($user->type === 'C') {
-            $favouriteRestaurants = Restaurant::getClientFavouriteRestaurants($db, $user->id); 
+        if ($user->type === 'C') { // favourite restaurants
+            $restaurants = Restaurant::getClientFavouriteRestaurants($db, $user->id); 
+        } else if ($user->type === 'O') {
+            $restaurants = Restaurant::getOwnerRestaurants($db, $user->id);
         }
     } 
 
     output_header();
-    if($user) { output_profile($user, $favouriteRestaurants); } 
+    if($user) { output_profile($user, $restaurants); } 
     else {header('Location: /../index.php');}
     output_footer();
 ?>
