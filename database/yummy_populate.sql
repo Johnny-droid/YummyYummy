@@ -51,20 +51,17 @@ insert into Favourite values(16, 8);
 insert into Favourite values(14, 4); 
 insert into Favourite values(11, 5); 
 
-insert into Review values(1, 10, 1, 5, 3, 'Very Good Restaurant');
-insert into Review values(2, 11, 3, 4, 5, 'A bit expensive but very good overall'); 
-insert into Review values(3, 12, 2, 3, 3, 'Was expecting a fairly better service...'); 
-insert into Review values(4, 13, 4, 5, 5, 'Expensive but definitely worth the buck!'); 
-insert into Review values(5, 14, 5, 4, 2, 'Very good and very cheap, what a finding this was!'); 
-insert into Review values(6, 15, 6, 3, 5, 'A bit expensive for what it is worth but good'); 
-insert into Review values(7, 15, 8, 5, 2, 'I am amazed, chinese food culture at its finest! Wow');  
+insert into Review values(1, 10, 1, 5, 3, 'Very Good Restaurant', 'Thank your for your feedback! Hope seeing you soon');
+insert into Review values(2, 11, 3, 4, 5, 'A bit expensive but very good overall', 'Thank you for your review! We promise we will build on that!'); 
+insert into Review values(3, 12, 2, 3, 3, 'Was expecting a fairly better service...', 'We are sorry to hear that... Come here one more time and your wont regret it'); 
+insert into Review values(4, 13, 4, 5, 5, 'Expensive but definitely worth the buck!', 'Great review! Thanks!'); 
+insert into Review values(5, 14, 5, 4, 2, 'Very good and very cheap, what a finding this was!', 'Great review! Thanks!'); 
+insert into Review values(6, 15, 6, 3, 5, 'A bit expensive for what it is worth but good', 'We are delighted to hear that from you!'); 
+insert into Review values(7, 15, 8, 5, 2, 'I am amazed, chinese food culture at its finest! Wow', 'More than glad that you liked it! There is no such thing as chinese culture and you know it :)');  
+insert into Review values(8, 9, 1, 4, 3, 'Nice and Confortable Restaurant', '');
+insert into Review values(9, 11, 1, 4, 5, "It's a nice Restaurant, but it's waaay too expensive!", '');
+insert into Review values(10, 12, 1, 1, 3, "The Food was cold, and the restaurant was very dirty overall.", '');
 
-insert into Reply values(1, 1, 'Thank your for your feedback! Hope seeing you soon'); 
-insert into Reply values(3, 2, 'Thank you for your review! We promise we will build on that!'); 
-insert into Reply values(2, 3, 'We are sorry to hear that... Come here one more time and your wont regret it'); 
-insert into Reply values(4, 4, 'Great review! Thanks!'); 
-insert into Reply values(5, 5, 'We are delighted to hear that from you!'); 
-insert into Reply values(6, 6, 'More than glad that you liked it! There is no such thing as chinese culture and you know it :)'); 
 
 insert into Category values(1, 'Pizza'); 
 insert into Category values(2, 'Hamburger');

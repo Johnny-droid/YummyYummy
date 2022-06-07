@@ -9,21 +9,22 @@
         public int $rating;
         public int $priceScore;
         public string $comment;
+        public string $review;
 
-        public function __construct(int $id_client, string $username, int $id_restaurant, int $rating, int $priceScore, string $comment) {
+        public function __construct(int $id_client, string $username, int $id_restaurant, int $rating, int $priceScore, string $comment, string $reply) {
             $this->id_client = $id_client;
             $this->username = $username;
             $this->id_restaurant = $id_restaurant;
             $this->rating = $rating;
             $this->priceScore = $priceScore;
             $this->comment = $comment;
-
+            $this->reply = $reply;
         }
 
         static function getRestaurantReviews(PDO $db, int $id) : array {
             $stmt = $db->prepare('
                 SELECT * 
-                FROM (select id_client as id_user, id_restaurant, rating, price, comment FROM Review) 
+                FROM (select id_client as id_user, id_restaurant, rating, price, comment, reply FROM Review) 
                      JOIN User using(id_user)
                 WHERE id_restaurant = ?
             ');
@@ -39,7 +40,8 @@
                     intval($review['id_restaurant']),
                     intval($review['rating']),
                     intval($review['price']),
-                    $review['comment']
+                    $review['comment'],
+                    $review['reply']
                 );
             }
 
@@ -73,10 +75,10 @@
             if ($previousReview) return false;
 
             try {
-                $stmt1 = $db->prepare('insert into Review (id_client, id_restaurant, rating, price, comment) 
+                $stmt1 = $db->prepare('insert into Review (id_client, id_restaurant, rating, price, comment, reply) 
                          values(?, ?, ?, ?, ?); '); 
 
-                $stmt1->execute(array($id_client, $id_restaurant, $rating, $price, $comment)); 
+                $stmt1->execute(array($id_client, $id_restaurant, $rating, $price, $comment, '')); 
                 
             } catch (PDOException $e) {
                 return false;

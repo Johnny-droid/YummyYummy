@@ -1,17 +1,16 @@
 --Delete tables if they already exist
 drop view if exists Client; 
 drop view if exists Courier; 
-drop view if exists CompleteOrders; 
-drop table if exists Favourite; 
-drop table if exists User; 
-drop table if exists Products_Orders;
-drop table if exists Orders;
-drop table if exists Product;
+drop view if exists CompleteOrders;
 drop table if exists Review;
 drop table if exists RestaurantCategory;
+drop table if exists Favourite; 
+drop table if exists Products_Orders;
 drop table if exists Category;
+drop table if exists Product;
+drop table if exists Orders;
 drop table if exists Restaurant;
-drop table if exists Reply; 
+drop table if exists User; 
 
 
 create view Client as 
@@ -100,19 +99,15 @@ CREATE TABLE Review (
     rating INTEGER, 
     price INTEGER, 
     comment VARCHAR,
+    reply VARCHAR,
     UNIQUE(id_client, id_restaurant)
     --maybe we should tell the id_client and id_restaurant to be unique (together)
 );
 
-CREATE TABLE Reply (
-    id_replier INTEGER REFERENCES User(id_user), 
-    id_review INTEGER REFERENCES Review(id_review),
-    reply VARCHAR, 
-    PRIMARY KEY(id_replier, id_review)
-); 
 
 CREATE TABLE Favourite (
     id_user INTEGER REFERENCES User(id_user),
-    id_restaurant INTEGER REFERENCES Restaurant(id_restaurant)
+    id_restaurant INTEGER REFERENCES Restaurant(id_restaurant),
+    UNIQUE(id_user, id_restaurant)
 ); 
 

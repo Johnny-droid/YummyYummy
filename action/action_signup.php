@@ -24,6 +24,18 @@
         $_SESSION['id'] = $client->id;
         $_SESSION['username'] = $client->name;
         $_SESSION['isClient'] = true;
+        /*
+        Add this to the restaurant owner
+        if ($user->type === 'O') {
+            $restaurants = Restaurant::getOwnerRestaurants($db, $user->id);
+            $ids_restaurants_owned = array();
+            foreach ($restaurants as $restaurant) {
+            $ids_restaurants_owned[$restaurant->id] = true; // works as a set 
+            }
+            $_SESSION['ids_restaurants_owned'] = $ids_restaurants_owned; 
+        }
+        */
+
         header('Location:' . __DIR__ . '/../pages/index.php');
     
     } else {

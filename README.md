@@ -86,3 +86,4 @@ Courier and Restaurant Owner can change status of deliveries
 Restaurant Owners can reply to customers
 Sort orders according to date
 Fazer com que as coisas do restaurant fiquem centradas, nos donos de restaurante e couriers que não têm as orders de lado
+Adicionar talvez mais coisas à base de dados
