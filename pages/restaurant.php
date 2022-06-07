@@ -27,6 +27,8 @@
         $alreadyHasReview = Review::alreadyHasReview($db, $_SESSION['id'], $id_restaurant);
     }
 
+    var_dump($_SESSION);
+
     $restaurant = Restaurant::getRestaurant($db, $id_restaurant);
     $reviews = Review::getRestaurantReviews($db, $id_restaurant);
     $categories = Category::getRestaurantCategories($db, $id_restaurant);

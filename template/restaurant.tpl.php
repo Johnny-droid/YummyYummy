@@ -68,17 +68,24 @@
                 <h2>Reviews</h2>
 
                 <?php foreach($reviews as $review) { ?>
-
-                    <article>
-                        <div>
-                            <div class="reviewHeader">
+                    <div class="review">
+                        <div class="reviewHeader">
                             <strong><?= $review->username ?></strong>
                             <div class="reviewRating"><?= $review->rating ?></div>
                             <div class="reviewPrice"><?= $review->getPriceSymbols() ?></div>
-                            </div>
-                            <p class="reviewComment"><?= $review->comment ?></p>
                         </div>
-                    <article>
+                        <p class="reviewComment">▸ <?= $review->comment ?></p>
+
+                        <?php if ($review->reply !== '') { ?>
+                            <em>Reply: </em>
+                            <p>▹<?= $review->reply ?></p>
+                        <?php } else if ($review->reply === '' && isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) { ?>
+                            <form method="POST" id="" action="">
+                                <input class="makeReviewComment" type="text" name="comment" placeholder="write your reply here">
+                                <button type="submit">Post Reply</button>
+                            </form>
+                        <?php } ?>
+                    </div>
                 <?php } ?>
                 
                 <div class="makeReview">

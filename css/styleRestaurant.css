@@ -1,4 +1,4 @@
-.restaurantInformation > div {
+.restaurantInformation > div, .review {
     padding: 1.5em;
     margin: 1em;
     border: 2px solid black;
