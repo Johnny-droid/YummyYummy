@@ -80,8 +80,9 @@
                             <em>Reply: </em>
                             <p>▹<?= $review->reply ?></p>
                         <?php } else if ($review->reply === '' && isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) { ?>
-                            <form method="POST" id="" action="">
-                                <input class="makeReviewComment" type="text" name="comment" placeholder="write your reply here">
+                            <button id="buttonMakeReply" onclick="toggleDisplayButton('buttonMakeReply', 'makeReplyForm', 'Reply to Review', 'Hide')">Reply to Review</button>
+                            <form method="POST" id="makeReplyForm" action="">
+                                <input class="makeReviewComment" type="text" name="reply" placeholder="write your reply here">
                                 <button type="submit">Post Reply</button>
                             </form>
                         <?php } ?>
@@ -99,7 +100,7 @@
                                 <small class="error">You can only make one review per restaurant</small>
                             <?php } ?>
                         <?php } ?>
-                        <button id="buttonMakeReview" onclick="toggleReviewButton()">Make Review</button>
+                        <button id="buttonMakeReview" onclick="toggleDisplayButton('buttonMakeReview', 'makeReviewForm', 'Make Review', 'Hide Review')">Make Review</button>
                         <form method="POST" id="makeReviewForm" action="../action/action_write_review.php">
                             <div>
                                 <div>Rating: <input class="makeReviewNumber" type="number" name="rating" min="1" max="5" placeholder="1 to 5"></div>

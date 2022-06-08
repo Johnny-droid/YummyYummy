@@ -33,7 +33,8 @@
     $reviews = Review::getRestaurantReviews($db, $id_restaurant);
     $categories = Category::getRestaurantCategories($db, $id_restaurant);
     $products = Product::getRestaurantProducts($db, $id_restaurant);
-
+    echo '<br>';
+    var_dump($reviews);
     output_header(); 
     output_restaurant($restaurant, $categories, $reviews, $products, $alreadyHasReview); 
     output_footer();
