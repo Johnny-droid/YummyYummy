@@ -108,7 +108,7 @@
 
 
 /* FOOTER */
-@media (min-width: 50em) {
+@media (min-width: 80em) {
     body > footer {
         align-items: center;
         display: grid; 
@@ -124,8 +124,18 @@
         grid-column: start / imgYummy;
     }
 
-    body > footer h3 {
+    body > footer .textInfo {
         grid-column: imgYummy / authors;
+    }
+
+    .textInfo {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .textInfo h4:last-of-type {
+        padding-right: 4em;
     }
 
     body > footer > img:last-child {
@@ -134,14 +144,14 @@
     }
 }
 
-@media (max-width: 50em) {
+@media (max-width: 80em) {
     body > footer {
         align-items: center;
         display: grid; 
         grid-template-columns: [start] auto [imgYummy] 1fr [authors] auto [imgFEUP];
     }
 
-    body > footer h4 {
+    .textInfo {
         display: none;
     }
 

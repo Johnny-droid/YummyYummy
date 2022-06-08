@@ -74,7 +74,10 @@
         <footer>
             <img src="../images/Logo/YummyLogoWhiteBlack.png" alt="LogoYummyWhite">
 
-            <h4> Made by: João Alves & José Araújo </h4>
+            <div class="textInfo">
+                <h4> Made by: João Alves & José Araújo </h4>
+                <h4> 📞 Contact Us: +351 933478958 </h4>
+            </div>
 
             <img src="../images/Logo/FeupLogo.png" alt="Logo FEUP">
         </footer>
