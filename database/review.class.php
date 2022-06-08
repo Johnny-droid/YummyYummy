@@ -3,15 +3,17 @@
 
     class Review {
 
+        public int $id_review;
         public int $id_client;
         public string $username;
         public int $id_restaurant;
         public int $rating;
         public int $priceScore;
         public string $comment;
-        public string $review;
+        public string $reply;
 
-        public function __construct(int $id_client, string $username, int $id_restaurant, int $rating, int $priceScore, string $comment, string $reply) {
+        public function __construct(int $id_review, int $id_client, string $username, int $id_restaurant, int $rating, int $priceScore, string $comment, string $reply) {    
+            $this->id_review = $id_review; 
             $this->id_client = $id_client;
             $this->username = $username;
             $this->id_restaurant = $id_restaurant;
@@ -19,14 +21,15 @@
             $this->priceScore = $priceScore;
             $this->comment = $comment;
             $this->reply = $reply;
+            
         }
 
         static function getRestaurantReviews(PDO $db, int $id) : array {
             $stmt = $db->prepare('
                 SELECT * 
-                FROM (select id_client as id_user, id_restaurant, rating, price, comment, reply FROM Review) 
+                FROM (select id_review, id_client as id_user, id_restaurant, rating, price, comment, reply FROM Review) 
                      JOIN User using(id_user)
-                WHERE id_restaurant = ?
+                WHERE id_restaurant = ?;
             ');
 
             $stmt->execute(array($id));
@@ -35,6 +38,7 @@
 
             while ($review = $stmt->fetch()) {
                 $reviews[] = new Review(
+                    intval($review['id_review']),
                     intval($review['id_user']),
                     $review['username'],
                     intval($review['id_restaurant']),

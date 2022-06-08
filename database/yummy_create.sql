@@ -101,7 +101,6 @@ CREATE TABLE Review (
     comment VARCHAR,
     reply VARCHAR,
     UNIQUE(id_client, id_restaurant)
-    --maybe we should tell the id_client and id_restaurant to be unique (together)
 );
 
 
