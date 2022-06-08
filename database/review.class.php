@@ -12,8 +12,8 @@
         public string $comment;
         public string $reply;
 
-        public function __construct(int $id_review, int $id_client, string $username, int $id_restaurant, int $rating, int $priceScore, string $comment, string $reply) {
-            $this->$id_review = $id_review;
+        public function __construct(int $id_review, int $id_client, string $username, int $id_restaurant, int $rating, int $priceScore, string $comment, string $reply) {    
+            $this->id_review = $id_review; 
             $this->id_client = $id_client;
             $this->username = $username;
             $this->id_restaurant = $id_restaurant;
@@ -21,6 +21,7 @@
             $this->priceScore = $priceScore;
             $this->comment = $comment;
             $this->reply = $reply;
+            
         }
 
         static function getRestaurantReviews(PDO $db, int $id) : array {

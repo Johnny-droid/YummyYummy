@@ -76,16 +76,18 @@
                         </div>
                         <p class="reviewComment">▸ <?= $review->comment ?></p>
 
+                        <div class="reviewReply">
                         <?php if ($review->reply !== '') { ?>
                             <em>Reply: </em>
                             <p>▹<?= $review->reply ?></p>
                         <?php } else if ($review->reply === '' && isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) { ?>
-                            <button id="buttonMakeReply" onclick="toggleDisplayButton('buttonMakeReply', 'makeReplyForm', 'Reply to Review', 'Hide')">Reply to Review</button>
-                            <form method="POST" id="makeReplyForm" action="">
+                            <button id="buttonMakeReply<?= $review->id_review ?>" class="makeReplyButton" onclick="toggleDisplayButton('buttonMakeReply<?= $review->id_review ?>', 'makeReplyForm<?= $review->id_review ?>', 'Reply to Review', 'Hide')">Reply to Review</button>
+                            <form method="POST" id="makeReplyForm<?= $review->id_review ?>" class="makeReplyForm" action="">
                                 <input class="makeReviewComment" type="text" name="reply" placeholder="write your reply here">
                                 <button type="submit">Post Reply</button>
                             </form>
                         <?php } ?>
+                        </div>
                     </div>
                 <?php } ?>
                 
