@@ -5,25 +5,30 @@
 
     require_once( __DIR__ . '/../database/connection.db.php');
     require_once( __DIR__ . '/../database/user.class.php');
-    require_once( __DIR__ . '/../database/restaurant_owner.class.php');
-    require_once( __DIR__ . '/../database/client.class.php');
 
     $db = getDatabaseConnection();
+    $userType; 
 
-    $existsClient = Client::existsWithUsername($db, $_POST['username']);
-    $existsRestaurantOwner = RestaurantOwner::existsWithUsername($db, $_POST['username']);
+    $existsUser = User::existsWithUsername($db, $_POST['username']);
 
-    if ($existsClient || $existsRestaurantOwner) {
-        header('Location: ' . __DIR__ .'/../pages/signup.php?error=1');
+    if($_POST['accountType'] === 'client') {
+        $userType = 'C'; 
+    } else if($_POST['accountType'] === 'courier') {
+        $userType = 'E';
+    }
+
+    if ($existsUser) {
+        header('Location: /../pages/signup.php?error=1');
     
-    } else if (!Client::saveUser($db, $_POST['username'], $_POST['password'], $_POST['address'], $_POST['phoneNumber'])) {
+    } else if (!User::saveUser($db, $_POST['username'], $_POST['password'], $_POST['address'], $_POST['phoneNumber'], 
+                                $_POST['email'], intval($_POST['age']) ,$_POST['bio'], $userType)) {
     //sha1($_POST['password'])
-        header('Location: ' . __DIR__ .'/../pages/signup.php?error=2');
+        header('Location: /../pages/signup.php?error=2');
     
-    } else if ($client = Client::getClientWithPassword($db, $_POST['username'], $_POST['password'])) {
-        $_SESSION['id'] = $client->id;
-        $_SESSION['username'] = $client->name;
-        $_SESSION['isClient'] = true;
+    } else if ($user = User::getUserWithPassword($db, $_POST['username'], $_POST['password'])) {
+        $_SESSION['id'] = $user->id;
+        $_SESSION['username'] = $user->name;
+        $_SESSION['type'] = 'C';
         /*
         Add this to the restaurant owner
         if ($user->type === 'O') {
@@ -36,10 +41,10 @@
         }
         */
 
-        header('Location:' . __DIR__ . '/../pages/index.php');
+        header('Location: /../index.php');
     
     } else {
-        header('Location: ' . __DIR__ .'/../pages/signup.php?error=3');
+        header('Location: /../pages/signup.php?error=3');
     }
 
     
