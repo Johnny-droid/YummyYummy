@@ -100,13 +100,19 @@
     font-weight: bold;
 }
 
-.makeReview form {
+.reviewReply {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.makeReview form, .review form {
     display: none;
     flex-direction: column;
     align-items: center;
     width: 80%;
-    
 }
+
 
 .makeReview form > div {
     display: flex;
@@ -120,3 +126,4 @@
     align-items: center;
 
 }
+
