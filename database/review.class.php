@@ -74,15 +74,15 @@
             
             if ($previousReview) return false;
 
-            try {
+            //try {
                 $stmt1 = $db->prepare('insert into Review (id_client, id_restaurant, rating, price, comment, reply) 
-                         values(?, ?, ?, ?, ?); '); 
+                         values(?, ?, ?, ?, ?, ?); '); 
 
                 $stmt1->execute(array($id_client, $id_restaurant, $rating, $price, $comment, '')); 
                 
-            } catch (PDOException $e) {
-                return false;
-            }
+            //} catch (PDOException $e) {
+            //    return false;
+            //}
             
             return true;
         }
