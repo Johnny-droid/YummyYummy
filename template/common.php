@@ -23,6 +23,7 @@
         <script src="../javascript/colorsOrders.js" defer></script>
         <script src="../javascript/colorsOpenClose.js" defer></script>
         <script src="../javascript/dropdownHeader.js" defer></script>
+        <script src="../javascript/favouriteButton.js" defer></script>
     </head>
 
     <body>

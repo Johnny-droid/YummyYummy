@@ -75,15 +75,18 @@ Keep in mind that some extra changes might be made in order to add functionaliti
 # Details we still need to do:
 
 hash passwords
-(invetar um número de tele aleatório para colocar no footer e fingir como linha de suport técnico)
 adicionar comentários/reviews
 editar perfil
 donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc
 Add option to add restaurant to favourites list
-Ask the aditional things for sign up things to sign up and change things from Client/Owner to User
-Don't forget to ask wether it will be user or courier
 Courier and Restaurant Owner can change status of deliveries
 Restaurant Owners can reply to customers
 Sort orders according to date
 Fazer com que as coisas do restaurant fiquem centradas, nos donos de restaurante e couriers que não têm as orders de lado
 Adicionar talvez mais coisas à base de dados
+
+
+
+DONE - (invetar um número de tele aleatório para colocar no footer e fingir como linha de suport técnico)
+DONE - Ask the aditional things for sign up things to sign up and change things from Client/Owner to User
+DONE - Don't forget to ask wether it will be user or courier
