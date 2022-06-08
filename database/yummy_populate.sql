@@ -61,6 +61,7 @@ insert into Review values(7, 15, 8, 5, 2, 'I am amazed, chinese food culture at 
 insert into Review values(8, 9, 1, 4, 3, 'Nice and Confortable Restaurant', '');
 insert into Review values(9, 11, 1, 4, 5, "It's a nice Restaurant, but it's waaay too expensive!", '');
 insert into Review values(10, 12, 1, 1, 3, "The Food was cold, and the restaurant was very dirty overall.", '');
+insert into Review values(11, 13, 2, 2, 4, "The Food was way too hot, and the restaurant was very small overall", '');
 
 
 insert into Category values(1, 'Pizza'); 

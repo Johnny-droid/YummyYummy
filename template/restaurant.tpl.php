@@ -6,7 +6,7 @@
             <?php
                 if(isset($_SESSION['id']) && $_SESSION['type'] === 'C') { ?>
                 <div class="addFavourite">
-                    <button class="buttonFav">⭐ ADD TO FAVOURITES</button>
+                    <button id="buttonFavourite" class="buttonFav">⭐ ADD TO FAVOURITES</button>
                 </div>
             <?php } ?>
             
@@ -82,8 +82,9 @@
                             <p>▹<?= $review->reply ?></p>
                         <?php } else if ($review->reply === '' && isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) { ?>
                             <button id="buttonMakeReply<?= $review->id_review ?>" class="makeReplyButton" onclick="toggleDisplayButton('buttonMakeReply<?= $review->id_review ?>', 'makeReplyForm<?= $review->id_review ?>', 'Reply to Review', 'Hide')">Reply to Review</button>
-                            <form method="POST" id="makeReplyForm<?= $review->id_review ?>" class="makeReplyForm" action="">
+                            <form method="POST" id="makeReplyForm<?= $review->id_review ?>" class="makeReplyForm" action="../action/action_write_reply.php">
                                 <input class="makeReviewComment" type="text" name="reply" placeholder="write your reply here">
+                                <input style="display: none;" type="number" name="id_review" value="<?= $review->id_review ?>">
                                 <button type="submit">Post Reply</button>
                             </form>
                         <?php } ?>

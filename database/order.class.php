@@ -22,6 +22,7 @@
                 SELECT *
                 FROM Orders
                 Where id_client = ?
+                Order by dateStart DESC;
             ');
 
             $stmt->execute(array($id_client));

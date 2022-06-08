@@ -71,6 +71,23 @@
         }
 
 
+        static function alreadyHasReply(PDO $db, int $id_review) : bool {
+            $stmt = $db->prepare('
+                SELECT * 
+                FROM Review
+                WHERE id_review = ?;
+            ');
+
+            $stmt->execute(array($id_review));
+
+            $review = $stmt->fetch();
+
+            if ($review['reply'] === '') {
+                return false;
+            }
+            return true;
+        }
+
 
         static function addReview(PDO $db, int $id_client, int $id_restaurant, int $rating, int $price, string $comment) : bool {
 
@@ -91,6 +108,20 @@
             return true;
         }
 
+
+
+        static function addReply(PDO $db, int $id_review, string $reply) : bool {
+            
+            $previousReply = Review::alreadyHasReply($db, $id_review);
+
+            if ($previousReply) return false;
+
+            $stmt1 = $db->prepare('update Review set reply = ? where id_review = ?; '); 
+
+            $stmt1->execute(array($reply, $id_review)); 
+            
+            return true;
+        }
 
 
 

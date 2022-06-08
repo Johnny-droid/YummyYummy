@@ -92,6 +92,38 @@
             //    return false; 
             //}
         }
+
+        static function existsFavourite(PDO $db, int $id_user, int $id_restaurant, bool $change) : bool {
+
+            $stmt1 = $db->prepare('
+                SELECT *
+                FROM Favourite
+                Where id_user = ? AND id_restaurant = ?;
+            ');
+
+            $stmt1->execute(array($id_user, $id_restaurant));
+
+            $favourite =  $stmt1->fetch();
+
+            if ($favourite) {
+                $exists = true;
+            } else {
+                $exists = false;
+            }
+
+            if (!$change) {return $exists;}
+
+            if ($exists) {
+                $stmt2 = $db->prepare('delete from Favourite where id_user = ? AND id_restaurant = ?');
+            } else {
+                $stmt2 = $db->prepare('insert into Favourite values(?, ?); ');
+            }
+
+            $stmt2->execute(array($id_user, $id_restaurant));
+
+            return !$exists;
+        }
+
     }
 ?>
 
