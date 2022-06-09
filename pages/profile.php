@@ -12,7 +12,8 @@
     require_once(__DIR__ . '/../database/restaurant.class.php'); 
 
     $db = getDatabaseConnection();
-
+    $restaurants = array();
+    //$user;
     if (isset($_SESSION['id'])) {
         $user = User::getUser($db, $_SESSION['id']);
 

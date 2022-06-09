@@ -48,6 +48,44 @@
             return $orders;
         }
 
+
+        static function getOwnerOrders(PDO $db, int $id_owner) : array {
+            $stmt = $db->prepare('
+                SELECT *
+                FROM Orders
+                Where id_order in (
+                    select id_order 
+                    from (Products_Orders JOIN Product using(id_product))
+                         JOIN Restaurant using(id_restaurant)
+                    where owner = ?
+                )
+                Order by dateStart DESC;
+            ');
+
+            $stmt->execute(array($id_owner));
+
+            $orders = array();
+
+            while ($order = $stmt->fetch()) {
+                if ($order['dateEnd'] === '') {
+                    $orderDateEnd = null;
+                } else {
+                    $orderDateEnd = DateTime::createFromFormat('d/m/Y H:i:s', $order['dateEnd']);
+                }
+
+                $orders[intval($order['id_order'])] = new Order(
+                    intval($order['id_order']),
+                    $order['status'],
+                    DateTime::createFromFormat('d/m/Y H:i:s', $order['dateStart']),
+                    $orderDateEnd,
+                    intval($order['id_client'])
+                );
+            }
+
+            return $orders;
+        }
+
+
         static function insertOrder(PDO $db, int $id_client, stdClass $products) : bool {
             $id_order = 0;
             try {

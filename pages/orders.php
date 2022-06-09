@@ -13,18 +13,23 @@
 
     $db = getDatabaseConnection();
 
-    $id_client = intval($_SESSION['id']);
+    if (!isset($_SESSION['id'])) {
+        header('Location: ../pages/signup.php?error=4');
+        exit();
+    }
+    
+    $id_user = intval($_SESSION['id']);
 
-    $orders = Order::getClientOrders($db, $id_client);
-    //order -> [(product, quantity), ...]
-    $orders_products = Product::getOrdersProducts($db, $orders);
+    if ($_SESSION['type'] === 'C') {
+        $orders = Order::getClientOrders($db, $id_client); 
+    } else if ($_SESSION['type'] === 'O') {
+        $orders = Order::getOwnerOrders($db, $id_user);
+    } // we need to cover one more case for the courier
+    
+    $orders_products = Product::getOrdersProducts($db, $orders); //order -> [(product, quantity), (product, quantity), ...]
     $restaurants = Restaurant::getRestaurants($db);
     
     output_header(); 
-    if($id_client) {
-        output_orders($orders, $orders_products, $restaurants);
-    } else {
-        header('Location: ../pages/signup.php?error=4');
-    }
+    output_orders($orders, $orders_products, $restaurants);
     output_footer(); 
 ?>
