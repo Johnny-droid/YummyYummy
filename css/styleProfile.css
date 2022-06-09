@@ -8,6 +8,12 @@
     transition: all .3s ease;
 }
 
+#accountType {
+    width: 10em; 
+    margin-top: 2em; 
+    margin-bottom: 1em; 
+}
+
 #file {
     display: none;
 }
