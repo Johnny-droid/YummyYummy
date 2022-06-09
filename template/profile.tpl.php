@@ -11,11 +11,11 @@
         <div class="profiling">
             <!-- <span class="material-symbols-outlined">edit</span> -->
             <h1>@<?= $user->name ?></h1>
-            <div class="itemProfile"><div>Age: <?= $user->age ?></div><button id="age"><span class="material-symbols-outlined">edit</span></button></div>
-            <div class="itemProfile"><div>Address: <?= $user->address ?></div><button id="age"><span class="material-symbols-outlined">edit</span></button></div>
-            <div class="itemProfile"><div>Phone Number: <?= $user->phoneNumber ?></div><button id="age"><span class="material-symbols-outlined">edit</span></button></div>
-            <div class="itemProfile"><div>Email: <?= $user->email ?></div><button id="age"><span class="material-symbols-outlined">edit</span></button></div>
-            <div class="itemProfile"><div>Bio: <?= $user->bio ?></div><button id="age"><span class="material-symbols-outlined">edit</span></button></div>
+            <div id="ageDiv1" class="itemProfile1"><div>Age: <?= $user->age ?></div><button class="itemProfileButtonEdit" id="age" value="<?= $user->age ?>"><span class="material-symbols-outlined">edit</span></button></div>
+            <div id="addressDiv1" class="itemProfile1"><div>Address: <?= $user->address ?></div><button class="itemProfileButtonEdit" id="address" value="<?= $user->address ?>"><span class="material-symbols-outlined">edit</span></button></div>
+            <div id="phoneNumberDiv1" class="itemProfile1"><div>Phone Number: <?= $user->phoneNumber ?></div><button class="itemProfileButtonEdit" id="phoneNumber" value="<?= $user->phone_number ?>"><span class="material-symbols-outlined">edit</span></button></div>
+            <div id="emailDiv1"class="itemProfile1"><div>Email: <?= $user->email ?></div><button class="itemProfileButtonEdit" id="email" value="<?= $user->email ?>"><span class="material-symbols-outlined">edit</span></button></div>
+            <div id="bioDiv1" class="itemProfile1"><div>Bio: <?= $user->bio ?></div><button class="itemProfileButtonEdit" id="bio" value="<?= $user->bio ?>"><span class="material-symbols-outlined">edit</span></button></div>
             <div class="favourites">
                 <?php if ($restaurants) { ?>
                     <?php if ($user->type === 'C') { ?> 

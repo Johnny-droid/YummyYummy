@@ -59,8 +59,15 @@
     background-size: cover;
 }
 
-.itemProfile {
+.itemProfile1 {
     display: flex;
+}
+
+.itemProfile2 {
+    display: none;
+}
+
+.itemProfile1, .itemProfile2, .itemProfile {
     border: 3px solid black;
     border-radius: 15px;
     padding: 0.5em; 
@@ -79,15 +86,15 @@
     background-size: cover;
 }
 
-.itemProfile > div {
+.itemProfile1 > div {
     align-self: center;
     flex-grow: 1;
 }
 
-.itemProfile > button {
+.itemProfile1 > button, .itemProfile2 > button {
     border-radius: 10px;
 }
 
-.itemProfile > button:hover {
+.itemProfile1 > button:hover, .itemProfile2 > button:hover {
     background-color: lightgray;
 }

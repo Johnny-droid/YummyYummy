@@ -70,7 +70,7 @@ function addEventListenersPrevNext(type, id_order) {
     if (type === 'O') {
         if (previousButton) {
             previousButton.addEventListener('click', function () {
-                let string = nextButton.getAttribute('id');
+                let string = previousButton.getAttribute('id');
                 let id_order = string.replace(/^\D+/g, '');
                 const orderStatusDisplayed = document.querySelector('#orderStatus' + id_order); 
                 const status = orderStatusDisplayed.textContent.trim()
@@ -107,7 +107,7 @@ function addEventListenersPrevNext(type, id_order) {
     } else if (type === 'E') {
         if (previousButton) {
             previousButton.addEventListener('click', function () {
-                let string = nextButton.getAttribute('id');
+                let string = previousButton.getAttribute('id');
                 let id_order = string.replace(/^\D+/g, '');
                 const orderStatusDisplayed = document.querySelector('#orderStatus' + id_order); 
                 const status = orderStatusDisplayed.textContent.trim()
