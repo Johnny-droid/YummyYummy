@@ -181,6 +181,7 @@ async function run() {
                 article.remove();
                 const courierOrdersSection = document.querySelector('.ordersGlobal:nth-child(2)')
                 courierOrdersSection.appendChild(copyArticle)
+                addEventListenersPrevNext('E', id_order)
             })
         }
 
