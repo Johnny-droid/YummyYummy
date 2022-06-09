@@ -24,15 +24,38 @@
         $orders = Order::getClientOrders($db, $id_user); 
     } else if ($_SESSION['type'] === 'O') {
         $orders = Order::getOwnerOrders($db, $id_user);
-    } // we need to cover one more case for the courier
+    } else if ($_SESSION['type'] === 'E') {
+        $orders_free = Order::getCourierFreeOrders($db);
+        $orders = Order::getCourierOrders($db, $id_user);
+        $_SESSION['orders_free'] = $orders_free;
+    } else {
+        exit();
+    }
 
 
     $_SESSION['orders'] = $orders;
     
-    $orders_products = Product::getOrdersProducts($db, $orders); //order -> [(product, quantity), (product, quantity), ...]
-    $restaurants = Restaurant::getRestaurants($db);
+    if($orders) {
+        $orders_products = Product::getOrdersProducts($db, $orders); //order -> [(product, quantity), (product, quantity), ...]
+        $restaurants = Restaurant::getRestaurants($db);
+    }
+
+    if ($orders_free) {
+        $orders_products_free =  Product::getOrdersProducts($db, $orders_free);
+    }
+   
+    
     
     output_header(); 
-    output_orders($orders, $orders_products, $restaurants);
+    if ($_SESSION['type'] === 'E') { ?>
+        <div class="ordersGlobalCourier">
+        <?php output_orders_courier($orders_free, $orders_products_free, $restaurants);
+        output_orders($orders, $orders_products, $restaurants);?>
+        </div> 
+    <?php
+    } else {
+        output_orders($orders, $orders_products, $restaurants);
+    }
+    
     output_footer(); 
 ?>

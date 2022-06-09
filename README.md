@@ -82,13 +82,14 @@ fix sign up client/courier drop down
 editar perfil
 donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc
 Courier and Restaurant Owner can change status of deliveries
+Fazer css para os botões nas orders
 
 
 ## Extras: 
 Adicionar talvez mais coisas à base de dados
 Criar adicionar algo na página das orders quando n há nenhuma order
 Talvez encontrar maneira de colocar o footer sempre em baixo
-Fazer com que as coisas do restaurant fiquem centradas, nos donos de restaurante e couriers que não têm as orders de lado
+Fazer com que as coisas do restaurant fiquem centradas, nos donos de restaurante e couriers que não têm as orders de lado (acho que usar expand deve funcionar)
 
 
 ## DONE

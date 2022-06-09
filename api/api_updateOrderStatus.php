@@ -20,7 +20,7 @@
     $allStatus = ['RECEIVED', 'PREPARING', 'READY', 'DELIVERED'];
     $position = array_search($orderInfo->{'status'}, $allStatus);
 
-    /*
+    
     if (!$position) exit();
 
     if (($_SESSION['type'] === 'O') && ($position > 2)) {
@@ -30,8 +30,7 @@
     if (($_SESSION['type'] === 'E') && ($position < 2)) {
         exit();
     } 
-    */
-    //$isFavourite = User::existsFavourite($db, $favInfo->{'user'}, $favInfo->{'restaurant'}, $favInfo->{'change'});
+    
 
     Order::updateOrderStatus($db, intval($orderInfo->{'order'}), $orderInfo->{'status'});
     

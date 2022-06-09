@@ -86,6 +86,72 @@
         }
 
 
+        static function getCourierOrders(PDO $db, int $id_courier) : array {
+            $stmt = $db->prepare('
+                SELECT *
+                FROM Orders
+                Where id_courier = ?
+                Order by dateStart DESC;
+            ');
+
+            $stmt->execute(array($id_courier));
+
+            $orders = array();
+
+            while ($order = $stmt->fetch()) {
+                if ($order['dateEnd'] === '') {
+                    $orderDateEnd = null;
+                } else {
+                    $orderDateEnd = DateTime::createFromFormat('d/m/Y H:i:s', $order['dateEnd']);
+                }
+
+                $orders[intval($order['id_order'])] = new Order(
+                    intval($order['id_order']),
+                    $order['status'],
+                    DateTime::createFromFormat('d/m/Y H:i:s', $order['dateStart']),
+                    $orderDateEnd,
+                    intval($order['id_client'])
+                );
+            }
+
+            return $orders;
+        }
+
+
+
+        static function getCourierFreeOrders(PDO $db) : array {
+            $stmt = $db->prepare('
+                SELECT *
+                FROM Orders
+                Where id_courier is NULL
+                Order by dateStart DESC;
+            ');
+
+            $stmt->execute(array());
+
+            $orders = array();
+            
+
+            while ($order = $stmt->fetch()) {
+                if ($order['dateEnd'] === '') {
+                    $orderDateEnd = null;
+                } else {
+                    $orderDateEnd = DateTime::createFromFormat('d/m/Y H:i:s', $order['dateEnd']);
+                }
+
+                $orders[intval($order['id_order'])] = new Order(
+                    intval($order['id_order']),
+                    $order['status'],
+                    DateTime::createFromFormat('d/m/Y H:i:s', $order['dateStart']),
+                    $orderDateEnd,
+                    intval($order['id_client'])
+                );
+            }
+
+            return $orders;
+        }
+
+
         static function insertOrder(PDO $db, int $id_client, stdClass $products) : bool {
             $id_order = 0;
             try {
@@ -120,6 +186,14 @@
             $stmt1 = $db->prepare('update Orders set status = ?, dateEnd = ?  where id_order = ?; '); 
 
             $stmt1->execute(array($status, $date, $id_order)); 
+        }
+
+
+        static function updateOrderCourier(PDO $db, int $id_courier, int $id_order) {
+
+            $stmt1 = $db->prepare('update Orders set id_courier = ?  where id_order = ?; '); 
+
+            $stmt1->execute(array($id_courier, $id_order)); 
         }
 
 
