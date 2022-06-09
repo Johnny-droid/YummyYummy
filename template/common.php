@@ -29,7 +29,7 @@
         <script src="../javascript/changeOrderStatus.js" defer></script>
     </head>
 
-    <body>
+    <body class="body">
         <header>
             <nav class="dropdown">
                 <button onclick="showDropdownContent()" class="button" type="button">
