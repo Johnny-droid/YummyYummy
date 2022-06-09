@@ -9,13 +9,13 @@
         </div>
 
         <div class="profiling">
-
+            <!-- <span class="material-symbols-outlined">edit</span> -->
             <h1>@<?= $user->name ?></h1>
-            <div class="itemProfile">Age: <?= $user->age ?></div>
-            <div class="itemProfile">Address: <?= $user->address ?></div>
-            <div class="itemProfile">Phone Number: <?= $user->phoneNumber ?></div>
-            <div class="itemProfile">Email: <?= $user->email ?></div>
-            <div class="itemProfile">Bio: <?= $user->bio ?></div>
+            <div class="itemProfile"><div>Age: <?= $user->age ?></div><button id="age"><span class="material-symbols-outlined">edit</span></button></div>
+            <div class="itemProfile"><div>Address: <?= $user->address ?></div><button id="age"><span class="material-symbols-outlined">edit</span></button></div>
+            <div class="itemProfile"><div>Phone Number: <?= $user->phoneNumber ?></div><button id="age"><span class="material-symbols-outlined">edit</span></button></div>
+            <div class="itemProfile"><div>Email: <?= $user->email ?></div><button id="age"><span class="material-symbols-outlined">edit</span></button></div>
+            <div class="itemProfile"><div>Bio: <?= $user->bio ?></div><button id="age"><span class="material-symbols-outlined">edit</span></button></div>
             <div class="favourites">
                 <?php if ($restaurants) { ?>
                     <?php if ($user->type === 'C') { ?> 
