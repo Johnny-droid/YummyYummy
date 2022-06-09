@@ -21,10 +21,13 @@
     $id_user = intval($_SESSION['id']);
 
     if ($_SESSION['type'] === 'C') {
-        $orders = Order::getClientOrders($db, $id_client); 
+        $orders = Order::getClientOrders($db, $id_user); 
     } else if ($_SESSION['type'] === 'O') {
         $orders = Order::getOwnerOrders($db, $id_user);
     } // we need to cover one more case for the courier
+
+
+    $_SESSION['orders'] = $orders;
     
     $orders_products = Product::getOrdersProducts($db, $orders); //order -> [(product, quantity), (product, quantity), ...]
     $restaurants = Restaurant::getRestaurants($db);

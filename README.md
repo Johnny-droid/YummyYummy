@@ -75,6 +75,7 @@ Keep in mind that some extra changes might be made in order to add functionaliti
 # Details we still need to do:
 
 hash passwords/ filter / encode
+Talvez quando damos search no index, podemos procurar não só pelo nome, como também pela categoria, e etc em vez de adicionar os filtros, mas temos de mostrar mais info sobre o restaurante;
 editar perfil
 donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc
 Courier and Restaurant Owner can change status of deliveries
