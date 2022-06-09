@@ -39,10 +39,25 @@ async function updateColors() {
 }
 
 
+async function saveStatus(id_order, statusText) {
+    let orderInfo = {
+        order: id_order,
+        status: statusText
+    } 
+    console.log(orderInfo)
+    let orderInfo_json = 'orderInfo_json=' + (JSON.stringify(orderInfo));
+
+    request= new XMLHttpRequest()
+    request.open("POST", "../api/api_updateOrderStatus.php", true)
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+    request.send(orderInfo_json);
+}
+
+
 async function run() {
     const allStatus = ['RECEIVED', 'PREPARING', 'READY', 'DELIVERED'];
     const session = await getSession();
-    console.log(session);
+
     if (!session['id'] || !session['orders'] || (session['type'] === 'C')) return;
 
     for (id_order in session['orders']) {
@@ -55,15 +70,15 @@ async function run() {
                     let string = nextButton.getAttribute('id');
                     let id_order = string.replace(/^\D+/g, '');
                     const orderStatusDisplayed = document.querySelector('#orderStatus' + id_order); 
-                    const saveButton = document.querySelector('#buttonSaveOrder' + id_order);
-                    let position = allStatus.indexOf(saveButton.getAttribute('value'));
+                    const status = orderStatusDisplayed.textContent.trim()
+                    let position = allStatus.indexOf(status);
 
                     if (position <= 0) return;
                     position--;
 
-                    saveButton.setAttribute('value', allStatus[position]);
                     orderStatusDisplayed.textContent = allStatus[position];
                     updateColors();
+                    saveStatus(parseInt(id_order), allStatus[position]);
                 })
             }
 
@@ -72,16 +87,15 @@ async function run() {
                     let string = nextButton.getAttribute('id');
                     let id_order = string.replace(/^\D+/g, '');
                     const orderStatusDisplayed = document.querySelector('#orderStatus' + id_order); 
-                    const saveButton = document.querySelector('#buttonSaveOrder' + id_order);
-                    let position = allStatus.indexOf(saveButton.getAttribute('value'));
+                    const status = orderStatusDisplayed.textContent.trim()
+                    let position = allStatus.indexOf(status);
                     
-
                     if (position >= 2) return;
                     position++;
 
-                    saveButton.setAttribute('value', allStatus[position]);
                     orderStatusDisplayed.textContent = allStatus[position];
                     updateColors();
+                    saveStatus(parseInt(id_order), allStatus[position]);
                 })
             }
 
@@ -93,15 +107,15 @@ async function run() {
                     let string = nextButton.getAttribute('id');
                     let id_order = string.replace(/^\D+/g, '');
                     const orderStatusDisplayed = document.querySelector('#orderStatus' + id_order); 
-                    const saveButton = document.querySelector('#buttonSaveOrder' + id_order);
-                    let position = allStatus.indexOf(saveButton.getAttribute('value'));
+                    const status = orderStatusDisplayed.textContent.trim()
+                    let position = allStatus.indexOf(status);
 
                     if (position <= 2) return;
                     position--;
 
-                    saveButton.setAttribute('value', allStatus[position]);
                     orderStatusDisplayed.textContent = allStatus[position];
                     updateColors();
+                    saveStatus(parseInt(id_order), allStatus[position]);
                 })
             }
 
@@ -110,19 +124,21 @@ async function run() {
                     let string = nextButton.getAttribute('id');
                     let id_order = string.replace(/^\D+/g, '');
                     const orderStatusDisplayed = document.querySelector('#orderStatus' + id_order); 
-                    const saveButton = document.querySelector('#buttonSaveOrder' + id_order);
-                    let position = allStatus.indexOf(saveButton.getAttribute('value'));
+                    const status = orderStatusDisplayed.textContent.trim()
+                    let position = allStatus.indexOf(status);
                     
-
                     if (position >= 3) return;
                     position++;
 
-                    saveButton.setAttribute('value', allStatus[position]);
                     orderStatusDisplayed.textContent = allStatus[position];
                     updateColors();
+                    saveStatus(parseInt(id_order), allStatus[position]);
                 })
             }
         }
+
+
+
     }
 }
 

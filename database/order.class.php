@@ -108,7 +108,23 @@
         }
 
 
+        static function updateOrderStatus(PDO $db, int $id_order, string $status) {
+
+            if ($status === 'DELIVERED') {
+                $date =  date('d/m/Y H:i:s');
+            } else {
+                $date = '';
+            }
+
+
+            $stmt1 = $db->prepare('update Orders set status = ?, dateEnd = ?  where id_order = ?; '); 
+
+            $stmt1->execute(array($status, $date, $id_order)); 
+        }
+
+
     }
+
 
 
 

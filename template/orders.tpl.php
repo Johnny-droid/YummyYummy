@@ -22,7 +22,6 @@
                 <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'O') { ?>
                     <div class="orderButtons">
                         <button id="buttonPrevious<?= $id_order ?>">PREVIOUS</button> <!-- add some css class to these buttons -->
-                        <button id="buttonSaveOrder<?= $id_order ?>" value="<?=  $orders[$id_order]->status ?>">SAVE</button>
                         <button id="buttonNext<?= $id_order ?>">NEXT</button>
                     </div>
                 <?php } ?>

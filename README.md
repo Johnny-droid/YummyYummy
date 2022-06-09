@@ -76,6 +76,9 @@ Keep in mind that some extra changes might be made in order to add functionaliti
 
 hash passwords/ filter / encode
 Talvez quando damos search no index, podemos procurar não só pelo nome, como também pela categoria, e etc em vez de adicionar os filtros, mas temos de mostrar mais info sobre o restaurante;
+clean up the code from colorOrders
+logout doesn't go to sign up
+fix sign up client/courier drop down
 editar perfil
 donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc
 Courier and Restaurant Owner can change status of deliveries
