@@ -16,6 +16,7 @@
         <link href="../css/layoutProfile.css" rel="stylesheet">
         <link href="../css/styleProfile.css" rel="stylesheet">
         <link rel="icon" href="../images/Logo/YummyLogoTransparentBg.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <script src="../javascript/searchRestaurant.js" defer></script>
         <script src="../javascript/makeOrder.js" defer></script>
         <script src="../javascript/toggleDisplayButton.js" defer></script>
@@ -25,6 +26,7 @@
         <script src="../javascript/dropdownHeader.js" defer></script>
         <script src="../javascript/favouriteButton.js" defer></script>
         <script src="../javascript/colorsRestaurantRating.js" defer></script>
+        <script src="../javascript/changeOrderStatus.js" defer></script>
     </head>
 
     <body>

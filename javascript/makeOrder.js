@@ -86,6 +86,7 @@ async function redrawOrders(id_product) {
 async function drawOrders() {
     products = await getSessionProducts()
     if (!aside) return
+    if (!products) return;
     keys = Object.keys(products)
     keys.forEach( (id_product) => {
         if (products[id_product] != 0) {

@@ -15,6 +15,7 @@
     $_SESSION['id'] = $user->id;
     $_SESSION['username'] = $user->name;
     $_SESSION['type'] = $user->type;
+    $_SESSION['products'] = new stdClass();
   } 
 
   if ($user->type === 'O') {

@@ -11,7 +11,7 @@
     $price = intval($_POST['price']);
     $comment = $_POST['comment'];
 
-    if (!isset($_SESSION['id']) && !isset($_SESSION['id_restaurant']) && $_SESSION['type'] !== 'C') {
+    if (!isset($_SESSION['id']) || !isset($_SESSION['id_restaurant']) || $_SESSION['type'] !== 'C') {
         $url = parse_url($_SERVER['HTTP_REFERER']);
         parse_str($url['query'], $query);
         header('Location: ../pages/restaurant.php?id=' . $query['id'] . '&error_review=1'); //add error

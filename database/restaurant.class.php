@@ -102,7 +102,7 @@
         static function getClientFavouriteRestaurants(PDO $db, int $id_user) : array {
  
             $stmt = $db->prepare('select distinct *
-                                from Favourite, Restaurant
+                                from Favourite JOIN Restaurant using(id_restaurant)
                                 where id_user = ?; '); 
 
             $stmt->execute(array($id_user)); 
@@ -132,8 +132,6 @@
 
             $stmt->execute(array($id_owner)); 
             
-            $restaurants = array();
-
             while ($restaurant = $stmt->fetch()) {
                 $restaurants[] = new Restaurant(
                     intval($restaurant['id_restaurant']),
@@ -143,7 +141,7 @@
                     DateTime::createFromFormat('H:i', $restaurant['openingTime']),
                     DateTime::createFromFormat('H:i', $restaurant['closingTime']),
                     intval($restaurant['owner'])
-                    );
+                );
             }
 
             return $restaurants;

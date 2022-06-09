@@ -16,11 +16,16 @@
     $db = getDatabaseConnection();
     $id_restaurant = intval($_GET['id']);
     
-    if (isset($_SESSION['id']) && $_SESSION['id_restaurant'] !== $id_restaurant) {
+    if (isset($_SESSION['id']) && (!isset($_SESSION['id_restaurant']) || ($_SESSION['id_restaurant'] !== $id_restaurant))) {
         $_SESSION['products'] = new stdClass();
     }
+
+    if (isset($_SESSION['id'])) {
+        $_SESSION['id_restaurant'] = $id_restaurant;
+    }
     
-    $_SESSION['id_restaurant'] = $id_restaurant;
+    
+
 
     $alreadyHasReview = true;
     if (isset($_SESSION['id']) && $_SESSION['type'] === 'C') {

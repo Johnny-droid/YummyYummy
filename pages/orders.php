@@ -13,18 +13,49 @@
 
     $db = getDatabaseConnection();
 
-    $id_client = intval($_SESSION['id']);
+    if (!isset($_SESSION['id'])) {
+        header('Location: ../pages/signup.php?error=4');
+        exit();
+    }
+    
+    $id_user = intval($_SESSION['id']);
 
-    $orders = Order::getClientOrders($db, $id_client);
-    //order -> [(product, quantity), ...]
-    $orders_products = Product::getOrdersProducts($db, $orders);
-    $restaurants = Restaurant::getRestaurants($db);
+    if ($_SESSION['type'] === 'C') {
+        $orders = Order::getClientOrders($db, $id_user); 
+    } else if ($_SESSION['type'] === 'O') {
+        $orders = Order::getOwnerOrders($db, $id_user);
+    } else if ($_SESSION['type'] === 'E') {
+        $orders_free = Order::getCourierFreeOrders($db);
+        $orders = Order::getCourierOrders($db, $id_user);
+        $_SESSION['orders_free'] = $orders_free;
+    } else {
+        exit();
+    }
+
+
+    $_SESSION['orders'] = $orders;
+    
+    if($orders) {
+        $orders_products = Product::getOrdersProducts($db, $orders); //order -> [(product, quantity), (product, quantity), ...]
+        $restaurants = Restaurant::getRestaurants($db);
+    }
+
+    if ($orders_free) {
+        $orders_products_free =  Product::getOrdersProducts($db, $orders_free);
+    }
+   
+    
     
     output_header(); 
-    if($id_client) {
-        output_orders($orders, $orders_products, $restaurants);
+    if ($_SESSION['type'] === 'E') { ?>
+        <div class="ordersGlobalCourier">
+        <?php output_orders_courier($orders_free, $orders_products_free, $restaurants);
+        output_orders($orders, $orders_products, $restaurants);?>
+        </div> 
+    <?php
     } else {
-        header('Location: ../pages/signup.php?error=4');
+        output_orders($orders, $orders_products, $restaurants);
     }
+    
     output_footer(); 
 ?>
