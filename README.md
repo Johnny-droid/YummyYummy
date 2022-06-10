@@ -82,7 +82,7 @@ editar perfil
 donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc
 Courier and Restaurant Owner can change status of deliveries
 Fazer css para os botões nas orders
-
+Fazer a avaliação enviada pelo prof!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ## Extras: 
 Adicionar talvez mais coisas à base de dados
