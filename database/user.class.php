@@ -139,7 +139,45 @@
             return 'Age: ' . $age;
         }
 
-        
+        static function updateAddress(PDO $db, int $id_user, int $address) : string {
+
+            //try catch here return new or previous value
+            $stmt1 = $db->prepare('update User set address = ?  where id_user = ?; '); 
+
+            $stmt1->execute(array($address, $id_user)); 
+
+            return 'Address: ' . $address;
+        }
+
+        static function updatePhoneNumber(PDO $db, int $id_user, int $phone) : string {
+
+            //try catch here return new or previous value
+            $stmt1 = $db->prepare('update User set phone_number = ?  where id_user = ?; '); 
+
+            $stmt1->execute(array($phone, $id_user)); 
+
+            return 'Phone Number: ' . $phone;
+        }
+
+        static function updateEmail(PDO $db, int $id_user, int $email) : string {
+
+            //try catch here return new or previous value
+            $stmt1 = $db->prepare('update User set email = ?  where id_user = ?; '); 
+
+            $stmt1->execute(array($email, $id_user)); 
+
+            return 'Email: ' . $email;
+        }
+
+        static function updateBio(PDO $db, int $id_user, int $bio) : string {
+
+            //try catch here return new or previous value
+            $stmt1 = $db->prepare('update User set bio = ?  where id_user = ?; '); 
+
+            $stmt1->execute(array($bio, $id_user)); 
+
+            return 'Bio: ' . $bio;
+        }
 
 
 
