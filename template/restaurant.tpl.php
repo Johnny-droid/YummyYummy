@@ -50,7 +50,7 @@
                                 <?php } ?>
 
                                 <?php 
-                                    if(isset($_SESSION['id']) && $_SESSION['type'] === 'O') {
+                                    if(isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) {
                                 ?>
                                     <button class="itemRestaurantButtonDelete" value="<?= $product->id ?>"><span class="delete">🗑️</span></button>
                                 <?php } ?>
@@ -59,12 +59,12 @@
                             <li class="product">
                                 <?= $product->name . ' ' . $product->price * (1 - ($product->discount/100)) ?>€ <br>
                                 Discount: <?= $product->discount ?>% &nbsp&nbsp Old price: <?= $product->price ?>€
-                                <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C') { ?>
+                                <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C' && ($_SESSION['id'] === $restaurant->owner)) { ?>
                                     <button class="productOrderAddButton" value="<?= $product->id ?>"> + </button>
                                 <?php } ?>
 
                                 <?php 
-                                    if(isset($_SESSION['id']) && $_SESSION['type'] === 'O') {
+                                    if(isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) {
                                 ?>
                                     <button class="itemRestaurantButtonDelete" value="<?= $product->id ?>"><span class="delete">🗑️</span></button>
                                 <?php } ?>
@@ -72,9 +72,17 @@
                             </li>
                         <?php } ?>
                         
-
-
-                    <?php } ?>   
+                    <?php } ?>  
+                    
+                    <?php if (isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) { ?>
+                            <button id="buttonAddItem<?= $restaurant->id ?>" class="addItemButton" onclick="toggleDisplayButton('buttonAddItem<?= $restaurant->id ?>', 'addItemForm<?= $restaurant->id ?>', 'Add to Menu', 'Hide')">Add to Menu</button>
+                            <form method="POST" id="addItemForm<?= $restaurant->id ?>" class="addItemForm" action="../action/action_add_item_menu.php">
+                                <input class="itemName" type="text" name="itemName" placeholder="Item name">
+                                <input class="itemPrice" type="number" min="0" step="0.01" name="itemPrice" placeholder="Item price">
+                                <input style="display: none;" type="number" name="id_restaurant" value="<?= $restaurant->id ?>">
+                                <button type="submit">Submit</button>
+                            </form>
+                        <?php } ?>
                 </ul>
                 
             </div>
