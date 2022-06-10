@@ -124,6 +124,25 @@
             return !$exists;
         }
 
+
+
+
+        //write the update functions here
+
+        static function updateAge(PDO $db, int $id_user, int $age) : string {
+
+            //try catch here return new or previous value
+            $stmt1 = $db->prepare('update User set age = ?  where id_user = ?; '); 
+
+            $stmt1->execute(array($age, $id_user)); 
+
+            return 'Age: ' . $age;
+        }
+
+
+
+
+
     }
 ?>
 

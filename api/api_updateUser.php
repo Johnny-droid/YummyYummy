@@ -4,7 +4,7 @@
     session_start();
     
     require_once(__DIR__ .'/../database/connection.db.php');
-    require_once(__DIR__ .'/../database/order.class.php');
+    require_once(__DIR__ .'/../database/user.class.php');
     
 
     $db = getDatabaseConnection();
@@ -19,7 +19,7 @@
 
     switch ($info->{'param'}) {
         case 'age':
-            # code...
+            $newString = User::updateAge($db, $_SESSION['id'], intval($info->{'value'}));
             break;
         case 'address':
             # code...
@@ -28,7 +28,6 @@
             break;
     }
     
-
-    //Order::updateOrderStatus($db, intval($orderInfo->{'order'}), $orderInfo->{'status'});
+    echo json_encode($newString);
     
 ?>

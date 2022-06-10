@@ -12,7 +12,7 @@ async function getSession() {
 function getEditElement(parameter) {
     return `
     <div id="${parameter}Div2" class="itemProfile2">
-        <input type="text" placeholder="...">
+        <input id="${parameter}Value" type="text" placeholder="...">
         <button class="itemProfileButtonCheck" id="${parameter}Check">&#10003</button>
         <button class="itemProfileButtonCross" id="${parameter}Cross">&#10007</button>
     </div>
@@ -20,6 +20,7 @@ function getEditElement(parameter) {
 }
 
 function saveChange(parameter, newValue) {
+
     let info = {
         param: parameter,
         value: newValue
@@ -29,10 +30,21 @@ function saveChange(parameter, newValue) {
 
     request= new XMLHttpRequest()
     request.addEventListener("load", function () {
-        //let exists = JSON.parse(this.responseText)
-        //updateButtonText(exists);
+        
+        const response = JSON.parse(this.responseText)
+
+        const selfDiv = document.querySelector('#' + parameter + 'Div2');
+        selfDiv.classList.replace('itemProfile1', 'itemProfile2');
+
+        const displayDiv = document.querySelector('#' + parameter + 'Div1');
+        displayDiv.classList.replace('itemProfile2', 'itemProfile1');
+
+        const valueDiv = displayDiv.querySelector('div:first-child');
+        console.log(response);
+        valueDiv.innerHTML = response;
+
     })
-    request.open("POST", "../api/api_update.php", true)
+    request.open("POST", "../api/api_updateUser.php", true)
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     request.send(info_json);
 
@@ -71,6 +83,7 @@ async function run() {
         })
     })
 
+    // Cross
     const crossButtons = document.querySelectorAll('.itemProfileButtonCross');
     if (!crossButtons) return;
     
@@ -84,8 +97,19 @@ async function run() {
             const displayDiv = document.querySelector('#' + parameter + 'Div1');
             displayDiv.classList.replace('itemProfile2', 'itemProfile1');
         })
+    })
 
+    // Check
+    const checkButtons = document.querySelectorAll('.itemProfileButtonCheck');
+    if (!checkButtons) return;
 
+    checkButtons.forEach(function (checkButton) {
+        checkButton.addEventListener('click', function () {
+            const parameter = checkButton.getAttribute('id').replace('Check', '');
+            const input = document.querySelector('#' + parameter + 'Value');
+            const value = input.value;
+            const response = saveChange(parameter, value);
+        })
     })
 
 }
