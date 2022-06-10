@@ -40,12 +40,19 @@
             <div class="menu">
                 <h2>Menu</h2>
                 <ul>
+
                     <?php foreach ($products as $product) { ?>
                         <?php if ($product->discount === 0) { ?>
                             <li class="product">
                                 <?= $product->name . ' ' . $product->price ?>€
                                 <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C') { ?>
                                     <button class="productOrderAddButton" value="<?= $product->id ?>"> + </button>
+                                <?php } ?>
+
+                                <?php 
+                                    if(isset($_SESSION['id']) && $_SESSION['type'] === 'O') {
+                                ?>
+                                    <button class="itemRestaurantButtonDelete" value="<?= $product->id ?>"><span class="delete">🗑️</span></button>
                                 <?php } ?>
                             </li>
                         <?php } else { ?>
@@ -55,10 +62,18 @@
                                 <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C') { ?>
                                     <button class="productOrderAddButton" value="<?= $product->id ?>"> + </button>
                                 <?php } ?>
+
+                                <?php 
+                                    if(isset($_SESSION['id']) && $_SESSION['type'] === 'O') {
+                                ?>
+                                    <button class="itemRestaurantButtonDelete" value="<?= $product->id ?>"><span class="delete">🗑️</span></button>
+                                <?php } ?>
+
                             </li>
                         <?php } ?>
                         
-                        
+
+
                     <?php } ?>   
                 </ul>
                 
