@@ -21,9 +21,20 @@
         case 'age':
             $newString = User::updateAge($db, $_SESSION['id'], intval($info->{'value'}));
             break;
+
         case 'address':
-            # code...
+            
             break;
+
+        case 'phoneNumber': 
+            break; 
+
+        case 'email':
+            break; 
+
+        case 'bio': 
+            break; 
+
         default:
             break;
     }
