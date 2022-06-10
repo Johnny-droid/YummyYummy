@@ -139,7 +139,7 @@
             return 'Age: ' . $age;
         }
 
-        static function updateAddress(PDO $db, int $id_user, int $address) : string {
+        static function updateAddress(PDO $db, int $id_user, string $address) : string {
 
             //try catch here return new or previous value
             $stmt1 = $db->prepare('update User set address = ?  where id_user = ?; '); 
@@ -159,7 +159,7 @@
             return 'Phone Number: ' . $phone;
         }
 
-        static function updateEmail(PDO $db, int $id_user, int $email) : string {
+        static function updateEmail(PDO $db, int $id_user, string $email) : string {
 
             //try catch here return new or previous value
             $stmt1 = $db->prepare('update User set email = ?  where id_user = ?; '); 
@@ -169,7 +169,7 @@
             return 'Email: ' . $email;
         }
 
-        static function updateBio(PDO $db, int $id_user, int $bio) : string {
+        static function updateBio(PDO $db, int $id_user, string $bio) : string {
 
             //try catch here return new or previous value
             $stmt1 = $db->prepare('update User set bio = ?  where id_user = ?; '); 

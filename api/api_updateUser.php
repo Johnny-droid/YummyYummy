@@ -23,16 +23,19 @@
             break;
 
         case 'address':
-            
+            $newString = User::updateAddress($db, $_SESSION['id'], $info->{'value'});
             break;
 
-        case 'phoneNumber': 
+        case 'phoneNumber':
+            $newString = User::updatePhoneNumber($db, $_SESSION['id'], intval($info->{'value'})); 
             break; 
 
         case 'email':
+            $newString = User::updateEmail($db, $_SESSION['id'], $info->{'value'});
             break; 
 
         case 'bio': 
+            $newString = User::updateBio($db, $_SESSION['id'], $info->{'value'});
             break; 
 
         default:

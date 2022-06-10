@@ -40,7 +40,6 @@ function saveChange(parameter, newValue) {
         displayDiv.classList.replace('itemProfile2', 'itemProfile1');
 
         const valueDiv = displayDiv.querySelector('div:first-child');
-        console.log(response);
         valueDiv.innerHTML = response;
 
     })
