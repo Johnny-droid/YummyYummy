@@ -64,8 +64,6 @@
         }
 
 
-
-
         static function getOrdersProducts(PDO $db, array $orders) : array {
             $ordersProducts = array();
             
@@ -97,6 +95,7 @@
             return $ordersProducts;
         }
 
+
         static function getTotalPriceProducts(array $products) : float {
             $sum = 0;
             foreach ($products as $product) {
@@ -105,6 +104,24 @@
             return round($sum, 2, PHP_ROUND_HALF_UP);
         }
 
+
+        static function addItem(PDO $db, string $name, float $price, int $id_restaurant) : bool {
+
+            $stmt = $db->prepare('insert into Product (name, price, id_restaurant) 
+                    values (?, ?, ?); '); 
+
+            $stmt->execute(array($name, $price, $id_restaurant)); 
+
+            return true; 
+        }
+
+        static function deleteItem(PDO $db, int $id_product) : bool {
+            $stmt = $db->prepare('delete from Product where id_product = ?; '); 
+
+            $stmt->execute(array($id_product)); 
+
+            return true; 
+        } 
 
     }
 

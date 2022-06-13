@@ -28,6 +28,8 @@
         <script src="../javascript/colorsRestaurantRating.js" defer></script>
         <script src="../javascript/changeOrderStatus.js" defer></script>
         <script src="../javascript/editProfile.js" defer></script>
+        <script src="../javascript/removeProduct.js" defer></script>
+        
     </head>
 
     <body class="body">
