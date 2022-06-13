@@ -43,7 +43,7 @@
 
                     <?php foreach ($products as $product) { ?>
                         <?php if ($product->discount === 0) { ?>
-                            <li class="product">
+                            <li class="product" id="productItem<?= $product->id ?>">
                                 <?= $product->name . ' ' . $product->price ?>€
                                 <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C') { ?>
                                     <button class="productOrderAddButton" value="<?= $product->id ?>"> + </button>
@@ -56,7 +56,7 @@
                                 <?php } ?>
                             </li>
                         <?php } else { ?>
-                            <li class="product">
+                            <li class="product" id="productItem<?= $product->id ?>">
                                 <?= $product->name . ' ' . $product->price * (1 - ($product->discount/100)) ?>€ <br>
                                 Discount: <?= $product->discount ?>% &nbsp&nbsp Old price: <?= $product->price ?>€
                                 <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C' && ($_SESSION['id'] === $restaurant->owner)) { ?>
