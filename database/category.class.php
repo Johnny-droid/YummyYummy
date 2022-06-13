@@ -33,7 +33,25 @@
         }
 
 
+        static function getCategory(PDO $db, int $id_category) {
+            $stmt = $db->prepare('
+                SELECT *
+                FROM Category
+                Where id_category = ?
+            ');
+
+            $stmt->execute(array($id_category));
+
+            $category = $stmt->fetch();
+
+            return new Category(
+                intval($category['id_category']),
+                $category['name']
+            );
+
+        }
         
+
         static function getRestaurantCategories(PDO $db, int $id_restaurant) : array {
             $stmt = $db->prepare('
                 SELECT id_category, name
@@ -55,7 +73,7 @@
             return $categories;
         }
 
-
+        
 
     }
 

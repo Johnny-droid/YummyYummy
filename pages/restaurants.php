@@ -8,12 +8,19 @@
 
     require_once(__DIR__ . '/../database/connection.db.php');
     require_once(__DIR__ . '/../database/restaurant.class.php');
+    require_once(__DIR__ . '/../database/category.class.php');
 
     $db = getDatabaseConnection();
 
-    $restaurants = Restaurant::getRestaurants($db);
+    if (isset($_GET['category'])) {
+        $restaurants = Restaurant::getRestaurantsOfCategory($db, intval($_GET['category']));
+        $category = Category::getCategory($db, intval($_GET['category']));
+    } else {
+        $restaurants = Restaurant::getRestaurants($db);
+        $category = NULL;
+    }
 
     output_header(); 
-    output_restaurants($restaurants);
+    output_restaurants($restaurants, $category);
     output_footer();
 ?>
