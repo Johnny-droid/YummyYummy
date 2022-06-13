@@ -74,7 +74,7 @@
     margin-left: 1.5em;
 }
 
-#buttonMakeReview, .makeReplyButton {
+#buttonMakeReview, .makeReplyButton, .addItemButton {
     margin: 1em;
     padding: 1em;
     border-radius: 50px;
@@ -83,7 +83,7 @@
     font-weight: 700;
 }
 
-#buttonMakeReview:hover, .makeReplyButton:hover {
+#buttonMakeReview:hover, .makeReplyButton:hover, .addItemButton:hover {
     background-color: rgb(255, 255, 100);
     transform: scale(1.05) perspective(1px);
     transition: all 0.3s ease;

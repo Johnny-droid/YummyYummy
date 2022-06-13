@@ -100,13 +100,13 @@
     font-weight: bold;
 }
 
-.reviewReply {
+.reviewReply, .additing {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.makeReview form, .review form {
+.makeReview form, .review form , .additing form { 
     display: none;
     flex-direction: column;
     align-items: center;

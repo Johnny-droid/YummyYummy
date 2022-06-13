@@ -74,13 +74,9 @@ Keep in mind that some extra changes might be made in order to add functionaliti
 
 # Details we still need to do:
 
-hash passwords/ filter / encode
-Talvez quando damos search no index, podemos procurar não só pelo nome, como também pela categoria, e etc em vez de adicionar os filtros, mas temos de mostrar mais info sobre o restaurante;
+filter / encode
 clean up the code from colorOrders
-logout doesn't go to sign up
-editar perfil
-donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc
-Courier and Restaurant Owner can change status of deliveries
+donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc (discount missing)
 Fazer css para os botões nas orders
 Fazer a avaliação enviada pelo prof!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -100,3 +96,8 @@ DONE - Add option to add restaurant to favourites list
 DONE - Sort orders according to date
 DONE - Talvez encontrar maneira de colocar o footer sempre em baixo
 DONE - fix sign up client/courier drop down
+DONE - hash passwords
+DONE - Talvez quando damos search no index, podemos procurar não só pelo nome, como também pela categoria;
+DONE - logout doesn't go to sign up
+DONE - editar perfil
+DONE - Courier and Restaurant Owner can change status of deliveries

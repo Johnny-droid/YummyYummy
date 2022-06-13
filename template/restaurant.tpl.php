@@ -75,6 +75,7 @@
                     <?php } ?>  
                     
                     <?php if (isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) { ?>
+                        <div class="additing">
                             <button id="buttonAddItem<?= $restaurant->id ?>" class="addItemButton" onclick="toggleDisplayButton('buttonAddItem<?= $restaurant->id ?>', 'addItemForm<?= $restaurant->id ?>', 'Add to Menu', 'Hide')">Add to Menu</button>
                             <form method="POST" id="addItemForm<?= $restaurant->id ?>" class="addItemForm" action="../action/action_add_item_menu.php">
                                 <input class="itemName" type="text" name="itemName" placeholder="Item name">
@@ -83,6 +84,7 @@
                                 <button type="submit">Submit</button>
                             </form>
                         <?php } ?>
+                        </div>
                 </ul>
                 
             </div>
