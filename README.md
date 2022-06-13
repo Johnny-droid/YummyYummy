@@ -77,14 +77,13 @@ Keep in mind that some extra changes might be made in order to add functionaliti
 filter / encode
 clean up the code from colorOrders
 donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc (discount missing)
-Fazer css para os botões nas orders
 Fazer a avaliação enviada pelo prof!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ## Extras: 
 Adicionar talvez mais coisas à base de dados
 Criar adicionar algo na página das orders quando n há nenhuma order
 Fazer com que as coisas do restaurant fiquem centradas, nos donos de restaurante e couriers que não têm as orders de lado (acho que usar expand deve funcionar)
-
+Tratar de guardar a imagem de perfil na base de dados
 
 ## DONE
 DONE - Restaurant Owners can reply to customers
@@ -101,3 +100,4 @@ DONE - Talvez quando damos search no index, podemos procurar não só pelo nome,
 DONE - logout doesn't go to sign up
 DONE - editar perfil
 DONE - Courier and Restaurant Owner can change status of deliveries
+DONE - Fazer css para os botões nas orders
