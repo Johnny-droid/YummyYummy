@@ -25,3 +25,7 @@ body {
     border-top-right-radius: 20px;
 }
 
+.category a {
+    text-decoration: none;
+    color: black;
+}
