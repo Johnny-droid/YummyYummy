@@ -16,8 +16,10 @@
         <?php foreach($categories as $category) { ?>
             
             <article class="category">
-                <img src="../images/Categories/Animated<?= str_replace(' ', '', $category->name)?>.jpg">
-                <h3><?= $category->name ?></h3>
+                <a href="pages/restaurants.php?category=<?= $category->id ?>">
+                    <img src="../images/Categories/Animated<?= str_replace(' ', '', $category->name)?>.jpg">
+                    <h3><?= $category->name ?></h3>
+                </a>
             </article>
 
         <?php } ?>

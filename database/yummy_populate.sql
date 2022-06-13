@@ -1,34 +1,34 @@
 PRAGMA foreign_keys = on; 
 
 --Restaurant owner
-insert into User values(1, 'rubenarruada', 'abba', 'Rua das Camélias', 932471824, 'rubenarruada@gmail.com', 43, 'I am good at what I make. Surf is my passion :)', 'O');
-insert into User values(2, 'anamarota', 'abba', 'Rua das Passagens', 932471824, 'anamarota@gmail.com', 24, 'Live your best life xoxo', 'O');
-insert into User values(3, 'ritaferro', 'abba', 'Rua das Graves', 924854125, 'ritaferro@outlook.com', 32, 'What is life without dogs? Just think', 'O');
-insert into User values(4, 'zedopipo', 'abba', 'Rua dos Bispos', 921451218, 'zedopipo@gmail.com', 54, 'Adoro ir a tascas e comer muitas tapas! A vida é boa...', 'O');
-insert into User values(5, 'andreferreira', 'abba', 'Rua das Freiras', 932458212, 'andreferreira@outlook.com', 30, 'Vendo o mar...', 'O');
-insert into User values(6, 'joaodireito', 'abba', 'Avenida do Bairro', 912457821, 'joaodireito@office.com', 53, 'Adoro comer chinês e às vezes um indiano!', 'O');
-insert into User values(7, 'marianacustodio', 'abba', 'Rua do Padrasto', 924785694, 'marianacustodio@yahoo.com', 47, 'Uma boa companhia é sempre apreciável!', 'O');
-insert into User values(8, 'luisrebento', 'abba', 'Avenida Lisboa', 919123564, 'luisrebento@gmail.com', 22, 'Não há nada que eu aprecie mais nesta vida que futebol. Adoro os meus gatos.', 'O');
+insert into User values(1, 'rubenarruada', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua das Camélias', 932471824, 'rubenarruada@gmail.com', 43, 'I am good at what I make. Surf is my passion :)', 'O');
+insert into User values(2, 'anamarota', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua das Passagens', 932471824, 'anamarota@gmail.com', 24, 'Live your best life xoxo', 'O');
+insert into User values(3, 'ritaferro', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua das Graves', 924854125, 'ritaferro@outlook.com', 32, 'What is life without dogs? Just think', 'O');
+insert into User values(4, 'zedopipo', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua dos Bispos', 921451218, 'zedopipo@gmail.com', 54, 'Adoro ir a tascas e comer muitas tapas! A vida é boa...', 'O');
+insert into User values(5, 'andreferreira', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua das Freiras', 932458212, 'andreferreira@outlook.com', 30, 'Vendo o mar...', 'O');
+insert into User values(6, 'joaodireito', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Avenida do Bairro', 912457821, 'joaodireito@office.com', 53, 'Adoro comer chinês e às vezes um indiano!', 'O');
+insert into User values(7, 'marianacustodio', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua do Padrasto', 924785694, 'marianacustodio@yahoo.com', 47, 'Uma boa companhia é sempre apreciável!', 'O');
+insert into User values(8, 'luisrebento', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Avenida Lisboa', 919123564, 'luisrebento@gmail.com', 22, 'Não há nada que eu aprecie mais nesta vida que futebol. Adoro os meus gatos.', 'O');
 
 --Client
-insert into User values(9, 'andresantos', 'abba', 'Rua de Camões', 963145278, 'andresantos@gmail.com', 20, 'Adoro carros, mas melhor que carros só comida!', 'C'); 
-insert into User values(10, 'cellopedro', 'abba', 'Rua de Sagres', 963145278, 'cellopedro@outlook.com', 40, 'Basket deveria ser mais que um desporto! Viva à Fast Food', 'C');
-insert into User values(11, 'ruiramiro', 'abba', 'Rua de Serpentes', 963145278, 'ruiramiro@gmail.com', 64, 'Gosto de um bom passeio na paraia. Nada como um bom Marisco', 'C');
-insert into User values(12, 'ruisantos', 'abba', 'Rua de Portugal', 963145278, 'ruisantos@poutlook.com', 43, 'Gosto de ver TV e socializar com a minha sogra', 'C');
-insert into User values(13, 'patriciavieira', 'abba', 'Rua do Porto', 963145278, 'patriciavieira@outlook.com', 37, 'Always strive for more, life is crazy', 'C');
-insert into User values(14, 'rosamarques', 'abba', 'Rua de Lisboa', 963145278, 'rosamarques@gmail.com', 43, 'Life is too short not to learn about Chemistry', 'C');
-insert into User values(15, 'miguelarruada', 'abba', 'Rua de Trancos', 963145278, 'miguelarruada@gmail.com', 29, 'Vivo a vida à Tom Sawyer e mais não é preciso dizer! ;)', 'C');
-insert into User values(16, 'chamicosantos', 'abba', 'Rua do Camilo', 963145278, 'chamicosantos@finance.com', 34, 'Sou simples, vivo ainda mais simplesmente...', 'C');
+insert into User values(9, 'andresantos', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua de Camões', 963145278, 'andresantos@gmail.com', 20, 'Adoro carros, mas melhor que carros só comida!', 'C'); 
+insert into User values(10, 'cellopedro', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua de Sagres', 963145278, 'cellopedro@outlook.com', 40, 'Basket deveria ser mais que um desporto! Viva à Fast Food', 'C');
+insert into User values(11, 'ruiramiro', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua de Serpentes', 963145278, 'ruiramiro@gmail.com', 64, 'Gosto de um bom passeio na paraia. Nada como um bom Marisco', 'C');
+insert into User values(12, 'ruisantos', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua de Portugal', 963145278, 'ruisantos@poutlook.com', 43, 'Gosto de ver TV e socializar com a minha sogra', 'C');
+insert into User values(13, 'patriciavieira', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua do Porto', 963145278, 'patriciavieira@outlook.com', 37, 'Always strive for more, life is crazy', 'C');
+insert into User values(14, 'rosamarques', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua de Lisboa', 963145278, 'rosamarques@gmail.com', 43, 'Life is too short not to learn about Chemistry', 'C');
+insert into User values(15, 'miguelarruada', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua de Trancos', 963145278, 'miguelarruada@gmail.com', 29, 'Vivo a vida à Tom Sawyer e mais não é preciso dizer! ;)', 'C');
+insert into User values(16, 'chamicosantos', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua do Camilo', 963145278, 'chamicosantos@finance.com', 34, 'Sou simples, vivo ainda mais simplesmente...', 'C');
 
 --Courier
-insert into User values(17, 'ritaroda', 'abba', 'Rua de Camões', 963145278, 'ritaroda@gmail.com', 22, 'Engenharia é a minha vida e andar de mota em part-time o meu hobbie!', 'E'); 
-insert into User values(18, 'joaobezugo', 'abba', 'Rua de Sagres', 963145278, 'joaobezugo@gmail.com', 34, 'Speed, I am Speed! Melhor entregador de sempre', 'E');
-insert into User values(19, 'matildecamelia', 'abba', 'Rua de Serpentes', 963145278, 'matildecamelia@yahoo.com', 56, 'Adoro fazer as pessoas felizes e comer é o meu passatempo preferido', 'E');
-insert into User values(20, 'ruisantos365', 'abba', 'Rua de Portugal', 963145278, 'ruisantos365@office365.com', 32, 'Sou o maior aficionado por motas, a obcessão é real, eu juro...', 'E');
-insert into User values(21, 'patricksantos', 'abba', 'Rua do Porto', 963145278, 'patricksantos@gmail.com', 70, 'Faço entregas desde que tenho 20 anos, sempre foi o meu trabalho de sonho...', 'E');
-insert into User values(22, 'rosanamarques', 'abba', 'Rua de Lisboa', 963145278, 'rosanamarques@live.com', 36, 'Melhores anos da minha vida são os loucos 30s! Um brinde à vida!', 'E');
-insert into User values(23, 'fernandomota', 'abba', 'Rua de Trancos', 963145278, 'fernandomota@gmail.com', 38, 'Divirto-me a fazer entregas e os meus clientes apreciam', 'E');
-insert into User values(24, 'pprunner', 'abba', 'Rua do Camilo', 963145278, 'pprunner@outlook.com', 20, 'Sou estafeta para ajudar a pagar os estudos! Vida dura, mas um dia compensará...', 'E');
+insert into User values(17, 'ritaroda', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua de Camões', 963145278, 'ritaroda@gmail.com', 22, 'Engenharia é a minha vida e andar de mota em part-time o meu hobbie!', 'E'); 
+insert into User values(18, 'joaobezugo', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua de Sagres', 963145278, 'joaobezugo@gmail.com', 34, 'Speed, I am Speed! Melhor entregador de sempre', 'E');
+insert into User values(19, 'matildecamelia', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua de Serpentes', 963145278, 'matildecamelia@yahoo.com', 56, 'Adoro fazer as pessoas felizes e comer é o meu passatempo preferido', 'E');
+insert into User values(20, 'ruisantos365', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua de Portugal', 963145278, 'ruisantos365@office365.com', 32, 'Sou o maior aficionado por motas, a obcessão é real, eu juro...', 'E');
+insert into User values(21, 'patricksantos', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua do Porto', 963145278, 'patricksantos@gmail.com', 70, 'Faço entregas desde que tenho 20 anos, sempre foi o meu trabalho de sonho...', 'E');
+insert into User values(22, 'rosanamarques', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua de Lisboa', 963145278, 'rosanamarques@live.com', 36, 'Melhores anos da minha vida são os loucos 30s! Um brinde à vida!', 'E');
+insert into User values(23, 'fernandomota', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua de Trancos', 963145278, 'fernandomota@gmail.com', 38, 'Divirto-me a fazer entregas e os meus clientes apreciam', 'E');
+insert into User values(24, 'pprunner', '$2y$12$0Vhb2v/7t66aPoFwAuayiuJjlIWGciblcY7ID4U9f5zx.ooCVM.BS', 'Rua do Camilo', 963145278, 'pprunner@outlook.com', 20, 'Sou estafeta para ajudar a pagar os estudos! Vida dura, mas um dia compensará...', 'E');
 
 
 insert into Restaurant values (1, 'Grelha do Manuel', '932659956', 'Porto', '22:30', '23:00', 1); 
