@@ -48,8 +48,17 @@
     margin-left: 1.5em;
 }
 
+/*
+.additing input {
+    margin: 0.5em; 
+    width: 90%; 
+    height: 3em; 
+}
 
-
+.additing button {
+    margin-top: 1em; 
+}
+*/
 
 /* Reviews */
 .reviewHeader {
@@ -100,7 +109,7 @@
     margin: 1em;
 }
 
-.makeReviewComment {
+.makeReviewComment, .additing input {
     width: 90%;
     padding: 0.7em;
     margin: 1em;
@@ -142,4 +151,12 @@
     color: white;
     border: 2px solid white;
     text-shadow:1px 0 0 black,0 1px 0 black,-1px 0 0 black,0 -1px 0 black;
+}
+
+.additing button:last-child {
+    padding: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+    cursor: pointer;
 }
