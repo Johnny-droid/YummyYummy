@@ -160,3 +160,12 @@
     border-radius: 10px;
     cursor: pointer;
 }
+
+.editProductDiv {
+    display: flex;
+    direction: row;
+}
+
+.editProductDiv > * {
+    margin: 0.3em;
+}

@@ -44,7 +44,33 @@
                     <?php foreach ($products as $product) { ?>
                         <?php if ($product->discount === 0) { ?>
                             <li class="product" id="productItem<?= $product->id ?>">
-                                <?= $product->name . ' ' . $product->price ?>€
+                                <div id="productItemInfo<?= $product->id ?>">
+                                    <?= $product->name . ' ' . $product->price ?>€
+                                </div>
+                                
+                                <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C') { ?>
+                                    <button class="productOrderAddButton" value="<?= $product->id ?>"> + </button>
+                                <?php } ?>
+
+                                <?php 
+                                    if(isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) {
+                                ?>  
+                                    
+                                    <div class="editProductDiv">
+                                        <button id="saveCheckBox<?= $product->id ?>" class="itemRestaurantButtonDiscountApply" value="<?= $product->id ?>" style="display: none;">&#10003</button>
+                                        <input id="inputDiscount<?= $product->id ?>" type="number" style="display: none;" min="0" max="100">
+                                        <button id="buttonDiscount<?= $product->id ?>" class="itemRestaurantButtonDiscount" value="0">%</button>
+                                        <button class="itemRestaurantButtonDelete" value="<?= $product->id ?>"><span class="delete">🗑️</span></button>
+                                    </div>
+                                <?php } ?>
+                            </li>
+                        <?php } else { ?>
+                            <li class="product" id="productItem<?= $product->id ?>">
+                                <div id="productItemInfo<?= $product->id ?>">
+                                    <?= $product->name . ' ' . $product->price * (1 - ($product->discount/100)) ?>€ <br>
+                                    Discount: <?= $product->discount ?>% &nbsp&nbsp Old price: <?= $product->price ?>€
+                                </div>
+                                
                                 <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C') { ?>
                                     <button class="productOrderAddButton" value="<?= $product->id ?>"> + </button>
                                 <?php } ?>
@@ -52,21 +78,14 @@
                                 <?php 
                                     if(isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) {
                                 ?>
-                                    <button class="itemRestaurantButtonDelete" value="<?= $product->id ?>"><span class="delete">🗑️</span></button>
-                                <?php } ?>
-                            </li>
-                        <?php } else { ?>
-                            <li class="product" id="productItem<?= $product->id ?>">
-                                <?= $product->name . ' ' . $product->price * (1 - ($product->discount/100)) ?>€ <br>
-                                Discount: <?= $product->discount ?>% &nbsp&nbsp Old price: <?= $product->price ?>€
-                                <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C' && ($_SESSION['id'] === $restaurant->owner)) { ?>
-                                    <button class="productOrderAddButton" value="<?= $product->id ?>"> + </button>
-                                <?php } ?>
-
-                                <?php 
-                                    if(isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) {
-                                ?>
-                                    <button class="itemRestaurantButtonDelete" value="<?= $product->id ?>"><span class="delete">🗑️</span></button>
+                                    
+                                    <div class="editProductDiv">
+                                        <button id="saveCheckBox<?= $product->id ?>" class="itemRestaurantButtonDiscountApply" value="<?= $product->id ?>" style="display: none;">&#10003</button>
+                                        <input id="inputDiscount<?= $product->id ?>" type="number" style="display: none;" min="0" max="100">
+                                        <button id="buttonDiscount<?= $product->id ?>" class="itemRestaurantButtonDiscount" value="0">%</button>
+                                        <button class="itemRestaurantButtonDelete" value="<?= $product->id ?>"><span class="delete">🗑️</span></button>
+                                    </div>
+                                   
                                 <?php } ?>
 
                             </li>

@@ -123,6 +123,16 @@
             return true; 
         } 
 
+
+        static function updateDiscount(PDO $db, int $id_product, int $discount) : bool {
+            $stmt1 = $db->prepare('update Product set discount = ?  where id_product = ?; '); 
+
+            $stmt1->execute(array($discount, $id_product));
+            
+            return true;
+
+        }
+
     }
 
 
