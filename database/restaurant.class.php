@@ -99,6 +99,35 @@
         }
 
 
+        static function getRestaurantsOfCategory(PDO $db, int $id_category) {
+
+            $stmt = $db->prepare('
+                SELECT * 
+                FROM Restaurant JOIN RestaurantCategory using(id_restaurant)
+                WHERE id_category = ?
+            ');
+
+            $stmt->execute(array($id_category));
+
+            $restaurants = array();
+
+            while ($restaurant = $stmt->fetch()) {
+                $restaurants[] = new Restaurant(
+                    intval($restaurant['id_restaurant']),
+                    $restaurant['name'],
+                    $restaurant['phone'],
+                    $restaurant['location'],
+                    DateTime::createFromFormat('H:i', $restaurant['openingTime']),
+                    DateTime::createFromFormat('H:i', $restaurant['closingTime']),
+                    intval($restaurant['owner'])
+                    );
+            }
+
+            return $restaurants;
+
+        }
+        
+
         static function getClientFavouriteRestaurants(PDO $db, int $id_user) : array {
  
             $stmt = $db->prepare('select distinct *
