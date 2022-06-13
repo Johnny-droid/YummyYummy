@@ -76,7 +76,6 @@ Keep in mind that some extra changes might be made in order to add functionaliti
 
 filter / encode
 clean up the code from colorOrders
-donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc (discount missing)
 CSS para separar os botões a editar o perfil
 Fazer a avaliação enviada pelo prof!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -102,3 +101,5 @@ DONE - logout doesn't go to sign up
 DONE - editar perfil
 DONE - Courier and Restaurant Owner can change status of deliveries
 DONE - Fazer css para os botões nas orders
+DONE - donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc
+
