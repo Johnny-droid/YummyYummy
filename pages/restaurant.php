@@ -34,12 +34,10 @@
 
     $reviews = Review::getRestaurantReviews($db, $id_restaurant);
     $restaurant = Restaurant::getRestaurant($db, $id_restaurant);
-    //var_dump($_SESSION);
     
     $categories = Category::getRestaurantCategories($db, $id_restaurant);
     $products = Product::getRestaurantProducts($db, $id_restaurant);
-    echo '<br>';
-    //var_dump($reviews);
+
     output_header(); 
     output_restaurant($restaurant, $categories, $reviews, $products, $alreadyHasReview); 
     output_footer();
