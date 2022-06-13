@@ -48,14 +48,13 @@
 
 
         static function getUserWithPassword(PDO $db, string $username, string $password) : ?User {
-            $stmt = $db->prepare('select * from User where username = ? and password = ?'); 
+            $stmt = $db->prepare('select * from User where username = ?'); 
 
-            // $stmt->execute(array(strtolower($username), sha1($password)));
-            $stmt->execute(array(strtolower($username), $password));
+            $stmt->execute(array(strtolower($username)));
 
             $user = $stmt->fetch(); 
 
-            if(!$user) { return null; }
+            if(!$user || !password_verify($password, $user['password'])) { return null;}
 
             return new User(
                 intval($user['id_user']), 
@@ -86,7 +85,9 @@
                 $stmt = $db->prepare('insert into User (username, password, address, phone_number, email, age, bio, user_type) 
                          values(?, ?, ?, ?, ?, ?, ?, ?); '); 
 
-                $stmt->execute(array($username, $password, $address, $phone_number, $email, $age, $bio, $type)); 
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]);
+                
+                $stmt->execute(array($username, $hashed_password, $address, $phone_number, $email, $age, $bio, $type)); 
                 return true; 
             //} catch (PDOException $e) {
             //    return false; 
