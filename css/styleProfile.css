@@ -104,3 +104,8 @@
 .itemProfile1 > button:hover, .itemProfile2 > button:hover {
     background-color: lightgray;
 }
+
+.itemProfile a {
+    text-decoration: none;
+    color: black; 
+}
