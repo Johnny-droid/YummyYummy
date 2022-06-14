@@ -8,24 +8,37 @@
 
     $db = getDatabaseConnection();
     $userType; 
+    
+    $username = preg_replace('/[^a-zA-Z\s]/', '', $_POST['username']);
+    var_dump($username);
+    var_dump($_POST['username']);
 
-    $existsUser = User::existsWithUsername($db, $_POST['username']);
+    $address = preg_replace('/[^a-zA-Z\s]/', '', $_POST['address']);
+    $phoneNumber = preg_replace('/\D/', '', $_POST['phoneNumber']);
+    $email = preg_replace('/[^a-zA-Z\s]/', '', $_POST['email']);
+    $age = preg_replace('/\D/', '', $_POST['age']);
+    $bio = preg_replace('/[^a-zA-Z\s]/', '', $_POST['bio']);
 
+    
     if($_POST['accountType'] === 'client') {
         $userType = 'C'; 
     } else if($_POST['accountType'] === 'courier') {
         $userType = 'E';
+    } else {
+        header('Location: /../pages/signup.php?error=3');
+        exit();
     }
+    
+    $existsUser = User::existsWithUsername($db, $username);
 
     if ($existsUser) {
         header('Location: /../pages/signup.php?error=1');
     
-    } else if (!User::saveUser($db, $_POST['username'], $_POST['password'], $_POST['address'], $_POST['phoneNumber'], 
-                                $_POST['email'], intval($_POST['age']) ,$_POST['bio'], $userType)) {
-    //sha1($_POST['password'])
+    } else if (!User::saveUser($db, $username, $_POST['password'], $address, $phoneNumber, $email, intval($age), $bio, $userType)) {
+
         header('Location: /../pages/signup.php?error=2');
     
-    } else if ($user = User::getUserWithPassword($db, $_POST['username'], $_POST['password'])) {
+    } else if ($user = User::getUserWithPassword($db, $username, $_POST['password'])) {
         $_SESSION['id'] = $user->id;
         $_SESSION['username'] = $user->name;
         $_SESSION['type'] = 'C';

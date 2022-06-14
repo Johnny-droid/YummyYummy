@@ -20,6 +20,18 @@
     margin-bottom: 0em;
 }
 
+@media (max-width: 50em) {
+    .profiling {
+        width: 90%;
+    }
+}
+
+@media (min-width: 50em) {
+    .profiling {
+        width: 45em;
+    }
+}
+
 .favourites {
     justify-content: center;
     text-align: center;

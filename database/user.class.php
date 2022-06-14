@@ -81,17 +81,17 @@
 
         static function saveUser(PDO $db, string $username, string $password, string $address, string $phone_number,
                                 string $email, int $age, string $bio, string $type): bool {
-            //try {
+            try {
                 $stmt = $db->prepare('insert into User (username, password, address, phone_number, email, age, bio, user_type) 
                          values(?, ?, ?, ?, ?, ?, ?, ?); '); 
 
                 $hashed_password = password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]);
                 
-                $stmt->execute(array($username, $hashed_password, $address, $phone_number, $email, $age, $bio, $type)); 
+                $stmt->execute(array(strtolower($username), $hashed_password, $address, $phone_number, $email, $age, $bio, $type)); 
                 return true; 
-            //} catch (PDOException $e) {
-            //    return false; 
-            //}
+            } catch (PDOException $e) {
+                return false; 
+            }
         }
 
         static function existsFavourite(PDO $db, int $id_user, int $id_restaurant, bool $change) : bool {
