@@ -1,12 +1,24 @@
 <?php function output_profile(User $user, array $restaurants) { ?>
     <div class="profile">
+        <!--
         <div class="pic">
             <label class="-label" for="file">
                 <span>Change Image</span>
             </label>
             <input id="file" type="file" onchange="loadFile(event)" />
-            <img src="../images/Artworks/Profile Pictures/profile1.png" alt="Avatar" class="avatar">
         </div>
+        -->
+        <?php if (file_exists('../images/Users/avatar' . $user->id . '.jpg')) { ?>
+            <img src="../images/Users/avatar<?= $user->id ?>.jpg" alt="Avatar" class="avatar">
+        <?php } else { ?>
+            <img src="../images/Artworks/Profile Pictures/profile1.png" alt="Avatar" class="avatar">
+            <form action="../action/action_uploadImg.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="image">
+                <input type="submit" value="Upload">
+            </form>
+        <?php } ?>
+        
+
 
         <div class="profiling">
             <h1>@<?= $user->name ?></h1>

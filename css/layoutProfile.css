@@ -40,3 +40,10 @@
 }
 
 
+.avatar {
+    margin-top: 3em;
+    margin-bottom: 1em;
+    border-radius: 50%;
+    width: 17em;
+    height: 17em;
+}
