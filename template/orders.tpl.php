@@ -1,4 +1,4 @@
-<?php function output_orders(?array $orders, ?array $orders_products, ?array $restaurants) { ?>
+<?php function output_orders(?array $orders, ?array $orders_products, ?array $restaurants, ?array $orders_address) { ?>
     <section class="ordersGlobal">
         <?php if ($_SESSION['type'] === 'E') { ?>
             <h1>YOUR ORDERS</h1>
@@ -15,6 +15,9 @@
                         </ul>
                         <strong>Price: <?= Product::getTotalPriceProducts($products) ?> € </strong><br>
                         <strong>Date Ordered: <?= $orders[$id_order]->dateStart->format('d/m/Y H:i:s') ?></strong>
+                        <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'E') { ?>
+                            <strong>Address: <?= $orders_address[$id_order] ?></strong>
+                        <?php } ?>
                     </div>
                     
                     <div class="orderStatus" id="orderStatus<?= $id_order ?>">
@@ -38,7 +41,7 @@
 
 
 
-<?php function output_orders_courier(?array $orders, ?array $orders_products, ?array $restaurants) { ?>
+<?php function output_orders_courier(?array $orders, ?array $orders_products, ?array $restaurants, ?array $orders_address) { ?>
     <section class="ordersGlobal">
         <?php if ($_SESSION['type'] === 'E') { ?>
             <h1>AVAILABLE ORDERS</h1>
@@ -55,6 +58,9 @@
                         </ul>
                         <strong>Price: <?= Product::getTotalPriceProducts($products) ?> € </strong><br>
                         <strong>Date Ordered: <?= $orders[$id_order]->dateStart->format('d/m/Y H:i:s') ?></strong>
+                        <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'E') { ?>
+                            <strong>Address: <?= $orders_address[$id_order] ?></strong>
+                        <?php } ?>
                     </div>
                     
                     <div class="orderStatus" id="orderStatus<?= $id_order ?>">

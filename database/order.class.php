@@ -151,6 +151,23 @@
             return $orders;
         }
 
+        static function getAddressForOrders(PDO $db) :array {
+            $stmt = $db->prepare('
+                SELECT *
+                FROM Orders JOIN (select id_user as id_client, address from User) using(id_client);
+            ');
+
+            $stmt->execute(array());
+
+            $orders_adress = array();
+
+            while ($order_address = $stmt->fetch()) {
+                $orders_adress[$order_address['id_order']] = $order_address['address'];
+            }
+
+            return $orders_adress;
+        }
+
 
         static function insertOrder(PDO $db, int $id_client, stdClass $products) : bool {
             $id_order = 0;

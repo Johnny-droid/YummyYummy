@@ -27,6 +27,7 @@
     } else if ($_SESSION['type'] === 'E') {
         $orders_free = Order::getCourierFreeOrders($db);
         $orders = Order::getCourierOrders($db, $id_user);
+        $orders_address = Order::getAddressForOrders($db);
         $_SESSION['orders_free'] = $orders_free;
     } else {
         exit();
@@ -49,12 +50,12 @@
     output_header(); 
     if ($_SESSION['type'] === 'E') { ?>
         <div class="ordersGlobalCourier">
-        <?php output_orders_courier($orders_free, $orders_products_free, $restaurants);
-        output_orders($orders, $orders_products, $restaurants);?>
+        <?php output_orders_courier($orders_free, $orders_products_free, $restaurants, $orders_address);
+        output_orders($orders, $orders_products, $restaurants, $orders_address);?>
         </div> 
     <?php
     } else {
-        output_orders($orders, $orders_products, $restaurants);
+        output_orders($orders, $orders_products, $restaurants, null);
     }
     
     output_footer(); 
