@@ -1,5 +1,5 @@
 async function getSession() {
-    const sessionResponse = await fetch('../api/api_getSession.php')
+    const sessionResponse = await fetch('/../api/api_getSession.php')
     const sessionArray = await sessionResponse.json()
     const session = sessionArray[0]
     return session; 
@@ -18,7 +18,7 @@ async function toggleFavourite(id_user, id_restaurant, changeStatus) {
         let exists = JSON.parse(this.responseText)
         updateButtonText(exists);
     })
-    request.open("POST", "../api/api_isFavourite.php", true)
+    request.open("POST", "/../api/api_isFavourite.php", true)
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     request.send(favInfo_json);
 }
