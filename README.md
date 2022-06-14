@@ -61,7 +61,7 @@ This is the UML of our database for the YummyYummy website.
 
 Keep in mind that some extra changes might be made in order to add functionalities.
 
-##Features
+###Features
 
 - [x] General 
     - [x] Make header
@@ -151,7 +151,7 @@ Keep in mind that some extra changes might be made in order to add functionaliti
     - Make database "bigger" 
 
 
-##Credentials (username/password): 
+###Credentials (username/password): 
 - Client account: andresantos / abba ; 
 - Restaurant Owner account: anamarota / abba ; 
 - Courier account: joaobezugo / abba ; 
