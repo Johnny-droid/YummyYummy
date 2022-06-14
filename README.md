@@ -73,10 +73,6 @@ Keep in mind that some extra changes might be made in order to add functionaliti
 
 
 # Details we still need to do:
-
-
-
-Courier may need to know where the order should go (address of client maybe)
 Fazer a avaliação enviada pelo prof!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ## Extras: 
@@ -105,4 +101,4 @@ DONE - donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar 
 DONE - clean up the code from colorOrders
 DONE - hash / filter / encode
 DONE - CSS para separar os botões a editar o perfil
-
+DONE - Courier may need to know where the order should go
