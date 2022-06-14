@@ -4,9 +4,9 @@ This a website made to help users decide in which restaurant to eat. We believe 
 
 This website will also support take-away orders. The users will be able to order from all the different kinds of restaurants, after creating an account. The restaurant owners will also have access to the orders made to their restaurant in their account.
 
-We hope you like our website after it's done.
+We hope you like our website!
 
-YummyYuummy will give you the most YummyYummy Food!!!
+YummyYummy will give you the most YummyYummy Food!!!
 
 <br>
 
