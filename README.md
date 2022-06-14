@@ -4,9 +4,9 @@ This a website made to help users decide in which restaurant to eat. We believe 
 
 This website will also support take-away orders. The users will be able to order from all the different kinds of restaurants, after creating an account. The restaurant owners will also have access to the orders made to their restaurant in their account.
 
-We hope you like our website after it's done.
+We hope you like our website!
 
-YummyYuummy will give you the most YummyYummy Food!!!
+YummyYummy will give you the most YummyYummy Food!!!
 
 <br>
 
@@ -61,7 +61,9 @@ This is the UML of our database for the YummyYummy website.
 
 Keep in mind that some extra changes might be made in order to add functionalities.
 
-##Features
+<br>
+
+### Features
 
 - [x] General 
     - [x] Make header
@@ -138,7 +140,7 @@ Keep in mind that some extra changes might be made in order to add functionaliti
     - [x] Show couriers all orders that have been picked by them and make them able to change order status
     - [x] Show each order details (date and time the order has been made, order's price, each products quantity, show delivery address)
     - [x] Sort orders according to date
-    - [] Display something when there are no orders placed
+    - [ ] Display something when there are no orders placed
    
 
 - [x] Security
@@ -148,7 +150,14 @@ Keep in mind that some extra changes might be made in order to add functionaliti
     - [x] Anti-SQL injection through "prepare" statements in database access
 
 
-##Credentials (username/password): 
+- Extra (not done): 
+    - Make database "bigger" 
+
+
+<br>
+
+
+### Credentials (username/password): 
 - Client account: andresantos / abba ; 
 - Restaurant Owner account: anamarota / abba ; 
 - Courier account: joaobezugo / abba ; 
@@ -161,36 +170,3 @@ Keep in mind that some extra changes might be made in order to add functionaliti
 
 ### Class 15
 ### Group 06
-
-
-
-# Details we still need to do:
-Fazer a avaliação enviada pelo prof!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-## Extras: 
-Adicionar talvez mais coisas à base de dados
-Criar adicionar algo na página das orders quando n há nenhuma order
-Fazer com que as coisas do restaurant fiquem centradas, nos donos de restaurante e couriers que não têm as orders de lado (acho que usar expand deve funcionar)
-Tratar de guardar a imagem de perfil na base de dados - 
-
-## DONE
-DONE - Restaurant Owners can reply to customers - 
-DONE - adicionar comentários/reviews - 
-DONE - (invetar um número de tele aleatório para colocar no footer e fingir como linha de suport técnico) - 
-DONE - Ask the aditional things for sign up things to sign up and change things from Client/Owner to User - 
-DONE - Don't forget to ask wether it will be user or courier - 
-DONE - Add option to add restaurant to favourites list - 
-DONE - Sort orders according to date - 
-DONE - Talvez encontrar maneira de colocar o footer sempre em baixo -
-DONE - fix sign up client/courier drop down -
-DONE - hash passwords -
-DONE - Talvez quando damos search no index, podemos procurar não só pelo nome, como também pela categoria; - 
-DONE - logout doesn't go to sign up - 
-DONE - editar perfil - 
-DONE - Courier and Restaurant Owner can change status of deliveries - 
-DONE - Fazer css para os botões nas orders - 
-DONE - donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc - 
-DONE - clean up the code from colorOrders - 
-DONE - hash / filter / encode - 
-DONE - CSS para separar os botões a editar o perfil - 
-DONE - Courier may need to know where the order should go -
