@@ -143,6 +143,7 @@ function addEventListenersPrevNext(type, id_order) {
 
 
 async function run() {
+    updateColors();
     const session = await getSession();
 
     if (!session['id'] || !session['orders'] || (session['type'] === 'C')) return;

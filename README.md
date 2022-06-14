@@ -74,8 +74,7 @@ Keep in mind that some extra changes might be made in order to add functionaliti
 
 # Details we still need to do:
 
-filter / encode
-clean up the code from colorOrders
+
 CSS para separar os botões a editar o perfil
 Courier may need to know where the order should go (address of client maybe)
 Fazer a avaliação enviada pelo prof!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -103,4 +102,7 @@ DONE - editar perfil
 DONE - Courier and Restaurant Owner can change status of deliveries
 DONE - Fazer css para os botões nas orders
 DONE - donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc
+DONE - clean up the code from colorOrders
+DONE - hash / filter / encode
+
 

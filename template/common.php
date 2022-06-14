@@ -21,7 +21,6 @@
         <script src="../javascript/makeOrder.js" defer></script>
         <script src="../javascript/toggleDisplayButton.js" defer></script>
         <script src="../javascript/profileChanges.js" defer></script>
-        <script src="../javascript/colorsOrders.js" defer></script>
         <script src="../javascript/colorsOpenClose.js" defer></script>
         <script src="../javascript/dropdownHeader.js" defer></script>
         <script src="../javascript/favouriteButton.js" defer></script>
