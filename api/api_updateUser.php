@@ -19,23 +19,28 @@
 
     switch ($info->{'param'}) {
         case 'age':
-            $newString = User::updateAge($db, $_SESSION['id'], intval($info->{'value'}));
+            $age = preg_replace('/\D/', '', $info->{'value'});
+            $newString = User::updateAge($db, $_SESSION['id'], intval($age));
             break;
 
         case 'address':
-            $newString = User::updateAddress($db, $_SESSION['id'], $info->{'value'});
+            $address = preg_replace('/[^a-zA-Z\s]/', '', $info->{'value'});
+            $newString = User::updateAddress($db, $_SESSION['id'], $address);
             break;
 
         case 'phoneNumber':
-            $newString = User::updatePhoneNumber($db, $_SESSION['id'], intval($info->{'value'})); 
+            $phoneNumber = preg_replace('/\D/', '', $info->{'value'});
+            $newString = User::updatePhoneNumber($db, $_SESSION['id'], intval($phoneNumber)); 
             break; 
 
         case 'email':
-            $newString = User::updateEmail($db, $_SESSION['id'], $info->{'value'});
+            $email = preg_replace('/[^a-zA-Z@.\s]/', '',  $info->{'value'});
+            $newString = User::updateEmail($db, $_SESSION['id'], $email);
             break; 
 
         case 'bio': 
-            $newString = User::updateBio($db, $_SESSION['id'], $info->{'value'});
+            $bio = preg_replace('/[^a-zA-Z!?.@,\s]/', '', $info->{'value'});
+            $newString = User::updateBio($db, $_SESSION['id'], $bio);
             break; 
 
         default:

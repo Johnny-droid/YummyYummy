@@ -9,13 +9,12 @@
         </div>
 
         <div class="profiling">
-            <!-- <span class="material-symbols-outlined">edit</span> -->
             <h1>@<?= $user->name ?></h1>
-            <div id="ageDiv1" class="itemProfile1"><div>Age: <?= $user->age ?></div><button class="itemProfileButtonEdit" id="age" value="<?= $user->age ?>"><span class="material-symbols-outlined">edit</span></button></div>
-            <div id="addressDiv1" class="itemProfile1"><div>Address: <?= $user->address ?></div><button class="itemProfileButtonEdit" id="address" value="<?= $user->address ?>"><span class="material-symbols-outlined">edit</span></button></div>
-            <div id="phoneNumberDiv1" class="itemProfile1"><div>Phone Number: <?= $user->phoneNumber ?></div><button class="itemProfileButtonEdit" id="phoneNumber" value="<?= $user->phone_number ?>"><span class="material-symbols-outlined">edit</span></button></div>
-            <div id="emailDiv1"class="itemProfile1"><div>Email: <?= $user->email ?></div><button class="itemProfileButtonEdit" id="email" value="<?= $user->email ?>"><span class="material-symbols-outlined">edit</span></button></div>
-            <div id="bioDiv1" class="itemProfile1"><div>Bio: <?= $user->bio ?></div><button class="itemProfileButtonEdit" id="bio" value="<?= $user->bio ?>"><span class="material-symbols-outlined">edit</span></button></div>
+            <div id="ageDiv1" class="itemProfile1"><div>Age: <?= htmlentities($user->age) ?></div><button class="itemProfileButtonEdit" id="age" value="<?= $user->age ?>"><span class="material-symbols-outlined">edit</span></button></div>
+            <div id="addressDiv1" class="itemProfile1"><div>Address: <?= htmlentities($user->address) ?></div><button class="itemProfileButtonEdit" id="address" value="<?= $user->address ?>"><span class="material-symbols-outlined">edit</span></button></div>
+            <div id="phoneNumberDiv1" class="itemProfile1"><div>Phone Number: <?= htmlentities($user->phoneNumber) ?></div><button class="itemProfileButtonEdit" id="phoneNumber" value="<?= $user->phone_number ?>"><span class="material-symbols-outlined">edit</span></button></div>
+            <div id="emailDiv1"class="itemProfile1"><div>Email: <?= htmlentities($user->email) ?></div><button class="itemProfileButtonEdit" id="email" value="<?= $user->email ?>"><span class="material-symbols-outlined">edit</span></button></div>
+            <div id="bioDiv1" class="itemProfile1"><div>Bio: <?= htmlentities($user->bio) ?></div><button class="itemProfileButtonEdit" id="bio" value="<?= $user->bio ?>"><span class="material-symbols-outlined">edit</span></button></div>
             <div class="favourites">
                 <?php if ($restaurants) { ?>
                     <?php if ($user->type === 'C') { ?> 
@@ -24,7 +23,7 @@
                         <h3 id="headingers">Restaurants Owned</h3>
                     <?php }; ?>
                     <?php foreach ($restaurants as $restaurant) { ?>
-                        <div class="itemProfile"><a href="restaurant.php?id=<?= $restaurant->id ?>"><?= $restaurant->name ?></a></div>
+                        <div class="itemProfile"><a href="restaurant.php?id=<?= $restaurant->id ?>"><?= htmlentities($restaurant->name) ?></a></div>
                     <?php } ?>
                 <?php } ?>
             </div>

@@ -10,14 +10,11 @@
     $userType; 
     
     $username = preg_replace('/[^a-zA-Z\s]/', '', $_POST['username']);
-    var_dump($username);
-    var_dump($_POST['username']);
-
     $address = preg_replace('/[^a-zA-Z\s]/', '', $_POST['address']);
     $phoneNumber = preg_replace('/\D/', '', $_POST['phoneNumber']);
-    $email = preg_replace('/[^a-zA-Z\s]/', '', $_POST['email']);
+    $email = preg_replace('/[^a-zA-Z@.\s]/', '', $_POST['email']);
     $age = preg_replace('/\D/', '', $_POST['age']);
-    $bio = preg_replace('/[^a-zA-Z\s]/', '', $_POST['bio']);
+    $bio = preg_replace('/[^a-zA-Z!?.@,\s]/', '', $_POST['bio']);
 
     
     if($_POST['accountType'] === 'client') {
