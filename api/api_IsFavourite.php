@@ -12,7 +12,10 @@
 
     $favInfo = json_decode($str_json);
 
-    $isFavourite = User::existsFavourite($db, $favInfo->{'user'}, $favInfo->{'restaurant'}, $favInfo->{'change'});
+    $id_user = preg_replace('/\D/', '', $favInfo->{'user'});
+    $id_restaurant = preg_replace('/\D/', '', $favInfo->{'restaurant'});
+
+    $isFavourite = User::existsFavourite($db, intval($id_user), intval($id_restaurant), $favInfo->{'change'});
 
     echo json_encode($isFavourite);
 ?>

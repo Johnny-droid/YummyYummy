@@ -47,6 +47,6 @@
             break;
     }
     
-    echo json_encode($newString);
+    echo json_encode(htmlentities($newString));
     
 ?>

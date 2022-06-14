@@ -158,6 +158,7 @@
                 $stmt1 = $db->prepare('insert into Orders (status, dateStart, dateEnd, id_client, id_courier) 
                          values(?, ?, ?, ?, ?); '); 
 
+                date_default_timezone_set('Europe/Belfast');
                 $stmt1->execute(array('RECEIVED', date('d/m/Y H:i:s'), '', $id_client, NULL)); 
                 $id_order = $db->lastInsertId();
 
@@ -177,6 +178,7 @@
         static function updateOrderStatus(PDO $db, int $id_order, string $status) {
 
             if ($status === 'DELIVERED') {
+                date_default_timezone_set('Europe/Belfast');
                 $date =  date('d/m/Y H:i:s');
             } else {
                 $date = '';

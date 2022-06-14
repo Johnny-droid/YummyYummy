@@ -45,7 +45,7 @@
                         <?php if ($product->discount === 0) { ?>
                             <li class="product" id="productItem<?= $product->id ?>">
                                 <div id="productItemInfo<?= $product->id ?>">
-                                    <?= $product->name . ' ' . $product->price ?>€
+                                    <?= $product->name . ' ' . round($product->price,2) ?>€
                                 </div>
                                 
                                 <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C') { ?>
@@ -67,7 +67,7 @@
                         <?php } else { ?>
                             <li class="product" id="productItem<?= $product->id ?>">
                                 <div id="productItemInfo<?= $product->id ?>">
-                                    <?= $product->name . ' ' . $product->price * (1 - ($product->discount/100)) ?>€ <br>
+                                    <?= $product->name . ' ' . round($product->price * (1 - ($product->discount/100)), 2) ?>€ <br>
                                     Discount: <?= $product->discount ?>% &nbsp&nbsp Old price: <?= $product->price ?>€
                                 </div>
                                 
@@ -114,16 +114,16 @@
                 <?php foreach($reviews as $review) { ?>
                     <div class="review">
                         <div class="reviewHeader">
-                            <strong><?= $review->username ?></strong>
-                            <div class="reviewRating"><?= $review->rating ?></div>
+                            <strong><?= htmlentities($review->username) ?></strong>
+                            <div class="reviewRating"><?= htmlentities($review->rating) ?></div>
                             <div class="reviewPrice"><?= $review->getPriceSymbols() ?></div>
                         </div>
-                        <p class="reviewComment">▸ <?= $review->comment ?></p>
+                        <p class="reviewComment">▸ <?= htmlentities($review->comment) ?></p>
 
                         <div class="reviewReply">
                         <?php if ($review->reply !== '') { ?>
                             <em>Reply: </em>
-                            <p>▹<?= $review->reply ?></p>
+                            <p>▹<?= htmlentities($review->reply) ?></p>
                         <?php } else if ($review->reply === '' && isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) { ?>
                             <button id="buttonMakeReply<?= $review->id_review ?>" class="makeReplyButton" onclick="toggleDisplayButton('buttonMakeReply<?= $review->id_review ?>', 'makeReplyForm<?= $review->id_review ?>', 'Reply to Review', 'Hide')">Reply to Review</button>
                             <form method="POST" id="makeReplyForm<?= $review->id_review ?>" class="makeReplyForm" action="../action/action_write_reply.php">
