@@ -63,7 +63,7 @@ Keep in mind that some extra changes might be made in order to add functionaliti
 
 <br>
 
-###Features
+### Features
 
 - [x] General 
     - [x] Make header
@@ -140,7 +140,7 @@ Keep in mind that some extra changes might be made in order to add functionaliti
     - [x] Show couriers all orders that have been picked by them and make them able to change order status
     - [x] Show each order details (date and time the order has been made, order's price, each products quantity, show delivery address)
     - [x] Sort orders according to date
-    - [] Display something when there are no orders placed
+    - [ ] Display something when there are no orders placed
    
 
 - [x] Security
@@ -157,7 +157,7 @@ Keep in mind that some extra changes might be made in order to add functionaliti
 <br>
 
 
-###Credentials (username/password): 
+### Credentials (username/password): 
 - Client account: andresantos / abba ; 
 - Restaurant Owner account: anamarota / abba ; 
 - Courier account: joaobezugo / abba ; 
