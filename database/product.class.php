@@ -99,7 +99,7 @@
         static function getTotalPriceProducts(array $products) : float {
             $sum = 0;
             foreach ($products as $product) {
-                $sum +=  ($product[0]->price * (1 - ($product[0]->discount/100))) * $product[1];   // 0 is the product, 1 is the quantity
+                $sum +=  round($product[0]->price * (1 - ($product[0]->discount/100)), 2) * $product[1];   // 0 is the product, 1 is the quantity
             }
             return round($sum, 2, PHP_ROUND_HALF_UP);
         }
