@@ -61,6 +61,8 @@ This is the UML of our database for the YummyYummy website.
 
 Keep in mind that some extra changes might be made in order to add functionalities.
 
+<br>
+
 ###Features
 
 - [x] General 
@@ -147,8 +149,12 @@ Keep in mind that some extra changes might be made in order to add functionaliti
     - [x] Encode user entries
     - [x] Anti-SQL injection through "prepare" statements in database access
 
+
 - Extra (not done): 
     - Make database "bigger" 
+
+
+<br>
 
 
 ###Credentials (username/password): 
