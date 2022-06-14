@@ -97,7 +97,7 @@ Keep in mind that some extra changes might be made in order to add functionaliti
     - [x] Display each restaurants name and picture
     - [x] If request to access Restaurants Page came from Home Page's categories section, display all restaurants included in that category and the respective category's image
     - [x] When you click on a restaurant's card, redirect to restaurant's page
-
+    - [x] Have restaurant content centered when order tab not showing
 
 - [x] Individual Restaurant Page
     - [x] Display restaurant's image
