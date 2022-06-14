@@ -76,7 +76,6 @@ Keep in mind that some extra changes might be made in order to add functionaliti
 
 
 CSS para separar os botões a editar o perfil
-Courier may need to know where the order should go (address of client maybe)
 Fazer a avaliação enviada pelo prof!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ## Extras: 
@@ -104,5 +103,5 @@ DONE - Fazer css para os botões nas orders
 DONE - donos dos restaurantes, editar perfil dos restaurantes, adicionar/editar pratos, e etc
 DONE - clean up the code from colorOrders
 DONE - hash / filter / encode
-
+DONE - Courier may need to know where the order should go
 
