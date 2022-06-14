@@ -121,6 +121,17 @@
                             <em>Reply: </em>
                             <p>▹<?= htmlentities($review->reply) ?></p>
                         <?php } else if ($review->reply === '' && isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) { ?>
+                            <?php if (isset($_GET['error_reply'])) { ?>
+                                <?php if ($_GET['error_reply'] === '1') { ?>   
+                                    <small class="error">You must be a Restaurant Owner to make the review</small>
+                                <?php } else if ($_GET['error_reply'] === '2') { ?>
+                                    <small class="error">Your reply is invalid</small>
+                                <?php } else if ($_GET['error_reply'] === '3') { ?>
+                                    <small class="error">You must be the Restaurant Owner to make the review</small>
+                                <?php } else if ($_GET['error_reply'] === '4') { ?>
+                                    <small class="error">Couldn't add reply. Contact Support Line.</small>
+                                <?php } ?>
+                            <?php } ?>
                             <button id="buttonMakeReply<?= $review->id_review ?>" class="makeReplyButton" onclick="toggleDisplayButton('buttonMakeReply<?= $review->id_review ?>', 'makeReplyForm<?= $review->id_review ?>', 'Reply to Review', 'Hide')">Reply to Review</button>
                             <form method="POST" id="makeReplyForm<?= $review->id_review ?>" class="makeReplyForm" action="../action/action_write_reply.php">
                                 <input class="makeReviewComment" type="text" name="reply" placeholder="write your reply here">
