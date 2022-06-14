@@ -11,7 +11,7 @@
     
     $str_json = $_POST['orderCourier_json'];
 
-    $id_order = json_decode($str_json);
+    $id_order = intval(preg_replace('/\D/', '', json_decode($str_json)));
 
     if (!isset($_SESSION['id']) || $_SESSION['type'] !== 'E') {
         exit();

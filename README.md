@@ -77,7 +77,7 @@ Keep in mind that some extra changes might be made in order to add functionaliti
 filter / encode
 clean up the code from colorOrders
 CSS para separar os botões a editar o perfil
-Courier needs to where the order should go (address of client maybe)
+Courier may need to know where the order should go (address of client maybe)
 Fazer a avaliação enviada pelo prof!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ## Extras: 

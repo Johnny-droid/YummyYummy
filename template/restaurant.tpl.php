@@ -45,16 +45,14 @@
                         <?php if ($product->discount === 0) { ?>
                             <li class="product" id="productItem<?= $product->id ?>">
                                 <div id="productItemInfo<?= $product->id ?>">
-                                    <?= $product->name . ' ' . round($product->price,2) ?>€
+                                    <?= htmlentities($product->name) . ' ' . round($product->price,2) ?>€
                                 </div>
                                 
                                 <?php if (isset($_SESSION['id']) && $_SESSION['type'] === 'C') { ?>
                                     <button class="productOrderAddButton" value="<?= $product->id ?>"> + </button>
                                 <?php } ?>
 
-                                <?php 
-                                    if(isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) {
-                                ?>  
+                                <?php if(isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) { ?>  
                                     
                                     <div class="editProductDiv">
                                         <button id="saveCheckBox<?= $product->id ?>" class="itemRestaurantButtonDiscountApply" value="<?= $product->id ?>" style="display: none;">&#10003</button>
@@ -67,7 +65,7 @@
                         <?php } else { ?>
                             <li class="product" id="productItem<?= $product->id ?>">
                                 <div id="productItemInfo<?= $product->id ?>">
-                                    <?= $product->name . ' ' . round($product->price * (1 - ($product->discount/100)), 2) ?>€ <br>
+                                    <?= htmlentities($product->name) . ' ' . round($product->price * (1 - ($product->discount/100)), 2) ?>€ <br>
                                     Discount: <?= $product->discount ?>% &nbsp&nbsp Old price: <?= $product->price ?>€
                                 </div>
                                 
@@ -75,9 +73,7 @@
                                     <button class="productOrderAddButton" value="<?= $product->id ?>"> + </button>
                                 <?php } ?>
 
-                                <?php 
-                                    if(isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) {
-                                ?>
+                                <?php if(isset($_SESSION['ids_restaurants_owned'][$_SESSION['id_restaurant']])) { ?>
                                     
                                     <div class="editProductDiv">
                                         <button id="saveCheckBox<?= $product->id ?>" class="itemRestaurantButtonDiscountApply" value="<?= $product->id ?>" style="display: none;">&#10003</button>

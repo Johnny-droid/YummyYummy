@@ -21,8 +21,8 @@
         exit(); 
     }
 
-    $id_product = intval($info_discount->{'product'});
-    $discount = intval($info_discount->{'discount'});
+    $id_product = intval(preg_replace('/\D/', '',$info_discount->{'product'}));
+    $discount = intval(preg_replace('/\D/', '', $info_discount->{'discount'}));
 
     if ($discount < 0 || $discount > 100) exit();
 

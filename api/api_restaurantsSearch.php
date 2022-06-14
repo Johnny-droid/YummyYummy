@@ -6,7 +6,7 @@
     require_once(__DIR__ .'/../database/connection.db.php');
     require_once(__DIR__ .'/../database/restaurant.class.php');
 
-    $search = $_GET['search'];
+    $search = preg_replace('/[^a-zA-Z!?.@,\s]/', '', $_GET['search']);
     if ($search !== '') {
         $db = getDatabaseConnection();
         $restaurants = Restaurant::getRestaurantsSearch($db, $search, 8);

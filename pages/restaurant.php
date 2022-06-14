@@ -14,7 +14,7 @@
     require_once(__DIR__ . '/../database/user.class.php');
 
     $db = getDatabaseConnection();
-    $id_restaurant = intval($_GET['id']);
+    $id_restaurant = intval(preg_replace('/\D/', '', $_GET['id']));
     
     if (isset($_SESSION['id']) && (!isset($_SESSION['id_restaurant']) || ($_SESSION['id_restaurant'] !== $id_restaurant))) {
         $_SESSION['products'] = new stdClass();
