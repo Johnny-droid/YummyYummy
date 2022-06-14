@@ -40,7 +40,9 @@ function saveChange(parameter, newValue) {
         displayDiv.classList.replace('itemProfile2', 'itemProfile1');
 
         const valueDiv = displayDiv.querySelector('div:first-child');
-        valueDiv.innerHTML = response;
+        valueDiv.innerHTML = response.replace(/[\u00A0-\u9999<>\&]/g, function(i) {
+            return '&#'+i.charCodeAt(0)+';';
+         });
 
     })
     request.open("POST", "../api/api_updateUser.php", true)
