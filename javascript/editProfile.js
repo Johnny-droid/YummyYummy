@@ -13,8 +13,10 @@ function getEditElement(parameter) {
     return `
     <div id="${parameter}Div2" class="itemProfile2">
         <input id="${parameter}Value" type="text" placeholder="...">
-        <button class="itemProfileButtonCheck" id="${parameter}Check">&#10003</button>
-        <button class="itemProfileButtonCross" id="${parameter}Cross">&#10007</button>
+        <div class="itemProfile3">
+            <button class="itemProfileButtonCheck" id="${parameter}Check">&#10003</button>
+            <button class="itemProfileButtonCross" id="${parameter}Cross">&#10007</button>
+        </div>
     </div>
     `
 }

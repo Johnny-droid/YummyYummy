@@ -67,6 +67,8 @@
 
 .itemProfile1 {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .itemProfile2 {
@@ -92,9 +94,22 @@
     background-size: cover;
 }
 
-.itemProfile1 > div {
+.itemProfile1 {
+    word-break: break-all;
+}
+
+.itemProfile1 > :first-child {
     align-self: center;
     flex-grow: 1;
+}
+
+.itemProfile1 > input {
+    margin-right: 1em ;
+    height: 2em;
+}
+
+.itemProfile3 {
+    align-self: center;
 }
 
 .itemProfile1 > button, .itemProfile2 > button {
